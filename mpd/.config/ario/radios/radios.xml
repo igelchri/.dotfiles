@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="no"?>
+<ario-radios>
+  <radio url="http://www.schwarze-welle.de:7500">Radio Schwarze Welle</radio>
+  <radio url="http://stream.laut.fm/schwarzeszene">Radio Schwarze Szene</radio>
+  <radio url="http://stream.laut.fm/radio-schwarzeseele">Radio Schwarze Seele</radio>
+  <radio url="http://stream.laut.fm/schattenreich">Schattenreich</radio>
+  <radio url="http://stream.laut.fm/radio-darkstar">Radio Darkstar</radio>
+  <radio url="http://stream.laut.fm/electrozombies">Electrozombies</radio>
+  <radio url="http://stream.laut.fm/gothic">Gothic</radio>
+  <radio url="http://stream.laut.fm/darkradio-finetunez">Darkradio Finetunez</radio>
+  <radio url="http://stream.laut.fm/darkstarfm">Darkstar FM</radio>
+  <radio url="http://stream.laut.fm/mittelalter-net">Narrenwut</radio>
+  <radio url="http://stream.laut.fm/vladsradio-darkinside">Vladsradio Darkinside</radio>
+  <radio url="http://stream.laut.fm/darkclubradio">Darkclub Radio</radio>
+  <radio url="http://stream.laut.fm/dark-bites">Dark Bites</radio>
+  <radio url="http://stream.laut.fm/german-gothic-radio">German Gothic-Radio</radio>
+  <radio url="http://stream.laut.fm/darkwave-sounds">Darkwave Sounds</radio>
+  <radio url="http://stream.laut.fm/bizarre-radio">Bizarre Radio</radio>
+  <radio url="http://stream.laut.fm/rabenwind">Rabenwind</radio>
+  <radio url="http://stream.laut.fm/hellschwarz">Hellschwarz</radio>
+  <radio url="http://135.125.216.61:5020/stream">Dunkle Welle</radio>
+  <radio url="http://85.93.89.57:7777/listen1">Hazzard of Darkness</radio>
+</ario-radios>

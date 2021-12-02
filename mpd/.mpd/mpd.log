@@ -1,0 +1,173 @@
+Oct 21 17:41 : state_file: Unrecognized line in state file: ## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+Oct 21 17:41 : state_file: Unrecognized line in state file: ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+Oct 21 17:41 : state_file: Unrecognized line in state file:
+Oct 21 17:41 : avahi: Service 'Music Player @ Legion' successfully established.
+Oct 21 18:05 : update: added /Cartoon - On & On (feat. Daniel Levi) [NCS Release].mp3
+Oct 21 18:05 : update: added /Culture Code - Make Me Move (feat. Karra) [NCS Release].mp3
+Oct 21 18:05 : update: added /Janji - Heroes Tonight (feat. Johnning) [NCS Release].mp3
+Oct 21 18:05 : update: added /N3WPORT - Power (feat. braev) [NCS Release].mp3
+Oct 21 18:05 : update: added /NEFFEX - Grateful [Copyright Free].mp3
+Oct 21 18:32 : player: played "NEFFEX - Grateful [Copyright Free].mp3"
+Oct 21 19:22 : player: played "NEFFEX - Grateful [Copyright Free].mp3"
+Oct 21 23:42 : player: played "NEFFEX - Grateful [Copyright Free].mp3"
+Oct 22 15:47 : player: played "NEFFEX - Grateful [Copyright Free].mp3"
+Oct 22 18:24 : exception: Failed to decode http://91.121.14.16:9090; CURL failed: Connection timeout after 10943 ms
+Oct 22 18:24 : player: played "http://91.121.14.16:9090"
+Oct 22 18:24 : exception: Failed to decode http://91.121.14.16:9090; CURL failed: Connection timeout after 10943 ms
+Oct 22 18:25 : exception: Failed to decode http://91.121.14.16:9090; CURL failed: Connection timeout after 10032 ms
+Oct 22 18:25 : player: played "http://91.121.14.16:9090"
+Oct 22 18:25 : exception: Failed to decode http://91.121.14.16:9090; CURL failed: Connection timeout after 10032 ms
+Oct 22 18:25 : exception: Failed to decode http://91.121.14.16:9090; CURL failed: Connection timeout after 11001 ms
+Oct 22 18:25 : player: played "http://91.121.14.16:9090"
+Oct 22 18:25 : exception: Failed to decode http://mp3.live.tv-radio.com/kissfm/all/kissfm-128k.mp3; CURL failed: Resolving timed out after 10872 milliseconds
+Oct 22 18:25 : player: played "http://mp3.live.tv-radio.com/kissfm/all/kissfm-128k.mp3"
+Oct 22 18:25 : exception: Failed to decode http://mp3.live.tv-radio.com/kissfm/all/kissfm-128k.mp3; CURL failed: Resolving timed out after 10872 milliseconds
+Oct 22 18:25 : player: played "NEFFEX - Grateful [Copyright Free].mp3"
+Oct 22 18:26 : exception: Failed to decode http://streaming.radio.funradio.fr/rtl2-1-44-96; CURL failed: The requested URL returned error: 404
+Oct 22 18:26 : player: played "http://streaming.radio.funradio.fr/rtl2-1-44-96"
+Oct 22 18:26 : exception: Failed to decode http://streaming.radio.funradio.fr/rtl2-1-44-96; CURL failed: The requested URL returned error: 404
+Oct 22 18:26 : player: played "http://streaming.radio.funradio.fr/rtl2-1-44-96"
+Oct 22 18:26 : exception: Failed to decode http://streaming.radio.funradio.fr/rtl2-1-44-96; CURL failed: The requested URL returned error: 404
+Oct 22 18:26 : player: played "http://streaming.radio.funradio.fr/rtl2-1-44-96"
+Oct 22 18:26 : exception: Failed to decode http://streaming.radio.funradio.fr/rtl2-1-44-96; CURL failed: The requested URL returned error: 404
+Oct 22 18:26 : player: played "http://streaming.radio.funradio.fr/rtl2-1-44-96"
+Oct 22 18:26 : exception: Failed to decode http://streaming.radio.funradio.fr/rtl2-1-44-96; CURL failed: The requested URL returned error: 404
+Oct 22 18:26 : player: played "http://streaming.radio.funradio.fr/rtl2-1-44-96"
+Oct 22 18:26 : exception: Failed to decode http://streaming.radio.funradio.fr/rtl2-1-44-96; CURL failed: The requested URL returned error: 404
+Oct 22 18:26 : player: played "http://streaming.radio.funradio.fr/rtl2-1-44-96"
+Oct 22 18:26 : exception: Failed to decode http://streaming.radio.funradio.fr/rtl2-1-44-96; CURL failed: The requested URL returned error: 404
+Oct 22 18:26 : player: played "http://streaming.radio.funradio.fr/rtl2-1-44-96"
+Oct 22 18:34 : exception: Failed to decode https://schwarze-welle.com; avformat_open_input() failed: Invalid data found when processing input
+Oct 22 18:34 : player: played "https://schwarze-welle.com"
+Oct 22 18:34 : exception: Failed to decode https://schwarze-welle.com; avformat_open_input() failed: Invalid data found when processing input
+Oct 22 18:34 : player: played "https://schwarze-welle.com"
+Oct 22 18:34 : exception: Failed to decode https://schwarze-welle.com; avformat_open_input() failed: Invalid data found when processing input
+Oct 22 18:34 : exception: Failed to decode http://streaming.radio.funradio.fr/rtl2-1-44-96; CURL failed: The requested URL returned error: 404
+Oct 22 18:34 : player: played "http://streaming.radio.funradio.fr/rtl2-1-44-96"
+Oct 22 18:34 : exception: Failed to decode https://schwarze-welle.com/#; avformat_open_input() failed: Invalid data found when processing input
+Oct 22 18:34 : player: played "https://schwarze-welle.com/#"
+Oct 22 18:34 : exception: Failed to decode https://schwarze-welle.com/#; avformat_open_input() failed: Invalid data found when processing input
+Oct 22 18:34 : player: played "https://schwarze-welle.com/#"
+Oct 22 18:58 : exception: CURL failed: Recv failure: Connection reset by peer
+Oct 22 19:22 : player: played "http://stream.laut.fm/schwarzeszene"
+Oct 22 19:34 : player: played "http://stream.laut.fm/german-gothic-radio"
+Oct 22 21:04 : player: played "http://stream.laut.fm/german-gothic-radio"
+Oct 22 21:44 : player: played "http://stream.laut.fm/german-gothic-radio"
+Oct 22 22:14 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Oct 22 23:59 : exception: No such directory
+Oct 22 23:59 : player: played "http://stream.laut.fm/vladsradio-darkinside"
+Oct 23 00:00 : exception: No such directory
+Oct 23 00:04 : player: played "http://stream.laut.fm/darkwave-sounds"
+Oct 23 00:04 : ffmpeg/lrc: Format lrc detected only with low score of 5, misdetection possible!
+Oct 23 00:04 : ffmpeg: No audio stream inside
+Oct 23 00:04 : exception: Failed to decode https://saurus.streampanel.net:2199/tunein/rjmvggsr.pls
+Oct 23 00:04 : player: played "https://saurus.streampanel.net:2199/tunein/rjmvggsr.pls"
+Oct 23 00:04 : ffmpeg/lrc: Format lrc detected only with low score of 5, misdetection possible!
+Oct 23 00:04 : ffmpeg: No audio stream inside
+Oct 23 00:04 : exception: Failed to decode https://saurus.streampanel.net:2199/tunein/rjmvggsr.pls
+Oct 23 00:04 : player: played "https://saurus.streampanel.net:2199/tunein/rjmvggsr.pls"
+Oct 23 00:16 : exception: Failed to decode http://radio.hazzardofdarkness.com:8000/; CURL failed: Resolving timed out after 10502 milliseconds
+Oct 23 00:16 : player: played "http://radio.hazzardofdarkness.com:8000/"
+Oct 23 00:16 : exception: Failed to decode http://radio.hazzardofdarkness.com:8000/; CURL failed: Resolving timed out after 10502 milliseconds
+Oct 23 00:18 : player: played "http://135.125.216.61:5020/stream"
+Oct 23 00:20 : exception: Failed to decode http://radio.hazzardofdarkness.com:8000/; CURL failed: Resolving timed out after 10880 milliseconds
+Oct 23 00:20 : player: played "http://radio.hazzardofdarkness.com:8000/"
+Oct 23 00:20 : exception: Failed to decode http://radio.hazzardofdarkness.com:8000/; CURL failed: Resolving timed out after 10880 milliseconds
+Oct 23 00:28 : player: played "http://radio.hazzardofdarkness.com:8000/"
+Oct 23 00:34 : player: played "http://www.schwarze-welle.de:7500"
+Oct 23 00:36 : player: played "http://www.schwarze-welle.de:7500"
+Oct 23 16:56 : player: played "http://stream.laut.fm/darkclubradio"
+Oct 23 17:26 : player: played "http://stream.laut.fm/darkwave-sounds"
+Oct 23 17:31 : player: played "http://stream.laut.fm/darkwave-sounds"
+Oct 23 17:41 : player: played "http://stream.laut.fm/darkwave-sounds"
+Oct 23 19:16 : player: played "http://stream.laut.fm/rabenwind"
+Oct 23 20:49 : player: played "http://stream.laut.fm/rabenwind"
+Oct 23 20:49 : exception: Failed to decode https://www.radio.de/s/hazzardofdarkness; avformat_open_input() failed: Invalid data found when processing input
+Oct 23 20:49 : player: played "https://www.radio.de/s/hazzardofdarkness"
+Oct 23 20:49 : exception: Failed to decode https://www.radio.de/s/hazzardofdarkness; avformat_open_input() failed: Invalid data found when processing input
+Oct 23 20:49 : player: played "https://www.radio.de/s/hazzardofdarkness"
+Oct 23 20:49 : exception: Failed to decode https://www.radio.de/s/hazzardofdarkness; avformat_open_input() failed: Invalid data found when processing input
+Oct 23 20:49 : player: played "https://www.radio.de/s/hazzardofdarkness"
+Oct 23 20:49 : exception: Failed to decode https://www.radio.de/s/hazzardofdarkness; avformat_open_input() failed: Invalid data found when processing input
+Oct 23 20:49 : player: played "https://www.radio.de/s/hazzardofdarkness"
+Oct 23 20:49 : exception: Failed to decode https://www.radio.de/s/hazzardofdarkness; avformat_open_input() failed: Invalid data found when processing input
+Oct 23 20:49 : player: played "https://www.radio.de/s/hazzardofdarkness"
+Oct 23 20:49 : exception: Failed to decode https://www.radio.de/s/hazzardofdarkness; avformat_open_input() failed: Invalid data found when processing input
+Oct 23 20:49 : player: played "https://www.radio.de/s/hazzardofdarkness"
+Oct 23 20:51 : exception: Failed to decode https://tunein.com/radio/Radio-HaZZard-of-Darkness-s96576/; avformat_open_input() failed: Invalid data found when processing input
+Oct 23 20:51 : player: played "https://tunein.com/radio/Radio-HaZZard-of-Darkness-s96576/"
+Oct 23 20:51 : exception: Failed to decode https://tunein.com/radio/Radio-HaZZard-of-Darkness-s96576/; avformat_open_input() failed: Invalid data found when processing input
+Oct 23 20:51 : player: played "https://tunein.com/radio/Radio-HaZZard-of-Darkness-s96576/"
+Oct 23 22:46 : player: played "http://85.93.89.57:7777/listen1"
+Oct 23 23:08 : player: played "http://stream.laut.fm/electrozombies"
+Nov 01 13:48 : player: played "http://stream.laut.fm/darkclubradio"
+Nov 01 14:44 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Nov 02 00:28 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Nov 02 10:00 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Nov 02 12:26 : update: added /Culture Code - Make Me Move (feat. Karra) [NCS Release].mp3
+Nov 02 12:26 : exception: Failed to decode http://stream.laut.fm/darkradio-finetunez; CURL failed: Could not resolve host: stream.laut.fm
+Nov 02 12:26 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Nov 02 12:26 : update: added /NEFFEX - Grateful [Copyright Free].mp3
+Nov 02 12:26 : update: added /N3WPORT - Power (feat. braev) [NCS Release].mp3
+Nov 02 12:26 : update: added /Cartoon - On & On (feat. Daniel Levi) [NCS Release].mp3
+Nov 02 12:26 : update: added /Janji - Heroes Tonight (feat. Johnning) [NCS Release].mp3
+Nov 02 12:26 : avahi: Service 'Music Player @ Legion' successfully established.
+Nov 02 12:31 : avahi: Service 'Music Player @ Legion' successfully established.
+Nov 02 12:45 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Nov 02 16:17 : update: added /Culture Code - Make Me Move (feat. Karra) [NCS Release].mp3
+Nov 02 16:17 : update: added /NEFFEX - Grateful [Copyright Free].mp3
+Nov 02 16:17 : update: added /N3WPORT - Power (feat. braev) [NCS Release].mp3
+Nov 02 16:17 : update: added /Cartoon - On & On (feat. Daniel Levi) [NCS Release].mp3
+Nov 02 16:17 : update: added /Janji - Heroes Tonight (feat. Johnning) [NCS Release].mp3
+Nov 02 17:05 : player: played "http://stream.laut.fm/darkclubradio"
+Nov 02 18:47 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Nov 02 19:18 : player: played "http://www.schwarze-welle.de:7500"
+Nov 02 22:30 : exception: CURL failed: Recv failure: Connection reset by peer
+Nov 02 22:30 : player: played "http://stream.laut.fm/schattenreich"
+Nov 02 23:42 : player: played "http://stream.laut.fm/darkclubradio"
+Nov 03 00:43 : exception: CURL failed: Recv failure: Connection reset by peer
+Nov 03 00:43 : player: played "http://stream.laut.fm/dark-bites"
+Nov 03 01:04 : player: played "http://stream.laut.fm/dark-bites"
+Nov 03 12:55 : exception: Not playing
+Nov 03 22:49 : exception: CURL failed: Recv failure: Connection reset by peer
+Nov 03 22:50 : player: played "http://stream.laut.fm/rabenwind"
+Nov 03 22:52 : player: played "http://stream.laut.fm/rabenwind"
+Nov 04 01:21 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Nov 08 00:24 : player: played "http://stream.laut.fm/german-gothic-radio"
+Nov 08 11:27 : exception: Failed to decode http://stream.laut.fm/german-gothic-radio; CURL failed: Could not resolve host: stream.laut.fm
+Nov 08 11:27 : player: played "http://stream.laut.fm/german-gothic-radio"
+Nov 08 23:20 : player: played "http://135.125.216.61:5020/stream"
+Nov 09 00:23 : exception: CURL failed: Recv failure: Connection reset by peer
+Nov 09 00:23 : player: played "http://stream.laut.fm/darkclubradio"
+Nov 09 00:47 : player: played "http://stream.laut.fm/darkstarfm"
+Nov 09 22:56 : player: played "http://stream.laut.fm/dark-bites"
+Nov 10 00:21 : player: played "http://stream.laut.fm/radio-schwarzeseele"
+Nov 10 13:29 : exception: Failed to decode http://stream.laut.fm/radio-schwarzeseele; CURL failed: Could not resolve host: stream.laut.fm
+Nov 10 13:29 : player: played "http://stream.laut.fm/radio-schwarzeseele"
+Nov 10 17:46 : exception: Not playing
+Nov 10 19:19 : player: played "http://stream.laut.fm/radio-schwarzeseele"
+Nov 12 15:07 : player: played "http://stream.laut.fm/radio-schwarzeseele"
+Nov 13 13:29 : player: played "http://stream.laut.fm/schattenreich"
+Nov 15 01:39 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Nov 16 21:17 : exception: Not playing
+Nov 16 23:44 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Nov 17 17:53 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Nov 17 22:10 : exception: Failed to decode http://stream.laut.fm/darkradio-finetunez; CURL failed: Could not resolve host: stream.laut.fm
+Nov 17 22:10 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Nov 23 01:20 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Nov 23 18:13 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Nov 23 20:52 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Nov 28 19:39 : log: error re-opening log file: /home/chris/.mpd/mpd.log
+Nov 28 19:39 : exception: Failed to create /home/chris/.mpd/mpdstate: No such file or directory
+Dec 01 18:22 : player: played "http://stream.laut.fm/darkstarfm"
+Dec 01 20:19 : player: played "http://stream.laut.fm/darkstarfm"
+Dec 01 20:41 : player: played "http://stream.laut.fm/darkstarfm"
+Dec 01 20:41 : player: played "http://stream.laut.fm/darkstarfm"
+Dec 01 20:41 : player: played "http://stream.laut.fm/darkstarfm"
+Dec 01 21:09 : player: played "http://stream.laut.fm/darkstarfm"
+Dec 01 21:52 : player: played "http://stream.laut.fm/radio-darkstar"
+Dec 01 21:55 : player: played "http://stream.laut.fm/radio-darkstar"
+Dec 02 17:32 : player: played "http://stream.laut.fm/radio-darkstar"
+Dec 02 18:32 : player: played "http://stream.laut.fm/radio-darkstar"
+Dec 02 18:54 : player: played "http://stream.laut.fm/radio-darkstar"
+Dec 02 20:00 : player: played "http://stream.laut.fm/schattenreich"
