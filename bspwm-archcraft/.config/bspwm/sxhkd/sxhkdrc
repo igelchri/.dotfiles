@@ -14,18 +14,12 @@ super + shift + k
 
 ### ----- Programme starten ----- ##
 
-#Terminal (alacritty)
-#super + Return
-#	bspterm
-
 # Terminal (floating)
-#super + shift + Return
 super + Return
 	bspterm -f
 
 # Terminal (fullscreen)
 super + t
-#	bspterm -s	
 	bspterm
 	
 # Datei Manager (GUI)
@@ -33,7 +27,7 @@ super + shift + d
 #	thunar
 	pcmanfm
 
-### Datei Manager (GUI)
+# Datei Manager (GUI)
 super + shift + Return
 #	thunar
 	pcmanfm
@@ -199,7 +193,7 @@ super + f
 
 # Toggle beetwen between the tiled and monocle layout
 super + space
-   bspc desktop -l next
+    bspc node -t "~"{floating,tiled}
 
 # Toggle beetwen floating & tiled
 super + shift + space
