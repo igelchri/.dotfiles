@@ -2,8 +2,8 @@ sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
 state: play
-current: 5
-time: 267.967000
+current: 7
+time: 17.909000
 random: 0
 repeat: 1
 single: 0
@@ -31,12 +31,16 @@ Title: Funker Vogt - Gunman
 Name: Darkstar FM
 song_end
 song_begin: http://stream.laut.fm/darkwave-sounds
-Title: Rammstein - DEUTSCHLAND
+Title: Diary of Dreams - Endless Nights
 Name: Darkwave Sounds
 song_end
 song_begin: http://135.125.216.61:5020/stream
+Title: The Smiths - Panic
+Name: RDW - Radio Dunkle Welle
 song_end
 song_begin: http://stream.laut.fm/electrozombies
+Title: Björk - Declare Independence
+Name: Electrozombies
 song_end
 song_begin: http://stream.laut.fm/german-gothic-radio
 song_end

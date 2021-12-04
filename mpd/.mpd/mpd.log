@@ -184,3 +184,5 @@ Dec 04 14:34 : exception: Failed to decode http://stream.laut.fm/darkstarfm; CUR
 Dec 04 14:34 : player: played "http://stream.laut.fm/darkstarfm"
 Dec 04 21:27 : exception: CURL failed: Recv failure: Connection reset by peer
 Dec 04 21:27 : player: played "http://stream.laut.fm/darkstarfm"
+Dec 04 22:09 : exception: CURL failed: Recv failure: Connection reset by peer
+Dec 04 22:09 : player: played "http://stream.laut.fm/darkwave-sounds"
