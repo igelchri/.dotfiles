@@ -1,8 +1,9 @@
 sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: stop
+state: play
 current: 4
+time: 956.089000
 random: 0
 repeat: 1
 single: 0
@@ -26,7 +27,7 @@ song_end
 song_begin: http://stream.laut.fm/darkradio-finetunez
 song_end
 song_begin: http://stream.laut.fm/darkstarfm
-Title: Mantus - Utopia
+Title: Naxwell - Fade To Grey (Club Mix)
 Name: Darkstar FM
 song_end
 song_begin: http://stream.laut.fm/darkwave-sounds
