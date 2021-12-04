@@ -1,9 +1,8 @@
 sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: play
-current: 1
-time: 706.976000
+state: stop
+current: 4
 random: 0
 repeat: 1
 single: 0
@@ -17,14 +16,18 @@ Title: DC Fallout - Poverty Blind
 Name: Bizarre-Radio
 song_end
 song_begin: http://stream.laut.fm/dark-bites
-Title: Massiv in Mensch - Hamburg (Trakktor R3werkk)
+Title: Depeche Mode - Behind the Wheel (Mark Picchiotti re-edited Vince Clarke radio mix)
 Name: Dark Bites
 song_end
 song_begin: http://stream.laut.fm/darkclubradio
+Title: Camouflage - The Pleasure Remains (Camouflage Vs. Wet Fingers-Club Version)
+Name: Darkclub-Radio
 song_end
 song_begin: http://stream.laut.fm/darkradio-finetunez
 song_end
 song_begin: http://stream.laut.fm/darkstarfm
+Title: Mantus - Utopia
+Name: Darkstar FM
 song_end
 song_begin: http://stream.laut.fm/darkwave-sounds
 song_end

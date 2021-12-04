@@ -6,14 +6,15 @@
 ##  |:  1    |:  1   |:  |   |:      |:  |   | 
 ##  |::.. .  |::.. . |::.|   |::.|:. |::.|:. | 
 ##  `-------'`-------`---'   `--- ---`--- ---' 
+##	Stand: 04.12.21
 
-## Environtment
+#+++ Umgebungsvariablen festlegen
 export PATH="${PATH}:$HOME/.config/bspwm/bin"
 
 #+++ Autostart
 $HOME/.config/bspwm/autostart.sh
 
-## Get colors from .Xresources -------------------------------#
+#+++ Get colors from .Xresources -------------------------------#
 xrdb ~/.Xresources
 getcolors() {
 	FOREGROUND=$(xrdb -query | grep 'foreground:'| awk '{print $NF}')
@@ -29,7 +30,7 @@ getcolors() {
 }
 getcolors
 
-## Configurations --------------------------------------------#
+#+++ Configurations --------------------------------------------#
 workspaces() {
 	name=1
 	for monitor in `bspc query -M`; do
@@ -41,10 +42,12 @@ workspaces() {
 workspaces
 
 bspc config border_width 3
-bspc config window_gap 5
+bspc config window_gap 8
 bspc config split_ratio 0.50
-
-bspc config top_padding          30
+#bspc config top_padding          30
+#bspc config bottom_padding       10
+#bspc config left_padding         10
+#bspc config right_padding        10
 
 bspc config focused_border_color "$BLUE" 
 bspc config normal_border_color "$BACKGROUND"
@@ -54,10 +57,10 @@ bspc config presel_feedback_color "$GREEN"
 bspc config borderless_monocle true
 bspc config gapless_monocle true
 bspc config paddingless_monocle true
-bspc config single_monocle false
+bspc config single_monocle true
 bspc config focus_follows_pointer true
 
-## Window rules ----------------------------------------------#
+##+++Window rules ----------------------------------------------#
 
 # remove all rules first
 bspc rule -r *:*
@@ -66,11 +69,12 @@ bspc rule -r *:*
 declare -a terminal=(Alacritty Xfce4-terminal urxvt)
 for i in ${terminal[@]}; do
     bspc rule -a $i desktop='^1' follow=on focus=on; done
+#bspc rule -a Alacritty desktop='^1' follow=on focus=on
+#bspc rule -a Xfce4-terminal desktop='^1' follow=on focus=on
 
 # 2 > web
-declare -a web=(firefox chromium)
-for i in ${web[@]}; do
-    bspc rule -a $i desktop='^2' follow=on focus=on; done
+bspc rule -a firefox desktop='^2' follow=on focus=on
+bspc rule -a chromium desktop='^2' follow=on focus=on
 
 # 3 > files
 declare -a files=(Pcmanfm Thunar)
@@ -78,12 +82,14 @@ for i in ${files[@]}; do
    bspc rule -a $i desktop='^3' follow=on focus=on; done
 
 # 4 > code
-declare -a code=(Geany emacs)
+declare -a code=(Geany emacs code-oss)
 for i in ${code[@]}; do
    bspc rule -a $i desktop='^4' follow=on focus=on; done
 
 # 5 > office and docs
-declare -a office=( Atril)
+declare -a office=(Gucharmap Atril Evince \
+libreoffice-writer libreoffice-calc libreoffice-impress \
+libreoffice-startcenter libreoffice Soffice *:libreofficedev *:soffice)
 for i in ${office[@]}; do
    bspc rule -a $i desktop='^5' follow=on focus=on; done
 
@@ -93,7 +99,7 @@ for i in ${comm[@]}; do
    bspc rule -a $i desktop='^6' follow=on focus=on; done
 
 # 7 > media
-declare -a media=(Ario vlc)
+declare -a media=(Audacity Music MPlayer Lxmusic Inkscape Gimp-2.10 obs Ario vlc)
 for i in ${media[@]}; do
    bspc rule -a $i desktop='^7' state=floating follow=on focus=on; done
 
@@ -107,10 +113,11 @@ for i in ${settings[@]}; do
    bspc rule -a $i desktop='^8' state=floating follow=on focus=on; done
 
 # special rules
-declare -a floating=(alacritty-float Onboard Yad 'Firefox:Places' \
+declare -a floating=(alacritty-float Pcmanfm Onboard Yad 'Firefox:Places' \
 Viewnior feh Nm-connection-editor)
 for i in ${floating[@]}; do
    bspc rule -a $i state=floating follow=on focus=on; done
 
 bspc rule -a Conky state=floating manage=off
 bspc rule -a stalonetray state=floating manage=off
+
