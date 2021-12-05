@@ -3,6 +3,9 @@
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
+
+
+
 [module/volume]
 type = internal/pulseaudio
 
@@ -241,6 +244,26 @@ label-sticky = " | Sticky"
 label-private = " | Private"
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/mod_1]
+type = internal/bspwm
+
+format = <label-mode>
+format-background = ${color.YELLOW}
+format-foreground = ${color.BACKGROUND}
+format-padding = 1
+
+label-monocle = "  "
+label-tiled = "  "
+
+label-floating = "  "
+label-pseudotiled = "  "
+label-fullscreen = "  "
+
+label-locked = "  "
+label-sticky = "  "
+label-private =  "     "
+
 
 [module/date]
 type = internal/date

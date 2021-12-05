@@ -1,9 +1,9 @@
 sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: pause
-current: 11
-time: 8.267000
+state: play
+current: 12
+time: 77.863000
 random: 0
 repeat: 1
 single: 0
@@ -61,7 +61,7 @@ Title: Heldmaschine - Menschenfresser
 Name: Hellschwarz
 song_end
 song_begin: http://stream.laut.fm/mittelalter-net
-Title: Faun - Holla
+Title: Delva - Stimmen aus den Tiefen
 Name: Mittelalter-Net
 song_end
 song_begin: http://stream.laut.fm/rabenwind

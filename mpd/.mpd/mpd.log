@@ -198,3 +198,5 @@ Dec 05 12:10 : player: played "http://stream.laut.fm/hellschwarz"
 Dec 05 13:02 : player: played "http://stream.laut.fm/hellschwarz"
 Dec 05 13:03 : exception: Failed to decode http://stream.laut.fm/hellschwarz; CURL failed: Could not resolve host: stream.laut.fm
 Dec 05 13:03 : player: played "http://stream.laut.fm/hellschwarz"
+Dec 06 00:07 : exception: CURL failed: Recv failure: Connection reset by peer
+Dec 06 00:07 : player: played "http://stream.laut.fm/hellschwarz"
