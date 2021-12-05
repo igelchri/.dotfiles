@@ -31,8 +31,8 @@ sxhkd -c $HOME/.config/bspwm/sxhkd/sxhkdrc &
 bspbar
 
 #+++ Wallpaper
-feh --bg-scale ~/.config/bspwm/wall.png &
-#bash $HOME/.fehbg
+#feh --bg-scale ~/.config/bspwm/wall.png &
+bash $HOME/.fehbg
 
 #+++ conky
 #conky -c $HOME/.config/bspwm/system-overview &

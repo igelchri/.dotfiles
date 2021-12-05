@@ -186,3 +186,15 @@ Dec 04 21:27 : exception: CURL failed: Recv failure: Connection reset by peer
 Dec 04 21:27 : player: played "http://stream.laut.fm/darkstarfm"
 Dec 04 22:09 : exception: CURL failed: Recv failure: Connection reset by peer
 Dec 04 22:09 : player: played "http://stream.laut.fm/darkwave-sounds"
+Dec 04 22:45 : player: played "http://stream.laut.fm/radio-darkstar"
+Dec 05 00:05 : exception: Failed to decode http://stream.laut.fm/schwarzeszene; CURL failed: Connection timeout after 10719 ms
+Dec 05 00:05 : player: played "http://stream.laut.fm/schwarzeszene"
+Dec 05 00:05 : exception: Failed to decode http://stream.laut.fm/schwarzeszene; CURL failed: Connection timeout after 10719 ms
+Dec 05 01:34 : exception: CURL failed: Recv failure: Connection reset by peer
+Dec 05 01:34 : player: played "http://stream.laut.fm/german-gothic-radio"
+Dec 05 01:35 : player: played "http://stream.laut.fm/hellschwarz"
+Dec 05 12:10 : exception: Failed to decode http://stream.laut.fm/hellschwarz; CURL failed: Could not resolve host: stream.laut.fm
+Dec 05 12:10 : player: played "http://stream.laut.fm/hellschwarz"
+Dec 05 13:02 : player: played "http://stream.laut.fm/hellschwarz"
+Dec 05 13:03 : exception: Failed to decode http://stream.laut.fm/hellschwarz; CURL failed: Could not resolve host: stream.laut.fm
+Dec 05 13:03 : player: played "http://stream.laut.fm/hellschwarz"
