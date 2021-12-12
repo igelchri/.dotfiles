@@ -193,11 +193,11 @@ super + f
 
 # Toggle beetwen between the tiled and monocle layout
 super + space
-    bspc node -t "~"{floating,tiled}
+   bspc desktop -l next
 
 # Toggle beetwen floating & tiled
 super + shift + space
-   bspc node -t "~"{monocle,tiled}
+   bspc node -t "~"{floating,tiled}
 
 # Pseudo Tiled & tiled mode
 #super + shift + space

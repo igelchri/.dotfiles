@@ -1,9 +1,9 @@
 sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: pause
-current: 11
-time: 14.493000
+state: play
+current: 14
+time: 2637.388000
 random: 0
 repeat: 1
 single: 0
@@ -57,19 +57,19 @@ Title: Junksista - Trust No Bitch
 Name: Radio Hazzard of Darkness. The Best Radio on Air
 song_end
 song_begin: http://stream.laut.fm/hellschwarz
-Title: Extramensch - Brenn Mit Mir
+Title: Sven Phalanx - Klangtherapie (Club Edit)
 Name: Hellschwarz
 song_end
 song_begin: http://stream.laut.fm/mittelalter-net
-Title: Delva - Stimmen aus den Tiefen
+Title: Faun - Seemann
 Name: Mittelalter-Net
 song_end
 song_begin: http://stream.laut.fm/rabenwind
-Title: Faun - Tinta - Live
+Title: Taurus Ferus - Füllt Euren Krug
 Name: Rabenwind
 song_end
 song_begin: http://stream.laut.fm/radio-darkstar
-Title: Ranunculus - Ductia
+Title: Necro Facility - Downstairs
 Name: Radio Darkstar
 song_end
 song_begin: http://stream.laut.fm/radio-schwarzeseele
