@@ -1,9 +1,9 @@
 sw_volume: 100
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: play
-current: 14
-time: 2637.388000
+state: pause
+current: 16
+time: 154.870000
 random: 0
 repeat: 1
 single: 0
@@ -69,19 +69,19 @@ Title: Taurus Ferus - Füllt Euren Krug
 Name: Rabenwind
 song_end
 song_begin: http://stream.laut.fm/radio-darkstar
-Title: Necro Facility - Downstairs
+Title: Qntal - Palestinalied
 Name: Radio Darkstar
 song_end
 song_begin: http://stream.laut.fm/radio-schwarzeseele
-Title: Nirvana - Drain You
+Title: Stage Bottles - Russia
 Name: Radio-Schwarzeseele
 song_end
 song_begin: http://stream.laut.fm/schwarzeszene
-Title: Ballistic - Superstition (Twisted Reality Mix)
+Title: P.K.C. - IM ZORN -12.2008
 Name: Schwarzeszene
 song_end
 song_begin: http://www.schwarze-welle.de:7500
-Title: Anne Clark & Thomas Rückoldt - A Star Here And A Star There [onAir: Radio Schwarze Welle]
+Title: Alterred - Broken Glass [onAir: Radio Schwarze Welle]
 Name: Radio Schwarze Welle
 song_end
 song_begin: http://stream.laut.fm/vladsradio-darkinside

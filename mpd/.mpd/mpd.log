@@ -210,3 +210,7 @@ Dec 12 22:45 : player: played "http://stream.laut.fm/hellschwarz"
 Dec 12 22:49 : player: played "http://stream.laut.fm/hellschwarz"
 Dec 12 23:55 : exception: CURL failed: Recv failure: Connection reset by peer
 Dec 12 23:56 : player: played "http://stream.laut.fm/hellschwarz"
+Dec 13 00:53 : player: played "http://stream.laut.fm/radio-darkstar"
+Dec 14 00:53 : player: played "http://stream.laut.fm/schwarzeszene"
+Dec 15 17:16 : player: played "http://stream.laut.fm/schwarzeszene"
+Dec 15 21:21 : player: played "http://stream.laut.fm/schwarzeszene"

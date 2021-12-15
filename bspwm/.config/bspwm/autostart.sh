@@ -71,6 +71,6 @@ exec mpd &
 
 # Start bspwm scripts
 bspcolors
-#bspfloat &
+bspfloat &
 
 
