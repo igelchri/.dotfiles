@@ -214,3 +214,13 @@ Dec 13 00:53 : player: played "http://stream.laut.fm/radio-darkstar"
 Dec 14 00:53 : player: played "http://stream.laut.fm/schwarzeszene"
 Dec 15 17:16 : player: played "http://stream.laut.fm/schwarzeszene"
 Dec 15 21:21 : player: played "http://stream.laut.fm/schwarzeszene"
+Dec 15 22:46 : player: played "http://stream.laut.fm/schwarzeszene"
+Dec 16 13:58 : exception: Failed to decode http://stream.laut.fm/schwarzeszene; avformat_open_input() failed: Invalid data found when processing input
+Dec 16 13:58 : player: played "http://stream.laut.fm/schwarzeszene"
+Dec 16 21:35 : exception: Not playing
+Dec 19 15:55 : update: added /Culture Code - Make Me Move (feat. Karra) [NCS Release].mp3
+Dec 19 15:55 : update: added /NEFFEX - Grateful [Copyright Free].mp3
+Dec 19 15:55 : update: added /N3WPORT - Power (feat. braev) [NCS Release].mp3
+Dec 19 15:55 : update: added /Cartoon - On & On (feat. Daniel Levi) [NCS Release].mp3
+Dec 19 15:55 : update: added /Janji - Heroes Tonight (feat. Johnning) [NCS Release].mp3
+Dec 19 15:55 : avahi: Service 'Music Player @ legion' successfully established.
