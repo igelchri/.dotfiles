@@ -267,6 +267,7 @@ type = internal/bspwm
 format = <label-mode>
 format-background = ${color.magenta}
 format-foreground = ${color.background}
+
 format-padding = 1
 format-font = 5
 

@@ -33,7 +33,7 @@ super + shift + f
 #	pcmanfm
 
 # Datei Manager (CLI)
-alt + shift + d
+alt + shift + f
 	terminal -e ranger
 #	alacritty -e mc
 #	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e ranger
