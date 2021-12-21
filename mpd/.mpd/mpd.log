@@ -224,3 +224,4 @@ Dec 19 15:55 : update: added /N3WPORT - Power (feat. braev) [NCS Release].mp3
 Dec 19 15:55 : update: added /Cartoon - On & On (feat. Daniel Levi) [NCS Release].mp3
 Dec 19 15:55 : update: added /Janji - Heroes Tonight (feat. Johnning) [NCS Release].mp3
 Dec 19 15:55 : avahi: Service 'Music Player @ legion' successfully established.
+Dec 19 23:33 : exception: Failed to access /home/ci/Music: No such file or directory
