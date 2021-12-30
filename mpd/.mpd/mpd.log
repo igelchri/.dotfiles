@@ -225,3 +225,23 @@ Dec 19 15:55 : update: added /Cartoon - On & On (feat. Daniel Levi) [NCS Release
 Dec 19 15:55 : update: added /Janji - Heroes Tonight (feat. Johnning) [NCS Release].mp3
 Dec 19 15:55 : avahi: Service 'Music Player @ legion' successfully established.
 Dec 19 23:33 : exception: Failed to access /home/ci/Music: No such file or directory
+Dec 22 19:22 : player: played "http://stream.laut.fm/schwarzeszene"
+Dec 22 20:16 : player: played "http://stream.laut.fm/schwarzeszene"
+Dec 22 20:28 : player: played "http://stream.laut.fm/schwarzeszene"
+Dec 22 20:28 : exception: Failed to decode http://stream.laut.fm/schwarzeszene; CURL failed: Could not resolve host: stream.laut.fm
+Dec 22 20:28 : player: played "http://stream.laut.fm/schwarzeszene"
+Dec 28 04:27 : player: played "http://stream.laut.fm/dark-bites"
+Dec 28 14:16 : player: played "http://stream.laut.fm/dark-bites"
+Dec 28 14:16 : exception: Failed to decode http://stream.laut.fm/dark-bites; CURL failed: Could not resolve host: stream.laut.fm
+Dec 28 14:16 : player: played "http://stream.laut.fm/dark-bites"
+Dec 28 15:12 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Dec 28 22:17 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Dec 29 00:59 : player: played "http://stream.laut.fm/mittelalter-net"
+Dec 29 01:00 : exception: Failed to decode http://stream.laut.fm/mittelalter-net; CURL failed: Could not resolve host: stream.laut.fm
+Dec 29 01:00 : player: played "http://stream.laut.fm/mittelalter-net"
+Dec 29 03:32 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Dec 29 21:09 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Dec 29 22:52 : player: played "http://www.schwarze-welle.de:7500"
+Dec 29 22:53 : player: played "http://stream.laut.fm/bizarre-radio"
+Dec 30 01:01 : player: played "http://www.schwarze-welle.de:7500"
+Dec 30 13:26 : player: played "http://www.schwarze-welle.de:7500"

@@ -282,7 +282,7 @@ XF86MonBrightness{Up,Down}
 	
 # Lautstärke
 XF86Audio{RaiseVolume,LowerVolume}
-	volume{ --inc, --dec}
+	amixer{ set Master 10%+, set Master 10%-}
 
 # Lautsprecher aus
 XF86AudioMute
