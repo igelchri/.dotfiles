@@ -245,3 +245,35 @@ Dec 29 22:52 : player: played "http://www.schwarze-welle.de:7500"
 Dec 29 22:53 : player: played "http://stream.laut.fm/bizarre-radio"
 Dec 30 01:01 : player: played "http://www.schwarze-welle.de:7500"
 Dec 30 13:26 : player: played "http://www.schwarze-welle.de:7500"
+Dec 31 00:31 : player: played "http://www.schwarze-welle.de:7500"
+Dec 31 02:00 : player: played "http://stream.laut.fm/vladsradio-darkinside"
+Dec 31 12:43 : player: played "http://stream.laut.fm/vladsradio-darkinside"
+Dec 31 12:44 : player: played "http://stream.laut.fm/vladsradio-darkinside"
+Dec 31 23:03 : player: played "http://85.93.89.57:7777/listen1"
+Jan 01 01:56 : player: played "http://85.93.89.57:7777/listen1"
+Jan 01 02:22 : player: played "http://stream.laut.fm/vladsradio-darkinside"
+Jan 01 02:22 : exception: Not playing
+Jan 01 02:26 : player: played "http://stream.laut.fm/dark-bites"
+Jan 01 03:19 : exception: Failed to decode http://stream.laut.fm/darkstarfm; CURL failed: Connection timeout after 10488 ms
+Jan 01 03:19 : player: played "http://stream.laut.fm/darkstarfm"
+Jan 01 03:19 : exception: Failed to decode http://stream.laut.fm/darkstarfm; CURL failed: Connection timeout after 10488 ms
+Jan 01 03:39 : player: played "http://stream.laut.fm/darkwave-sounds"
+Jan 01 14:31 : player: played "http://stream.laut.fm/darkwave-sounds"
+Jan 01 15:26 : player: played "http://stream.laut.fm/darkwave-sounds"
+Jan 01 16:09 : exception: Failed to decode http://stream.laut.fm/darkwave-sounds; CURL failed: Could not resolve host: stream.laut.fm
+Jan 01 16:09 : player: played "http://stream.laut.fm/darkwave-sounds"
+Jan 01 21:08 : player: played "http://stream.laut.fm/darkwave-sounds"
+Jan 01 21:08 : exception: Not playing
+Jan 01 21:08 : exception: Not playing
+Jan 01 21:08 : exception: Not playing
+Jan 01 21:08 : exception: Not playing
+Jan 01 21:08 : exception: Not playing
+Jan 01 21:59 : exception: CURL failed: Recv failure: Connection reset by peer
+Jan 01 21:59 : player: played "http://stream.laut.fm/radio-schwarzeseele"
+Jan 01 22:20 : player: played "http://stream.laut.fm/schwarzeszene"
+Jan 01 22:22 : exception: Not playing
+Jan 02 01:05 : player: played "http://stream.laut.fm/vladsradio-darkinside"
+Jan 02 01:06 : exception: Not playing
+Jan 02 01:30 : player: played "http://stream.laut.fm/darkclubradio"
+Jan 02 21:14 : player: played "http://stream.laut.fm/darkclubradio"
+Jan 02 21:26 : player: played "http://stream.laut.fm/darkradio-finetunez"
