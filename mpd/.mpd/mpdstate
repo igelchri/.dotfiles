@@ -1,8 +1,8 @@
-sw_volume: 62
+sw_volume: 49
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
 state: stop
-current: 3
+current: 16
 random: 0
 repeat: 0
 single: 0
@@ -12,70 +12,63 @@ mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
 song_begin: http://stream.laut.fm/bizarre-radio
-Title: THE NEW ROSES - Life Ain't Easy (For A Boy With Long Hair)
 Name: Bizarre-Radio
 song_end
 song_begin: http://stream.laut.fm/dark-bites
-Title: Minerve - Deep Inside
 Name: Dark Bites
 song_end
 song_begin: http://stream.laut.fm/darkclubradio
-Title: Mind.In.A.Box - Timelessness
 Name: Darkclub-Radio
 song_end
 song_begin: http://stream.laut.fm/darkradio-finetunez
-Title: Solitary Experiments - Rise And Fall (Trial Remix)
+Title: Solitary Experiments - Alles Was Bleibt (Feat. A. HARTUNG)
 Name: Darkradio Finetunez
 song_end
 song_begin: http://stream.laut.fm/darkstarfm
-Title: Distain - A Million Engines
+Title: A Life Divided - Doesn´t Count
 Name: Darkstar FM
 song_end
 song_begin: http://stream.laut.fm/darkwave-sounds
-Title: Danny Elfman; Trent Reznor - True
+Title: Covenant - Bullet
 Name: Darkwave Sounds
 song_end
 song_begin: http://135.125.216.61:5020/stream
-Title: Lost Area - Phoenix
+Title: The Cranberries - Promises
 Name: RDW - Radio Dunkle Welle
 song_end
 song_begin: http://stream.laut.fm/electrozombies
-Title: Torul - Monday
 Name: Electrozombies
 song_end
 song_begin: http://stream.laut.fm/german-gothic-radio
 Name: German Gothic-Radio
 song_end
 song_begin: http://stream.laut.fm/radio-darkstar
-Title: Hypnoskull - 03 - too hard to try
 Name: Radio Darkstar
 song_end
 song_begin: http://stream.laut.fm/gothic
-Title: Descendants Of Cain - One Of Us
+Title: New Order - Thieves Like Us (Instrumental)
 Name: Gothic
 song_end
 song_begin: http://85.93.89.57:7777/listen1
-Title: Patient Zero - I Don't Need It
+Title: Rain Fell Within - The Child Beneath
 Name: Radio Hazzard of Darkness. The Best Radio on Air
 song_end
 song_begin: http://stream.laut.fm/hellschwarz
-Title: Battle Scream - Der Letzte Akt
+Title: Dark Empire - Und ich tanz (Single Edit)
 Name: Hellschwarz
 song_end
 song_begin: http://stream.laut.fm/mittelalter-net
-Title: Harpyie - Morgenstern
 Name: Mittelalter-Net
 song_end
 song_begin: http://stream.laut.fm/rabenwind
-Title: Spielleute Skadefryd - Lord of the Dance
+Title: Spielleute Skadefryd - Hallelujah
 Name: Rabenwind
 song_end
 song_begin: http://stream.laut.fm/radio-schwarzeseele
-Title: Stone Sour - Hell & Consequences
+Title: The Rolling Stones - Brown Sugar
 Name: Radio-Schwarzeseele
 song_end
 song_begin: http://stream.laut.fm/schwarzeszene
-Title: Digitalis Purpurea - Ideomatic (Tribute to Rockets)
 Name: Schwarzeszene
 song_end
 song_begin: http://www.schwarze-welle.de:7500
@@ -83,11 +76,11 @@ Title: Liquid Grey - Transfusion (feat. Mallory Murdock) [onAir: Radio Schwarze 
 Name: Radio Schwarze Welle
 song_end
 song_begin: http://stream.laut.fm/schattenreich
-Title: The Soft Moon - Insides
+Title: Tragic Black - Born To Kill
 Name: Schattenreich
 song_end
 song_begin: http://stream.laut.fm/vladsradio-darkinside
-Title: Joy Division - Colony [2007 Re-mastered Album Version]
+Title: Black Sabbath - Children Of The Grave (Live At The Rainbow Theatre/ March 16th 1973)
 Name: Vladsradio Darkinside
 song_end
 playlist_end

@@ -7,7 +7,7 @@
 xsetroot -cursor_name left_ptr
 
 # Kill if already running
-killall -9 picom sxhkd dunst xfce4-power-manager ksuperkey eww
+killall -9 picom sxhkd dunst xfce4-power-manager ksuperkey eww clipit blueman-applet
 
 # Restore wallpaper
 bash $HOME/.config/bspwm/.fehbg
@@ -45,6 +45,15 @@ udiskie &
 while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
 picom --config $HOME/.config/bspwm/picom.conf &
 
+# Start mpd
+exec mpd &
+
+# Start Clipboard 
+clipit &
+
+# Start Bluetooth
+blueman-applet &
+
 # replace neovim colorscheme
 sed -i "s/theme =.*$/theme = \"tokyonight\",/g" $HOME/.config/nvim/lua/chadrc.lua
 
@@ -52,6 +61,5 @@ sed -i "s/theme =.*$/theme = \"tokyonight\",/g" $HOME/.config/nvim/lua/chadrc.lu
 XFCE_TERM_PATH="$HOME/.config/xfce4/terminal"
 cp "$XFCE_TERM_PATH"/colorschemes/tokyo-night "$XFCE_TERM_PATH"/terminalrc
 
-# Start mpd
-exec mpd &
+
 

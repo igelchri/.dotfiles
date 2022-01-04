@@ -277,3 +277,13 @@ Jan 02 01:06 : exception: Not playing
 Jan 02 01:30 : player: played "http://stream.laut.fm/darkclubradio"
 Jan 02 21:14 : player: played "http://stream.laut.fm/darkclubradio"
 Jan 02 21:26 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Jan 02 23:09 : exception: Failed to decode http://www.schwarze-welle.de:7500; CURL failed: Connection timeout after 10135 ms
+Jan 02 23:09 : player: played "http://www.schwarze-welle.de:7500"
+Jan 02 23:09 : exception: Failed to decode http://www.schwarze-welle.de:7500; CURL failed: Connection timeout after 10135 ms
+Jan 03 00:10 : player: played "http://stream.laut.fm/vladsradio-darkinside"
+Jan 03 00:10 : exception: Not playing
+Jan 03 00:10 : exception: Not playing
+Jan 03 00:11 : exception: Not playing
+Jan 03 00:40 : player: played "http://stream.laut.fm/gothic"
+Jan 03 18:47 : player: played "http://stream.laut.fm/gothic"
+Jan 03 20:48 : player: played "http://stream.laut.fm/schwarzeszene"
