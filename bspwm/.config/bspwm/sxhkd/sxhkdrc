@@ -35,9 +35,6 @@ super + shift + f
 # Datei Manager (CLI)
 alt + shift + f
 	terminal -e ranger
-#	alacritty -e mc
-#	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e ranger
-#	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e mc
 
 # Text Editor (GUI)
 super + shift + t
@@ -45,11 +42,7 @@ super + shift + t
 
 # Text Editor (CLI)
 alt + shift + t
-	terminal -e nano
-#	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e emacs
-#	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e vim
-#	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e nvim
-#	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e nano
+	terminal -e nvim
 
 # Internet Browser
 super + shift + w
@@ -65,7 +58,8 @@ super + shift + m
 
 # Musik Player (CLI)
 alt + shift + m
-	sh ~/.config/bspwm/rofi/bin/mpd
+	ncmpcpp
+#	sh ~/.config/bspwm/rofi/bin/mpd
 
 # Video Player
 super + shift + v
