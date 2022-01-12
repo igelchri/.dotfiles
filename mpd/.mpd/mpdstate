@@ -1,9 +1,8 @@
 sw_volume: 49
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: play
-current: 2
-time: 1777.744000
+state: stop
+current: 16
 random: 0
 repeat: 0
 single: 0
@@ -21,59 +20,62 @@ Title: Endanger - I Count On You
 Name: Dark Bites
 song_end
 song_begin: http://stream.laut.fm/darkclubradio
-Title: Depeche Mode - I Feel You
+Title: No Artist - No Title
 Name: Darkclub-Radio
 song_end
 song_begin: http://stream.laut.fm/darkradio-finetunez
-Title: Solitary Experiments - Alles Was Bleibt (Feat. A. HARTUNG)
+Title: Studio-X - Butene Machines
 Name: Darkradio Finetunez
 song_end
 song_begin: http://stream.laut.fm/darkstarfm
-Title: A Life Divided - Doesn´t Count
+Title: Torul - Mad World (Rob Dust Remix)
 Name: Darkstar FM
 song_end
 song_begin: http://stream.laut.fm/darkwave-sounds
-Title: Covenant - Bullet
+Title: Klangstabil - You May Start
 Name: Darkwave Sounds
 song_end
 song_begin: http://135.125.216.61:5020/stream
-Title: The Cranberries - Promises
+Title: salvation AMP - Oxygen
 Name: RDW - Radio Dunkle Welle
 song_end
 song_begin: http://stream.laut.fm/electrozombies
+Title: Ash Code - Nite Rite
 Name: Electrozombies
 song_end
 song_begin: http://stream.laut.fm/german-gothic-radio
 Name: German Gothic-Radio
 song_end
 song_begin: http://stream.laut.fm/radio-darkstar
+Title: Unheilig - One On The Dead
 Name: Radio Darkstar
 song_end
 song_begin: http://stream.laut.fm/gothic
-Title: New Order - Thieves Like Us (Instrumental)
+Title: Joy Division - The Eternal [-   High Wycombe Town Hall Live 13 July 1979   Sound Check]/-   High Wycombe Town...
 Name: Gothic
 song_end
 song_begin: http://85.93.89.57:7777/listen1
-Title: Rain Fell Within - The Child Beneath
+Title: Vnv Nation - Darkangel
 Name: Radio Hazzard of Darkness. The Best Radio on Air
 song_end
 song_begin: http://stream.laut.fm/hellschwarz
-Title: Dark Empire - Und ich tanz (Single Edit)
+Title: Helium Vola - Rose am Dorn
 Name: Hellschwarz
 song_end
 song_begin: http://stream.laut.fm/mittelalter-net
+Title: Ingrimm - König Der Idioten
 Name: Mittelalter-Net
 song_end
 song_begin: http://stream.laut.fm/rabenwind
-Title: Spielleute Skadefryd - Hallelujah
+Title: Corvus Corax - O Varium Fortune
 Name: Rabenwind
 song_end
 song_begin: http://stream.laut.fm/radio-schwarzeseele
-Title: The Rolling Stones - Brown Sugar
+Title: Subway To Sally - Messias
 Name: Radio-Schwarzeseele
 song_end
 song_begin: http://stream.laut.fm/schwarzeszene
-Title: Zeraphine - Wenn Du gehst
+Title: Din A Tod - Ephedrine Logic
 Name: Schwarzeszene
 song_end
 song_begin: http://www.schwarze-welle.de:7500

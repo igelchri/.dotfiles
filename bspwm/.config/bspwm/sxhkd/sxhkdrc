@@ -58,7 +58,7 @@ super + shift + m
 
 # Musik Player (CLI)
 alt + shift + m
-	ncmpcpp
+	terminal -e ncmpcpp
 #	sh ~/.config/bspwm/rofi/bin/mpd
 
 # Video Player

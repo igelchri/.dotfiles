@@ -290,3 +290,15 @@ Jan 03 20:48 : player: played "http://stream.laut.fm/schwarzeszene"
 Jan 05 01:03 : player: played "http://stream.laut.fm/vladsradio-darkinside"
 Jan 05 01:03 : exception: Not playing
 Jan 05 01:03 : exception: Not playing
+Jan 05 01:40 : output: Failed to play on "pulse audio" (pulse): suspended
+Jan 05 01:57 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Jan 05 22:57 : exception: CURL failed: Recv failure: Connection reset by peer
+Jan 05 22:57 : player: played "http://stream.laut.fm/darkradio-finetunez"
+Jan 06 00:13 : player: played "http://stream.laut.fm/darkwave-sounds"
+Jan 09 18:51 : player: played "http://stream.laut.fm/darkwave-sounds"
+Jan 10 23:04 : player: played "http://stream.laut.fm/darkwave-sounds"
+Jan 10 23:14 : exception: CURL failed: Recv failure: Connection reset by peer
+Jan 10 23:14 : player: played "http://stream.laut.fm/darkwave-sounds"
+Jan 10 23:17 : player: played "http://stream.laut.fm/radio-darkstar"
+Jan 11 02:02 : player: played "http://stream.laut.fm/radio-darkstar"
+Jan 11 18:23 : player: played "http://stream.laut.fm/schwarzeszene"
