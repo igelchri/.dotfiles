@@ -1,8 +1,9 @@
 sw_volume: 79
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: stop
-current: 10
+state: play
+current: 13
+time: 724.397000
 random: 0
 repeat: 0
 single: 0
@@ -49,19 +50,19 @@ Title: [:SITD:] - Hurt (Club Version)
 Name: Radio Darkstar
 song_end
 song_begin: http://stream.laut.fm/gothic
-Title: Verbraucherinformationen
+Title: The Damned - Standing On The Edge Of Tomorrow
 Name: Gothic
 song_end
 song_begin: http://85.93.89.57:7777/listen1
-Title: Vnv Nation - Darkangel
+Title: Paranoid Android - Humanoid
 Name: Radio Hazzard of Darkness. The Best Radio on Air
 song_end
 song_begin: http://stream.laut.fm/hellschwarz
-Title: Helium Vola - Rose am Dorn
+Title: Inception Of Eternity - The Cradle Of Darkness
 Name: Hellschwarz
 song_end
 song_begin: http://stream.laut.fm/mittelalter-net
-Title: Ingrimm - König Der Idioten
+Title: MinnePack - Die Flucht der Spielleute
 Name: Mittelalter-Net
 song_end
 song_begin: http://stream.laut.fm/rabenwind
