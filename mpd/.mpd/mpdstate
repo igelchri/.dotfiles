@@ -1,9 +1,8 @@
 sw_volume: 79
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: play
-current: 13
-time: 724.397000
+state: stop
+current: 15
 random: 0
 repeat: 0
 single: 0
@@ -66,11 +65,11 @@ Title: MinnePack - Die Flucht der Spielleute
 Name: Mittelalter-Net
 song_end
 song_begin: http://stream.laut.fm/rabenwind
-Title: Corvus Corax - O Varium Fortune
+Title: Frisia Non Cantat - Metley
 Name: Rabenwind
 song_end
 song_begin: http://stream.laut.fm/radio-schwarzeseele
-Title: Subway To Sally - Messias
+Title: Bring Me the Horizon - Happy Song
 Name: Radio-Schwarzeseele
 song_end
 song_begin: http://stream.laut.fm/schwarzeszene

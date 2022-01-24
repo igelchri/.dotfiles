@@ -3,6 +3,9 @@
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
+
+
+
 [module/volume]
 type = internal/pulseaudio
 
@@ -248,7 +251,7 @@ type = internal/bspwm
 format = <label-mode>
 format-background = ${color.background}
 format-foreground = ${color.yellow}
-format-padding = 0
+format-padding = 1
 
 label-monocle = "  "
 label-tiled = "  "
@@ -384,7 +387,7 @@ content = ◆
 
 content-background = ${color.background}
 content-foreground = ${color.black}
-content-padding = 1
+content-padding = 2
 
 [module/xwindow]
 ;https://github.com/jaagr/polybar/wiki/Module:-xwindow

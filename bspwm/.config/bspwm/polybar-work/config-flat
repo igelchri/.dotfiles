@@ -35,7 +35,7 @@ radius-bottom = 0.0
 line-size = 2
 line-color = ${color.blue}
 
-border-size = 1
+border-size = 4
 border-color = ${color.background}
 
 padding = 1
@@ -47,10 +47,9 @@ font-1 = "Iosevka Nerd Font:size=12;3"
 font-2 = "google\-mdi:size=12;3"
 font-3 = "Iosevka:style=bold:"size=12;3"
 
-modules-left = bspwm sep mod_1 sep xwindow
+modules-left = mod_1  sep bspwm sep xwindow
 modules-center = mpd
-modules-right = network sep volume sep battery sep date 
-#modules-right = volume sep brightness sep network sep battery sep date 
+modules-right = volume sep brightness sep network sep battery sep date 
 
 separator =
 spacing = 
