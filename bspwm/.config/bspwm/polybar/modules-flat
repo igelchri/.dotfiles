@@ -47,6 +47,27 @@ ramp-headphones-1 = 
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
+
+[module/volume_1]
+
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+format-volume = <label-volume> <bar-volume>
+label-volume = " "
+label-volume-foreground = ${color.blue}
+format-muted-prefix = " "
+format-muted-foreground = ${color.red}
+label-muted = Muted
+label-muted-foreground= ${color.foreground}
+bar-volume-width = 6
+bar-volume-indicator = 
+bar-volume-fill = ─
+bar-volume-empty = ─
+bar-volume-empty-foreground = ${color.cyan}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
 [module/bna]
 type = custom/text
 
@@ -221,6 +242,24 @@ label-separator-foreground = ${color.altblack}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
+[module/bspwm_1]
+
+type = internal/bspwm
+label-focused = %name%
+label-focused-background= ${colors.background-alt}
+label-focused-padding = 3
+label-occupied = %name%
+label-occupied-padding = 3
+label-occupied-foreground= ${colors.foreground}
+label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 3
+label-empty = %name%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 3
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
 [module/mod]
 type = internal/bspwm
 
@@ -374,6 +413,26 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-font = 3
+ramp-signal-foreground = ${color.cyan}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+[module/wlan]
+type = internal/network
+interface = ${system.network_interface}
+interval = 1.0
+format-connected = <ramp-signal>  <label-connected>
+label-connected = %essid%
+format-disconnected = <label-disconnected>
+label-disconnected =   Disconnected
+label-disconnected-foreground = ${color.red}
+ramp-signal-0 =  
+ramp-signal-1 =  
+ramp-signal-2 =  
+ramp-signal-3 =  
+ramp-signal-4 =  
+ramp-signal-5 =  
 ramp-signal-foreground = ${color.cyan}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_

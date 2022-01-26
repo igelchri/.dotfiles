@@ -49,7 +49,7 @@ font-3 = "Iosevka:style=bold:"size=12;3"
 
 modules-left = bspwm sep mod_1 sep xwindow
 modules-center = mpd
-modules-right = network sep volume sep battery sep date 
+modules-right = wlan sep volume_1 sep battery sep date 
 #modules-right = volume sep brightness sep network sep battery sep date 
 
 separator =
