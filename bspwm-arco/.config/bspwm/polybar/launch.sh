@@ -15,36 +15,36 @@ case $desktop in
     bspwm|/usr/share/xsessions/bspwm)
     if type "xrandr" > /dev/null; then
       for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload mainbar-bspwm -c ~/.config/polybar/config &
+        MONITOR=$m polybar --reload mainbar-bspwm -c ~/.config/bspwm/polybar/config &
       done
     else
-    polybar --reload mainbar-bspwm -c ~/.config/polybar/config &
+    polybar --reload mainbar-bspwm -c ~/.config/bspwm/polybar/config &
     fi
     # second polybar at bottom
     # if type "xrandr" > /dev/null; then
     #   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    #     MONITOR=$m polybar --reload mainbar-bspwm-extra -c ~/.config/polybar/config &
+    #     MONITOR=$m polybar --reload mainbar-bspwm-extra -c ~/.config/bspwm/polybar/config &
     #   done
     # else
-    # polybar --reload mainbar-bspwm-extra -c ~/.config/polybar/config &
+    # polybar --reload mainbar-bspwm-extra -c ~/.config/bspwm/polybar/config &
     # fi
     ;;
 
     leftwm|/usr/share/xsessions/leftwm)
     if type "xrandr" > /dev/null; then
       for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-        MONITOR=$m polybar --reload mainbar-leftwm -c ~/.config/polybar/config &
+        MONITOR=$m polybar --reload mainbar-leftwm -c ~/.config/leftwm/polybar/config &
       done
     else
-    polybar --reload mainbar-leftwm -c ~/.config/polybar/config &
+    polybar --reload mainbar-leftwm -c ~/.config/leftwm/polybar/config &
     fi
     # second polybar at bottom
     # if type "xrandr" > /dev/null; then
     #   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    #     MONITOR=$m polybar --reload mainbar-leftwm-extra -c ~/.config/polybar/config &
+    #     MONITOR=$m polybar --reload mainbar-leftwm-extra -c ~/.config/leftwm/polybar/config &
     #   done
     # else
-    # polybar --reload mainbar-leftwm-extra -c ~/.config/polybar/config &
+    # polybar --reload mainbar-leftwm-extra -c ~/.config/leftwm/polybar/config &
     # fi
     ;;
 

@@ -309,3 +309,7 @@ Jan 18 23:06 : player: played "http://stream.laut.fm/electrozombies"
 Jan 19 00:22 : player: played "http://stream.laut.fm/gothic"
 Jan 19 01:14 : player: played "http://stream.laut.fm/gothic"
 Jan 24 00:46 : player: played "http://stream.laut.fm/radio-schwarzeseele"
+Jan 30 23:17 : exception: Not playing
+Jan 30 23:17 : exception: Not playing
+Jan 30 23:17 : player: played "http://stream.laut.fm/radio-schwarzeseele"
+Jan 30 23:25 : exception: Failed to open /home/ci/.mpd/playlists: No such file or directory
