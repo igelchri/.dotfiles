@@ -110,7 +110,8 @@ font-2 = "Noto Sans:size=10;0"
 font-3 = "Noto Sans Mono:size=10;0"
 
 modules-left = bspwm xwindow
-modules-center = kernel
+#modules-center = kernel
+modules-center = mpd
 modules-right = pavolume memory2 cpu2 date
 
 tray-detached = false
