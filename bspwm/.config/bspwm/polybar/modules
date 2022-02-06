@@ -1,0 +1,156 @@
+[module/bspwm]
+type = internal/bspwm
+
+enable-click = true
+enable-scroll = true
+reverse-scroll = true
+pin-workspaces = true
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-default = " "
+#ws-icon-0 = 1;
+#ws-icon-1 = 2;
+#ws-icon-2 = 3;
+#ws-icon-3 = 4;
+#ws-icon-4 = 5;
+#ws-icon-5 = 6;
+#ws-icon-6 = 7;
+#ws-icon-7 = 8;
+#ws-icon-8 = 9;
+#ws-icon-9 = 10;
+#ws-icon-default = " "
+
+format = <label-state> <label-mode>
+
+label-focused = %icon%
+label-focused-background = ${colors.background}
+label-focused-underline= #6790eb
+label-focused-padding = 2
+label-focused-foreground = #6790EB
+
+label-occupied = %icon%
+label-occupied-padding = 2
+label-occupied-background = ${colors.background}
+label-occupied-foreground = #6790EB
+
+label-urgent = %icon%
+label-urgent-padding = 2
+
+label-empty = %icon%
+label-empty-foreground = ${colors.foreground}
+label-empty-padding = 2
+label-empty-background = ${colors.background}
+label-monocle = "  "
+label-monocle-foreground = ${colors.foreground}
+label-tiled = "  "
+label-tiled-foreground = ${colors.foreground}
+label-fullscreen = "  "
+label-fullscreen-foreground = ${colors.foreground}
+label-floating = "  "
+label-floating-foreground = ${colors.foreground}
+label-pseudotiled = "  "
+label-pseudotiled-foreground = ${colors.foreground}
+label-locked = "  "
+label-locked-foreground = ${colors.foreground}
+label-sticky = "  "
+label-sticky-foreground = ${colors.foreground}
+label-private =  "     "
+label-private-foreground = ${colors.foreground}
+
+; Separator in between workspaces
+;label-separator = |
+;label-separator-padding = 10
+;label-separator-foreground = #ffb52a
+
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+################################################################################
+
+[module/date]
+;https://github.com/jaagr/polybar/wiki/Module:-date
+type = internal/date
+; Seconds to sleep between updates
+interval = 5
+; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+date = " %Y-%m-%d%"
+date-alt = " %d-%m-%Y"
+time = %H:%M
+time-alt = %H:%M
+format-prefix = " "
+format-prefix-foreground = #c1941a
+format-underline = #c1941a
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+label = %date% %time%
+
+################################################################################
+
+[module/mpd]
+;https://github.com/jaagr/polybar/wiki/Module:-mpd
+type = internal/mpd
+
+;;host = 127.0.0.1
+;;port = 6600
+;;password = mysecretpassword
+;interval = 2
+format-online =  "<icon-prev>  <icon-stop>  <toggle>  <icon-next> <label-song>"
+;format-online =  "<label-song>   <icon-prev>  <icon-stop>  <toggle>  <icon-next>"
+;format-online =  "<label-song>  <bar-progress>"
+;format-online =  "<label-song>  <bar-progress> <icon-prev>  <icon-stop>  <toggle>  <icon-next>"
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+label-song-maxlen = 40
+label-song-ellipsis = true
+bar-progress-width = 10
+bar-progress-indicator = 
+bar-progress-fill = 
+bar-progress-empty = 
+bar-progress-fill-foreground = #ff0
+bar-progress-fill-background = ${colors.background}
+bar-progress-indicator-foreground = ${colors.foreground}
+format-online-foreground = ${colors.foreground}
+format-online-background = ${colors.background}
+################################################################################
+
+[module/xwindow]
+;https://github.com/jaagr/polybar/wiki/Module:-xwindow
+type = internal/xwindow
+
+; Available tokens:
+;   %title%
+; Default: %title%
+label = %title%
+label-maxlen = 50
+
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+###############################################################################
+[module/time]
+type = internal/date
+
+interval = 1.0
+
+time = %H:%M
+time-alt = %A, %d %B %Y
+
+format = <label>
+format-prefix = " "
+format-prefix-font = 3
+format-prefix-foreground = #c1941a
+
+label = %time%
+label-font = 4
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
