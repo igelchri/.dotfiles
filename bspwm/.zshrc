@@ -54,6 +54,7 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 
 ####   ARCOLINUX SETTINGS   ####
 export PAGER='most'
@@ -382,5 +383,5 @@ alias personal='cp -Rf /personal/* ~'
 
 [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
-elfman 
-#sfetch
+#elfman
+sfetch

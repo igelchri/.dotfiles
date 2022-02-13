@@ -247,3 +247,121 @@ format-connected-prefix-foreground = #3EC13F
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
 ;format-connected-underline = #62FF00
+
+################################################################################
+[module/network]
+type = internal/network
+interface = ${system.network_interface}
+
+interval = 1.0
+accumulate-stats = true
+unknown-as-up = true
+
+format-connected = <ramp-signal><label-connected>
+
+format-disconnected = <label-disconnected>
+format-disconnected-prefix = " 睊 "
+format-disconnected-prefix-font = 2
+format-disconnected-foreground = ${color.foreground}
+format-disconnected-background = ${color.background}
+
+label-connected = "%{A1:def-nmdmenu &:}%essid%%{A}"
+label-disconnected = "%{A1:def-nmdmenu &:}Offline%{A}"
+
+label-connected-foreground = ${color.foreground}
+label-disconnected-foreground = ${color.foreground}
+
+label-connected-background = ${color.green}
+label-disconnected-background = ${color.background}
+
+ramp-signal-0 = "  "
+ramp-signal-1 = "  "
+ramp-signal-2 = "  "
+ramp-signal-3 = "  "
+ramp-signal-4 = "  "
+ramp-signal-foreground = ${color.foreground}
+ramp-signal-background = ${color.background}
+ramp-signal-font = 2
+
+################################################################################
+
+[module/wifi]
+type = internal/network
+interface = wlan0
+interval = 3.0
+
+format-connected = <ramp-signal>
+; format-connected-underline = #9f78e1
+label-connected = %essid%
+
+format-disconnected = "睊No Signal"
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+
+################################################################################
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume> <bar-volume>
+label-volume =  %percentage%%
+label-volume-foreground = ${colors.nord8}
+
+label-muted =  muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.nord8}
+bar-volume-foreground-1 = ${colors.nord8}
+bar-volume-foreground-2 = ${colors.nord8}
+bar-volume-foreground-3 = ${colors.nord8}
+bar-volume-foreground-4 = ${colors.nord8}
+bar-volume-foreground-5 = ${colors.nord13}
+bar-volume-foreground-6 = ${colors.nord11}
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.nord4}
+################################################################################
+[module/alsa]
+type = internal/alsa
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+master-mixer = Master
+interval = 5
+
+format-volume = <ramp-volume> <label-volume>
+format-volume-background = ${color.shade}
+format-volume-foreground = ${color.magenta}
+format-volume-padding = 0
+
+format-muted = <label-muted>
+format-muted-prefix = " "
+format-muted-prefix-font = 3
+format-muted-prefix-background = ${color.shade}
+format-muted-prefix-foreground = ${color.magenta}
+format-muted-padding = 0
+
+label-volume = %percentage%%
+
+label-muted = "MUTED"
+label-muted-foreground = ${color.magenta}
+format-muted-background = ${color.shade}
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
+ramp-volume-font = 3
+ramp-headphones-0 = 

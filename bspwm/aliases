@@ -4,35 +4,6 @@
 # root privileges
 alias doas="doas --"
 
-##### GROOT  ##############################################################
-function sudo
-{
-    echo -e "\e[0;32m"
-    echo -e "⠀⠀⠀⠀⠀⠀⡾⠛⠳⣄⠀⣠⣤⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-    echo -e "⠀⠀⠀⠀⠀⠀⣧⠘⣆⣿⠟⢹⠈⠁⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-    echo -e "⠀⣠⣄⡀⠀⣠⣬⡓⡿⡏⠀⢸⠀⠀⡏⠸⣦⡴⣿⠛⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-    echo -e "⠀⢧⡐⣽⠟⠉⡟⠙⠃⡇⠀⠀⠀⠀⠀⠀⡽⠀⠀⠀⡏⣘⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-    echo -e "⠀⠀⠉⢻⡇⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠇⢸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀\e[0;33m"
-    echo -e "⠀⠀⠀⢸⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-    echo -e "⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-    echo -e "⠀⠀⠀⢸⣇\e[0;34m ⡴⠛⣿⣦⠀⠀⠀⠀⠀⠀⢀⡞⠙⣿⣦⠀\e[0;33m⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-    echo -e "⠀⠀⠀⢸⡿\e[0;34m ⣷⣶⣿⣿⠀⠀⠀⠀⠀⠀⠘⣿⣶⣿⡿⠁\e[0;33m⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-    echo -e "⠀⠀⠀⢸⡇\e[0;34m⠀⠈⠉⠉⠁\e[0;33m⠀⢰⣶⣶⣶⣶⣶⠀\e[0;34m⠀⠀⠈⠉⠉⠀\e[0;33m⠀⣄⣿⠀⠀⠀⠀⠀\e[0;93m⠀⠀⠀⠀⠀⠀⠀I am (G)root   \e[0;33m"
-    echo -e "⠀⠀⠀⠀⠻⣴⡀⠀⠀⠈⠛⠿⠭⠔⠋⠀⠀⠀⣄⣰⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-    echo -e "⠀⠀⠀⠀⠀⠈⠛⠿⠷⠤⣶⣤⣤⣤⣤⡾⠾⠞⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-    echo -e "⠀⠀⠀⢠⡞⠳⣄⣀⣀⡴⢾⡷⣄⡇⢸⣿⢟⣲⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-    echo -e "⠀⠀⠀⠈⠳⣤⣼⣟⣩⡽⣿⠁⢮⠳⣼⠟⠛⣦⢉⣧⣤⡀⠀⠀⠀⠀⠀\e[3;32m    With great power comes great responsibility       \e[0;33m"
-    echo -e "⠀⠀⠀⠀⠀⠀⠉⠉⠀⢠⡿⢤⡈⢧⡟⠀⠀⠈⠿⣤⡼⠇⠀⠀⠀⠀⠀\e[3;32m    Use sudo wisely.                                  \e[0;33m"
-    echo -e "⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣷⠄⠙⠻⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀\e[0;37m"
-    echo -e "⠀⠀⠀⠀⠀⠀⠀⣶⣶⣾⣷⣶⣶⣿⣿⣿⣶⣶⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-    echo -e "⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-    echo -e "⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-    echo -e "⠀⠀⠀⠀⠀⠀⠀⠈⠿⢿⣿⣿⣿⣿⣿⣿⡿⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"
-    echo -e ""
-    /usr/bin/sudo "$@"
-
-}
-
 #################################################################################
 # vim and emacs
 alias vim="nvim"
@@ -194,14 +165,6 @@ alias vbm="sudo /usr/local/bin/arcolinux-vbox-share"
 #enabling vmware services
 alias start-vmware="sudo systemctl enable --now vmtoolsd.service"
 alias sv="sudo systemctl enable --now vmtoolsd.service"
-
-#shopt
-shopt -s autocd # change to named directory
-shopt -s cdspell # autocorrects cd misspellings
-shopt -s cmdhist # save multi-line commands in history as single line
-shopt -s dotglob
-shopt -s histappend # do not overwrite history
-shopt -s expand_aliases # expand aliases
 
 #youtube download
 alias yta-aac="yt-dlp --extract-audio --audio-format aac "
