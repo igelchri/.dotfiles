@@ -9,7 +9,7 @@
 
 # Diese Hilfe anzeigen
 super + shift + k
-	sh ~/.config/bspwm/rofi/bin/show-help
+	sh ~/.config/bspwm/rofi/bin/rofi-helpmenu
 
 
 ### ----- Programme starten ----- ##
@@ -40,7 +40,7 @@ super + shift + t
 
 # Text Editor (CLI)
 alt + shift + t
-	alcritty -e vim
+	alacritty -e vim
 
 # Internet Browser
 super + shift + w

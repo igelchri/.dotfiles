@@ -3,8 +3,9 @@
 margin-top = 0
 margin-bottom = 0
 
-#include-file = ~/.config/bspwm/polybar/colors
+include-file = ~/.config/bspwm/polybar/colors/my-colors
 include-file = ~/.config/bspwm/polybar/modules
+
 
 [settings]
 ;https://github.com/jaagr/polybar/wiki/Configuration#application-settings
@@ -20,7 +21,7 @@ compositing-border = over
 ; Define fallback values used by all module formats
 format-foreground = #FF0000
 format-background = #00FF00
-format-underline =
+;format-underline = #3a4151
 format-overline =
 format-spacing =
 format-padding =
@@ -29,14 +30,14 @@ format-offset =
 
 [colors]
 ; Nord theme ============
-background = #2F343F
-foreground = #f3f4f5
-occupied = #cccccc
-active = #5e81ac
-alert = #d08770
-volume-min = #a3be8c
-volume-med = #ebcb8b
-volume-max = #bf616a
+;background = #2F343F
+;foreground = #f3f4f5
+;occupied = #cccccc
+;active = #5e81ac
+;alert = #d08770
+;volume-min = #a3be8c
+;volume-med = #ebcb8b
+;volume-max = #bf616a
 ; =======================
 
 ; Gotham theme ==========
@@ -81,7 +82,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 2
-line-color = #f00
+line-color = ${colors.foreground}
 
 wm-restack = bspwm
 override-redirect = true
@@ -90,12 +91,12 @@ override-redirect = true
 ; See the Messaging wiki page for more details.
 enable-ipc = true
 
-border-size = 0
+border-size = 3
 ;border-left-size = 0
 ;border-right-size = 25
 ;border-top-size = 0
 ;border-bottom-size = 25
-border-color = #00000000
+border-color = #3a4151
 
 padding-left = 0
 padding-right = 1
@@ -105,9 +106,10 @@ module-margin-right = 3
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
 font-0 = "Noto Sans:size=10;0"
-font-1 = "FontAwesome:size=13;0"
-font-2 = "Noto Sans:size=10;0"
-font-3 = "Noto Sans Mono:size=10;0"
+;font-0 = "Noto Sans Mono:size=10;0"
+font-1 = "FontAwesome:size=12;0"
+font-2 = "Noto Sans:size=12;0"
+font-3 = "Noto Sans Mono:size=12;0"
 
 modules-left = bspwm xwindow
 #modules-center = kernel
@@ -123,6 +125,7 @@ tray-maxsize = 20
 tray-scale = 1.0
 tray-position = right
 tray-background = ${colors.background}
+tray-foreground = ${colors.foreground}
 
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
