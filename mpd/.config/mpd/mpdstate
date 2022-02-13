@@ -1,8 +1,9 @@
 sw_volume: 79
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: stop
+state: play
 current: 15
+time: 120.152000
 random: 0
 repeat: 0
 single: 0
@@ -69,7 +70,7 @@ Title: Frisia Non Cantat - Metley
 Name: Rabenwind
 song_end
 song_begin: http://stream.laut.fm/radio-schwarzeseele
-Title: Flogging Molly - Drunken Lullabies
+Title: ALESTORM - Keelhauled
 Name: Radio-Schwarzeseele
 song_end
 song_begin: http://stream.laut.fm/schwarzeszene

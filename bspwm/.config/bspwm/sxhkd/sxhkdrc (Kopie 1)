@@ -114,7 +114,7 @@ super + F12
 
 #dmenu
 super + shift + d
-	dmenu_run -i -nb '#3a4151' -nf '#d7dde8' -sb '#3a4151' -sf '#d7dde8' -fn 'NotoMonoRegular:bold:pixelsize=14'
+	dmenu_run -i -nb '#191919' -nf '#d7dde8' -sb '#fea63c' -sf '#d7dde8' -fn 'NotoMonoRegular:bold:pixelsize=14'
 
 #Xfce4-appfinder
 alt + F3

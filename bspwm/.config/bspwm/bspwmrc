@@ -1,11 +1,11 @@
 #!/bin/sh
-##   _______  _______ _______ ___ ___ ___ ___  
-##  |   _   \|   _   |   _   |   Y   |   Y   | 
-##  |.  1   /|   1___|.  1   |.  |   |.      | 
-##  |.  _   \|____   |.  ____|. / \  |. \_/  | 
-##  |:  1    |:  1   |:  |   |:      |:  |   | 
-##  |::.. .  |::.. . |::.|   |::.|:. |::.|:. | 
-##  `-------'`-------`---'   `--- ---`--- ---' 
+##   _______  _______ _______ ___ ___ ___ ___
+##  |   _   \|   _   |   _   |   Y   |   Y   |
+##  |.  1   /|   1___|.  1   |.  |   |.      |
+##  |.  _   \|____   |.  ____|. / \  |. \_/  |
+##  |:  1    |:  1   |:  |   |:      |:  |   |
+##  |::.. .  |::.. . |::.|   |::.|:. |::.|:. |
+##  `-------'`-------`---'   `--- ---`--- ---'
 ##	Stand: 12.02.22
 
 #LAUNCHERS
@@ -65,7 +65,7 @@ declare -a comm=(Thunderbird TelegramDesktop Bluemail)
 for i in ${comm[@]}; do
    bspc rule -a $i desktop='^1' follow=on focus=on; done
 
-    
+
 # workspace 2 (file)
 declare -a filem=(Thunar Pcmanfm ranger mc)
 for i in ${filem[@]}; do
@@ -96,7 +96,7 @@ for i in ${settings[@]}; do
 
 # floating windows
 declare -a floats=(Lxappearance Arandr feh Arcolinux-tweak-tool.py Arcolinux-welcome-app.py Arcolinux-calamares-tool.py mpv  \
-Font-manager Galculator Oblogout Pavucontrol rofi Xfce4-terminal Alacritty)
+Font-manager Galculator Oblogout Pavucontrol rofi Xfce4-terminal Alacritty gcolor3 Gcolor3)
 for i in ${floats[@]}; do
   bspc rule -a $i state=floating follow=on focus=on; done
 
