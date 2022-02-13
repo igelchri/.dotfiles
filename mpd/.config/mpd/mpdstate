@@ -1,8 +1,9 @@
-sw_volume: 79
+sw_volume: 58
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: stop
-current: 11
+state: play
+current: 5
+time: 71.060000
 random: 0
 repeat: 0
 single: 0
@@ -27,11 +28,11 @@ Title: Rotersand - I Cry (Album Version)
 Name: Darkradio Finetunez
 song_end
 song_begin: http://stream.laut.fm/darkstarfm
-Title: In Extremo - Feuertaufe
+Title: Soul In Sadness - Mystery Called Love
 Name: Dark Star FM
 song_end
 song_begin: http://stream.laut.fm/darkwave-sounds
-Title: Depeche Mode - Going Backwards
+Title: Apoptygma Berzerk - Love To Blame
 Name: Darkwave Sounds
 song_end
 song_begin: http://135.125.216.61:5020/stream
@@ -55,27 +56,26 @@ Title: Foyer Des Arts - Toulouse Lautrec
 Name: Gothic
 song_end
 song_begin: http://85.93.89.57:7777/listen1
-Title: Dawn Of Ashes - Reborn In Fire
+Title: Arcane Ritual - Angel
 Name: Radio Hazzard of Darkness. The Best Radio on Air
 song_end
 song_begin: http://stream.laut.fm/hellschwarz
-Title: Inception Of Eternity - The Cradle Of Darkness
+Title: Schwarzwald - Dein Herz, meine Gier (Tribute to Suicide Commando)
 Name: Hellschwarz
 song_end
 song_begin: http://stream.laut.fm/mittelalter-net
-Title: MinnePack - Die Flucht der Spielleute
+Title: Krayenzeit - Tagelied
 Name: Mittelalter-Net
 song_end
 song_begin: http://stream.laut.fm/rabenwind
-Title: Frisia Non Cantat - Metley
 Name: Rabenwind
 song_end
 song_begin: http://stream.laut.fm/radio-schwarzeseele
-Title: Black Hawk - Legacy of Rock
+Title: Avantasia - Moonglow
 Name: Radio-Schwarzeseele
 song_end
 song_begin: http://stream.laut.fm/schwarzeszene
-Title: Diary Of Dreams - Traumtänzer
+Title: Faun - Satyros
 Name: Schwarzeszene
 song_end
 song_begin: http://www.schwarze-welle.de:7500

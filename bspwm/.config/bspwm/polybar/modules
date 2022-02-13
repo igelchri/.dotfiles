@@ -279,7 +279,7 @@ ramp-signal-1 = "  "
 ramp-signal-2 = "  "
 ramp-signal-3 = "  "
 ramp-signal-4 = "  "
-ramp-signal-foreground = ${color.foreground}
+ramp-signal-foreground = ${color.cyan}
 ramp-signal-background = ${color.background}
 ramp-signal-font = 2
 
@@ -287,12 +287,15 @@ ramp-signal-font = 2
 
 [module/wifi]
 type = internal/network
-interface = wlan0
+#interface = wlan0
+interface = wlp0s20f3
 interval = 3.0
 
-format-connected = <ramp-signal>
+format-connected = <ramp-signal> <label-connected>
 ; format-connected-underline = #9f78e1
 label-connected = %essid%
+label-connected-foreground = ${colors.foreground}
+label-connected-background = ${colors.background}
 
 format-disconnected = "睊No Signal"
 ;format-disconnected = <label-disconnected>
@@ -305,63 +308,33 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-
+ramp-signal-foreground = ${colors.blue1}
+ramp-signal-background = ${colors.background}
 ################################################################################
-
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume =  %percentage%%
-label-volume-foreground = ${colors.nord8}
+label-volume = 
+#label-volume =  %percentage%%
+label-volume-foreground = ${colors.foreground}
 
 label-muted =  muted
 
 bar-volume-width = 10
-bar-volume-foreground-0 = ${colors.nord8}
-bar-volume-foreground-1 = ${colors.nord8}
-bar-volume-foreground-2 = ${colors.nord8}
-bar-volume-foreground-3 = ${colors.nord8}
-bar-volume-foreground-4 = ${colors.nord8}
-bar-volume-foreground-5 = ${colors.nord13}
-bar-volume-foreground-6 = ${colors.nord11}
+bar-volume-foreground-0 = ${colors.blue}
+bar-volume-foreground-1 = ${colors.blue}
+bar-volume-foreground-3 = ${colors.blue}
+bar-volume-foreground-4 = ${colors.blue}
+bar-volume-foreground-5 = ${colors.cyan}
+bar-volume-foreground-6 = ${colors.red}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
+bar-volume-indicator-foreground = ${colors.red}
+
 bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.nord4}
-################################################################################
-[module/alsa]
-type = internal/alsa
-master-soundcard = default
-speaker-soundcard = default
-headphone-soundcard = default
-master-mixer = Master
-interval = 5
-
-format-volume = <ramp-volume> <label-volume>
-format-volume-background = ${color.shade}
-format-volume-foreground = ${color.magenta}
-format-volume-padding = 0
-
-format-muted = <label-muted>
-format-muted-prefix = " "
-format-muted-prefix-font = 3
-format-muted-prefix-background = ${color.shade}
-format-muted-prefix-foreground = ${color.magenta}
-format-muted-padding = 0
-
-label-volume = %percentage%%
-
-label-muted = "MUTED"
-label-muted-foreground = ${color.magenta}
-format-muted-background = ${color.shade}
-ramp-volume-0 = ""
-ramp-volume-1 = ""
-ramp-volume-2 = ""
-ramp-volume-font = 3
-ramp-headphones-0 = 
+bar-volume-empty-foreground = ${colors.foreground}
