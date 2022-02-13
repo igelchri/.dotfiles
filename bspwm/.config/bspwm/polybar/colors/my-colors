@@ -9,4 +9,9 @@ alert = #cf866f
 volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
+
 blue = #5d80ab
+blue1 = #87bfcf
+green = #a2bd8b
+red = #be6069
+cyan = #cf866f

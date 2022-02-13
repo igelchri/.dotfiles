@@ -313,3 +313,13 @@ Jan 30 23:17 : exception: Not playing
 Jan 30 23:17 : exception: Not playing
 Jan 30 23:17 : player: played "http://stream.laut.fm/radio-schwarzeseele"
 Jan 30 23:25 : exception: Failed to open /home/ci/.mpd/playlists: No such file or directory
+Feb 13 03:04 : player: played "http://stream.laut.fm/vladsradio-darkinside"
+Feb 13 03:20 : player: played "http://stream.laut.fm/darkwave-sounds"
+Feb 13 03:20 : exception: Failed to decode http://stream.laut.fm/darkwave-sounds; CURL failed: Could not resolve host: stream.laut.fm
+Feb 13 03:20 : player: played "http://stream.laut.fm/darkwave-sounds"
+Feb 13 03:26 : player: played "http://stream.laut.fm/darkwave-sounds"
+Feb 13 03:45 : player: played "http://stream.laut.fm/darkwave-sounds"
+Feb 13 04:42 : player: played "http://85.93.89.57:7777/listen1"
+Feb 13 04:49 : player: played "http://85.93.89.57:7777/listen1"
+Feb 13 05:06 : player: played "http://85.93.89.57:7777/listen1"
+Feb 13 14:40 : player: played "http://85.93.89.57:7777/listen1"

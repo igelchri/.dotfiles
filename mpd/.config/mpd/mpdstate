@@ -1,9 +1,8 @@
 sw_volume: 79
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: play
-current: 15
-time: 120.152000
+state: stop
+current: 11
 random: 0
 repeat: 0
 single: 0
@@ -16,45 +15,47 @@ song_begin: http://stream.laut.fm/bizarre-radio
 Name: Bizarre-Radio
 song_end
 song_begin: http://stream.laut.fm/dark-bites
-Title: Parralox - Eye in the Sky (The Talion Law Optical extended remix)
+Title: mind.in.a.box - Reflections
 Name: Dark Bites
 song_end
 song_begin: http://stream.laut.fm/darkclubradio
+Title: Schandmaul - Herren der Winde
 Name: Darkclub-Radio
 song_end
 song_begin: http://stream.laut.fm/darkradio-finetunez
+Title: Rotersand - I Cry (Album Version)
 Name: Darkradio Finetunez
 song_end
 song_begin: http://stream.laut.fm/darkstarfm
-Title: Komor Kommando - Servus Pulsu
+Title: In Extremo - Feuertaufe
 Name: Dark Star FM
 song_end
 song_begin: http://stream.laut.fm/darkwave-sounds
-Title: De/Vision - Dinner Without Grace
+Title: Depeche Mode - Going Backwards
 Name: Darkwave Sounds
 song_end
 song_begin: http://135.125.216.61:5020/stream
-Title: Dive vs Diskonnekted - Killing time
+Title: Stara Elektronika - Stara Elektronika
 Name: RDW - Radio Dunkle Welle
 song_end
 song_begin: http://stream.laut.fm/electrozombies
-Title: Machinista - Pain of Every Day (Original Mix)
+Title: Covenant - Call the Ships To Port
 Name: Electrozombies
 song_end
 song_begin: http://stream.laut.fm/german-gothic-radio
-Title: Camouflage - The Great Commandment
+Title: E-Craft - Easy To Fuck!
 Name: German Gothic-Radio
 song_end
 song_begin: http://stream.laut.fm/radio-darkstar
-Title: [:SITD:] - Hurt (Club Version)
+Title: Tyske Ludder - Wie Der Stahl Gehartet Wurde
 Name: Radio Darkstar
 song_end
 song_begin: http://stream.laut.fm/gothic
-Title: The Damned - Standing On The Edge Of Tomorrow
+Title: Foyer Des Arts - Toulouse Lautrec
 Name: Gothic
 song_end
 song_begin: http://85.93.89.57:7777/listen1
-Title: Paranoid Android - Humanoid
+Title: Dawn Of Ashes - Reborn In Fire
 Name: Radio Hazzard of Darkness. The Best Radio on Air
 song_end
 song_begin: http://stream.laut.fm/hellschwarz
@@ -70,23 +71,23 @@ Title: Frisia Non Cantat - Metley
 Name: Rabenwind
 song_end
 song_begin: http://stream.laut.fm/radio-schwarzeseele
-Title: ALESTORM - Keelhauled
+Title: Black Hawk - Legacy of Rock
 Name: Radio-Schwarzeseele
 song_end
 song_begin: http://stream.laut.fm/schwarzeszene
-Title: The Murderous Mistake - Help
+Title: Diary Of Dreams - Traumtänzer
 Name: Schwarzeszene
 song_end
 song_begin: http://www.schwarze-welle.de:7500
-Title: Bloody Dead And Sexy - Candy Box (Demo)
+Title: Zeritas - Dritte Person Singular [onAir: Radio Schwarze Welle]
 Name: Radio Schwarze Welle
 song_end
 song_begin: http://stream.laut.fm/schattenreich
-Title: Hanging Doll - The Sacred & Profane
+Title: The Last Cry - Living In Grey
 Name: Schattenreich
 song_end
 song_begin: http://stream.laut.fm/vladsradio-darkinside
-Title: Rage Against The Machine - Bullet In The Head (Live)
+Title: Letzte Instanz - Eisherz
 Name: Vladsradio Darkinside
 song_end
 playlist_end

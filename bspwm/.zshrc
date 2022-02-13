@@ -1,48 +1,98 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+#installation via script from github
+#export ZSH="/home/$USER/.oh-my-zsh"
+#installation via paru -S oh-my-zsh-git
+export ZSH=/usr/share/oh-my-zsh/
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# if you installed the package oh-my-zsh-powerline-theme-git then you type here "powerline" as zsh theme
+#ZSH_THEME="simple"
+#ZSH_THEME="agnoster"
+#ZSH_THEME="fletcherm"
+#ZSH_THEME="mikeh"
+#ZSH_THEME="clean"
+#ZSH_THEME="maran"
+#ZSH_THEME="bureau"
+#ZSH_THEME="gentoo"
+#ZSH_THEME="frontcube"
+#ZSH_THEME="tjkirch"
+#ZSH_THEME="pmcgee"
+
+ZSH_THEME="random"
+
+ZSH_THEME_RANDOM_CANDIDATES=( "simple" "agnoster" "fletcherm" "mikeh" "clean" "maran" "bureau" "gentoo" "frontcube" "tjkirch" "pmcgee")
+
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+
+####   ARCOLINUX SETTINGS   ####
+export PAGER='most'
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+setopt GLOB_DOTS
+#share commands between terminal instances or not
+unsetopt SHARE_HISTORY
+#setopt SHARE_HISTORY
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+export HISTCONTROL=ignoreboth:erasedups
+
+# Make nano the default editor
+
+export EDITOR='nano'
+export VISUAL='nano'
+
+#PS1='[\u@\h \W]\$ '
+
+if [ -d "$HOME/.bin" ] ;
+  then PATH="$HOME/.bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ;
+  then PATH="$HOME/.local/bin:$PATH"
+fi
 
 ### ALIASES ###
 
-# root privileges
-alias doas="doas --"
-
-# vim and emacs
-alias vim="nvim"
-alias em="/usr/bin/emacs -nw"
-alias emacs="emacsclient -c -a 'emacs'"
-alias doomsync="~/.emacs.d/bin/doom sync"
-alias doomdoctor="~/.emacs.d/bin/doom doctor"
-alias doomupgrade="~/.emacs.d/bin/doom upgrade"
-alias doompurge="~/.emacs.d/bin/doom purge"
-
-# Changing "ls" to "exa"
-alias ls='exa -al --color=always --group-directories-first' # my preferred listing
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first'  # long format
-alias lt='exa -aT --color=always --group-directories-first' # tree listing
-alias l.='exa -a | egrep "^\."'
-alias l.='exa'
-
-# adding flags
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias lynx='lynx -cfg=~/.lynx/lynx.cfg -lss=~/.lynx/lynx.lss -vikeys'
-alias vifm='./.config/vifm/scripts/vifmrun'
-alias ncmpcpp='ncmpcpp ncmpcpp_directory=$HOME/.config/ncmpcpp/'
-#alias mocp='mocp -M "$XDG_CONFIG_HOME"/moc -O MOCDir="$XDG_CONFIG_HOME"/moc'
-
-# git
-alias addup='git add -u'
-alias addall='git add .'
-alias branch='git branch'
-alias checkout='git checkout'
-alias clone='git clone'
-alias commit='git commit -m'
-alias fetch='git fetch'
-alias pull='git pull origin'
-alias push='git push origin'
-alias stat='git status'  # 'status' is protected name so using 'stat' instead
-alias tag='git tag'
-alias newtag='git tag -a'
-
+#list
+alias ls='ls --color=auto'
+alias la='ls -a'
+alias ll='ls -alFh'
+alias l='ls'
+alias l.="ls -A | egrep '^\.'"
 
 #fix obvious typo's
 alias cd..='cd ..'
@@ -113,8 +163,8 @@ alias skel='[ -d ~/.config ] || mkdir ~/.config && cp -Rf ~/.config ~/.config-ba
 alias bupskel='cp -Rf /etc/skel ~/.skel-backup-$(date +%Y.%m.%d-%H.%M.%S)'
 
 #copy shell configs
-alias cb='cp /etc/skel/.bashrc ~/.bashrc && exec bash'
-alias cz='cp /etc/skel/.zshrc ~/.zshrc && echo "Copied."'
+alias cb='cp /etc/skel/.bashrc ~/.bashrc && echo "Copied."'
+alias cz='cp /etc/skel/.zshrc ~/.zshrc && exec zsh'
 alias cf='cp /etc/skel/.config/fish/config.fish ~/.config/fish/config.fish && echo "Copied."'
 
 #switch between bash and zsh
@@ -166,12 +216,12 @@ alias start-vmware="sudo systemctl enable --now vmtoolsd.service"
 alias sv="sudo systemctl enable --now vmtoolsd.service"
 
 #shopt
-shopt -s autocd # change to named directory
-shopt -s cdspell # autocorrects cd misspellings
-shopt -s cmdhist # save multi-line commands in history as single line
-shopt -s dotglob
-shopt -s histappend # do not overwrite history
-shopt -s expand_aliases # expand aliases
+#shopt -s autocd # change to named directory
+#shopt -s cdspell # autocorrects cd misspellings
+#shopt -s cmdhist # save multi-line commands in history as single line
+#shopt -s dotglob
+#shopt -s histappend # do not overwrite history
+#shopt -s expand_aliases # expand aliases
 
 #youtube download
 alias yta-aac="yt-dlp --extract-audio --audio-format aac "
@@ -191,7 +241,7 @@ alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 
 #clear
-alias clean="clear; seq 1 (tput cols) | sort -R | sparklines | lolcat"
+alias clean="clear; seq 1 $(tput cols) | sort -R | sparklines | lolcat"
 
 #search content with ripgrep
 alias rg="rg --sort path"
@@ -264,6 +314,44 @@ alias bls="betterlockscreen -u /usr/share/backgrounds/arcolinux/"
 #give the list of all installed desktops - xsessions desktops
 alias xd="ls /usr/share/xsessions"
 
+# # ex = EXtractor for all kinds of archives
+# # usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   tar xf $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+#btrfs aliases
+alias btrfsfs="sudo btrfs filesystem df /"
+alias btrfsli="sudo btrfs su li / -t"
+
+#snapper aliases
+alias snapcroot="sudo snapper -c root create-config /"
+alias snapchome="sudo snapper -c home create-config /home"
+alias snapli="sudo snapper list"
+alias snapcr="sudo snapper -c root create"
+alias snapch="sudo snapper -c home create"
+
 #Leftwm aliases
 alias lti="leftwm-theme install"
 alias ltu="leftwm-theme uninstall"
@@ -288,3 +376,11 @@ alias rmgitcache="rm -r ~/.cache/git"
 
 #moving your personal files and folders from /personal to ~
 alias personal='cp -Rf /personal/* ~'
+
+#create a file called .zshrc-personal and put all your personal aliases
+#in there. They will not be overwritten by skel.
+
+[[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
+
+elfman 
+#sfetch
