@@ -1,7 +1,7 @@
 
 window:
 
-  opacity: 1
+  opacity: 0.98
 
   startup_mode: Windowed
 

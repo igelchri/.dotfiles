@@ -81,10 +81,11 @@ type = internal/mpd
 ;;port = 6600
 ;;password = mysecretpassword
 ;interval = 2
-format-online =  "<icon-prev>  <icon-stop>  <toggle>  <icon-next> <label-song>"
+;format-online =  "<icon-prev>  <icon-stop>  <toggle>  <icon-next> <label-song>"
 ;format-online =  "<label-song>   <icon-prev>  <icon-stop>  <toggle>  <icon-next>"
 ;format-online =  "<label-song>  <bar-progress>"
 ;format-online =  "<label-song>  <bar-progress> <icon-prev>  <icon-stop>  <toggle>  <icon-next>"
+format-online =  "<label-song>"
 icon-prev = 
 icon-stop = 
 icon-play = 
@@ -96,7 +97,7 @@ bar-progress-width = 10
 bar-progress-indicator = 
 bar-progress-fill = 
 bar-progress-empty = 
-bar-progress-fill-foreground = #ff0
+bar-progress-fill-foreground = ${colors.red}
 bar-progress-fill-background = ${colors.background}
 bar-progress-indicator-foreground = ${colors.foreground}
 format-online-foreground = ${colors.foreground}
@@ -128,7 +129,7 @@ time-alt = %A, %d %B %Y
 format = <label>
 #format-prefix = " "
 format-prefix = " "
-format-prefix-font = 5
+format-prefix-font = 6
 ;format-prefix-foreground = #c1941a
 format-prefix-foreground = ${colors.foreground}
 
@@ -136,6 +137,9 @@ label = %time%
 label-font = 3
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
+
+################################
+
 
 ###############################################################################
 [module/battery]
@@ -146,7 +150,8 @@ adapter = AC0
 full-at = 90
 
 format-charging = <animation-charging> <label-charging>
-label-charging =  %percentage%%
+#label-charging =  %percentage%%
+label-charging = %percentage%%
 format-charging-foreground = ${colors.foreground}
 format-charging-background = ${colors.background}
 ;format-charging-underline = #a3c725
@@ -186,7 +191,7 @@ type = internal/fs
 
 ; Mountpoints to display
 mount-0 = /
-;mount-1 = /home
+mount-1 = /home
 ;mount-2 = /var
 
 ; Seconds to sleep between updates
@@ -236,52 +241,27 @@ format-unmounted-background = ${colors.background}
 [module/networkspeeddown]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
-;interface = wlp3s0
-;interface = enp14s0
-interface = enp0s31f6
-;interface = enp4s0
+interface = wlp0s20f3
 label-connected = "%downspeed:7%"
 format-connected = <label-connected>
 format-connected-prefix = ""
-format-connected-prefix-foreground = #3EC13F
+format-connected-prefix-foreground = ${colors.foreground}
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
 ;format-connected-underline = #62FF00
 
-################################################################################
-[module/network]
+[module/networkspeedup]
+;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
-interface = ${system.network_interface}
+interface = wlp0s20f3
+label-connected = "%upspeed:7%"
+format-connected = <label-connected>
+format-connected-prefix = ""
+format-connected-prefix-foreground = ${colors.foreground}
+format-connected-foreground = ${colors.foreground}
+format-connected-background = ${colors.background}
+;format-connected-underline = #62FF00
 
-interval = 1.0
-accumulate-stats = true
-unknown-as-up = true
-
-format-connected = <ramp-signal><label-connected>
-
-format-disconnected = <label-disconnected>
-format-disconnected-prefix = " 睊 "
-format-disconnected-prefix-font = 2
-format-disconnected-foreground = ${color.foreground}
-format-disconnected-background = ${color.background}
-
-label-connected = "%{A1:def-nmdmenu &:}%essid%%{A}"
-label-disconnected = "%{A1:def-nmdmenu &:}Offline%{A}"
-
-label-connected-foreground = ${color.foreground}
-label-disconnected-foreground = ${color.foreground}
-
-label-connected-background = ${color.green}
-label-disconnected-background = ${color.background}
-
-ramp-signal-0 = "  "
-ramp-signal-1 = "  "
-ramp-signal-2 = "  "
-ramp-signal-3 = "  "
-ramp-signal-4 = "  "
-ramp-signal-foreground = ${color.cyan}
-ramp-signal-background = ${color.background}
-ramp-signal-font = 2
 
 ################################################################################
 

@@ -2,8 +2,8 @@ sw_volume: 58
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
 state: play
-current: 5
-time: 71.060000
+current: 15
+time: 205.050000
 random: 0
 repeat: 0
 single: 0
@@ -32,46 +32,45 @@ Title: Soul In Sadness - Mystery Called Love
 Name: Dark Star FM
 song_end
 song_begin: http://stream.laut.fm/darkwave-sounds
-Title: Apoptygma Berzerk - Love To Blame
+Title: Essence of Mind - After the Break Up
 Name: Darkwave Sounds
 song_end
 song_begin: http://135.125.216.61:5020/stream
-Title: Stara Elektronika - Stara Elektronika
+Title: Assemblage 23 - Spark (Album Mix)
 Name: RDW - Radio Dunkle Welle
 song_end
 song_begin: http://stream.laut.fm/electrozombies
-Title: Covenant - Call the Ships To Port
+Title: Radioaktivists - Lovers
 Name: Electrozombies
 song_end
 song_begin: http://stream.laut.fm/german-gothic-radio
-Title: E-Craft - Easy To Fuck!
+Title: Coronatus - Fallen
 Name: German Gothic-Radio
 song_end
 song_begin: http://stream.laut.fm/radio-darkstar
-Title: Tyske Ludder - Wie Der Stahl Gehartet Wurde
+Title: Diary Of Dreams - Victimized
 Name: Radio Darkstar
 song_end
 song_begin: http://stream.laut.fm/gothic
-Title: Foyer Des Arts - Toulouse Lautrec
 Name: Gothic
 song_end
 song_begin: http://85.93.89.57:7777/listen1
-Title: Arcane Ritual - Angel
+Title: Cygnosic - Alone
 Name: Radio Hazzard of Darkness. The Best Radio on Air
 song_end
 song_begin: http://stream.laut.fm/hellschwarz
-Title: Schwarzwald - Dein Herz, meine Gier (Tribute to Suicide Commando)
+Title: Ost+Front - Wasser Marsch
 Name: Hellschwarz
 song_end
 song_begin: http://stream.laut.fm/mittelalter-net
-Title: Krayenzeit - Tagelied
 Name: Mittelalter-Net
 song_end
 song_begin: http://stream.laut.fm/rabenwind
+Title: Spielleute Skadefryd - Die Schwarze Witwe
 Name: Rabenwind
 song_end
 song_begin: http://stream.laut.fm/radio-schwarzeseele
-Title: Avantasia - Moonglow
+Title: Let Them Fall - Storyteller
 Name: Radio-Schwarzeseele
 song_end
 song_begin: http://stream.laut.fm/schwarzeszene
