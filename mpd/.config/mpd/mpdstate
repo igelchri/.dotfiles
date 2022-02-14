@@ -1,9 +1,8 @@
 sw_volume: 58
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: play
+state: stop
 current: 15
-time: 205.050000
 random: 0
 repeat: 0
 single: 0
@@ -70,7 +69,6 @@ Title: Spielleute Skadefryd - Die Schwarze Witwe
 Name: Rabenwind
 song_end
 song_begin: http://stream.laut.fm/radio-schwarzeseele
-Title: Let Them Fall - Storyteller
 Name: Radio-Schwarzeseele
 song_end
 song_begin: http://stream.laut.fm/schwarzeszene
