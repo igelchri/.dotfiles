@@ -1,3 +1,4 @@
+#! /bin/bash
 #    _______  ___ ___  ___ ___ ___ ___  ______
 #   |   _   |(   Y   )|   Y   |   Y   )|   _  \
 #   |   1___| \  1  / |.  1   |.  1  / |.  |   \
@@ -40,7 +41,8 @@ super + shift + t
 
 # Text Editor (CLI)
 alt + shift + t
-	alacritty -e nvim
+	alacritty -e micro
+#	alacritty -e nvim
 
 # Internet Browser
 super + shift + w
@@ -68,7 +70,8 @@ super + shift + v
 # Menü
 alt + F1
 #    rofi -show drun
-	sh ~/.config/bspwm/rofi/bin/launcher
+	sh launcher
+#	sh ~/.config/bspwm/rofi/bin/launcher
 #alt + F1
 #    j4-dmenu
 

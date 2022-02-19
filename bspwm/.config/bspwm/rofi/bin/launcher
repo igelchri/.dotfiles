@@ -16,3 +16,4 @@ rofi \
 	-terminal alacritty \
 	-kb-cancel Alt-F1 \
 	-theme "$DIR"/rofi/themes/launcher.rasi
+
