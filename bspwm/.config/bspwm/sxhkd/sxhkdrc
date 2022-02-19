@@ -72,8 +72,8 @@ alt + F1
 #alt + F1
 #    j4-dmenu
 
-alt + shift + F1
-	sh ~/.config/bspwm/rofi/bin/launcher
+#alt + shift + F1
+#	sh ~/.config/bspwm/rofi/bin/launcher
 
 ## Programme Menü (ändern wenn WM-spezifische Sachen auf den F-Tasten sind)
 ##super + d
@@ -81,12 +81,12 @@ alt + shift + F1
 
 
 # Rofi Themes
-ctrl + alt + t
-	sh ~/.config/bspwm/rofi/bin/themes
+#ctrl + alt + t
+#	sh ~/.config/bspwm/rofi/bin/themes
 
 ## Rofi Menus/Applets
-ctrl + alt + {w,m,x,r,s,i}
-	sh ~/.config/bspwm/rofi/bin/{windows,mpd,powermenu,asroot,screenshot,network}
+#ctrl + alt + {w,m,x,r,s,i}
+#	sh ~/.config/bspwm/rofi/bin/{windows,mpd,powermenu,asroot,screenshot,network}
 
 
 # Power Menü
@@ -95,12 +95,12 @@ super + shift + x
 #	sh ~/.config/bspwm/rofi/bin/powermenu
 
 # Launch Menus
-super + {x,n,d,s}
-    {powermenu,def-nmdmenu,def-dmenu,def-ssdmenu}
+#super + {x,n,d,s}
+#    {powermenu,def-nmdmenu,def-dmenu,def-ssdmenu}
 
 # custom dmenu scripts
-alt + {e,l}
-    {edit-configs, quick-links}
+#alt + {e,l}
+#    {edit-configs, quick-links}
 
 ## ----- Sonstige Programme ----- ##
 

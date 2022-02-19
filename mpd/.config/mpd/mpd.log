@@ -347,3 +347,37 @@ Feb 18 21:34 : exception: Failed to open /home/ci/.config/mpd/playlists: No such
 Feb 18 23:14 : player: played "http://stream.laut.fm/schwarzeszene"
 Feb 18 23:36 : player: played "http://stream.laut.fm/schwarzeszene"
 Feb 19 00:20 : player: played "http://stream.laut.fm/schwarzeszene"
+Feb 19 12:58 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 13:49 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 13:56 : player: played "http://stream.laut.fm/schwarzeszene"
+Feb 19 16:15 : player: played "http://stream.laut.fm/vladsradio-darkinside"
+Feb 19 16:15 : exception: Not playing
+Feb 19 16:32 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 16:35 : player: played "http://135.125.216.61:5020/stream"
+Feb 19 16:36 : player: played "http://135.125.216.61:5020/stream"
+Feb 19 16:37 : player: played "http://135.125.216.61:5020/stream"
+Feb 19 17:00 : player: played "http://stream.laut.fm/vladsradio-darkinside"
+Feb 19 17:01 : exception: Not playing
+Feb 19 17:22 : player: played "http://stream.laut.fm/darkwave-sounds"
+Feb 19 17:26 : exception: Failed to create Avahi client: Daemon not running
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:29 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:31 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 19 17:31 : player: played "http://stream.laut.fm/radio-darkstar"
