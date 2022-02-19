@@ -40,7 +40,7 @@ super + shift + t
 
 # Text Editor (CLI)
 alt + shift + t
-	alacritty -e vim
+	alacritty -e nvim
 
 # Internet Browser
 super + shift + w
@@ -277,12 +277,12 @@ super + shift + h
 
 # Display Helligkeit
 XF86MonBrightness{Up,Down}
-	brightness{ --inc, --dec}
-#	xbacklight{ -inc 10, -dec 10}
+#	brightness{ --inc, --dec}
+	xbacklight{ -inc 10, -dec 10}
 
 # Lautstärke
 XF86Audio{RaiseVolume,LowerVolume}
-	amixer{ set Master 10%+, set Master 10%-}
+	amixer{ set Master 5%+, set Master 5%-}
 
 # Lautsprecher aus
 XF86AudioMute

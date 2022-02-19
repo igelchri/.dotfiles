@@ -96,7 +96,7 @@ for i in ${settings[@]}; do
 
 # floating windows
 declare -a floats=(Lxappearance Arandr feh Arcolinux-tweak-tool.py Arcolinux-welcome-app.py Arcolinux-calamares-tool.py mpv  \
-Font-manager Galculator Oblogout Pavucontrol rofi Xfce4-terminal Alacritty gcolor3 Gcolor3)
+Font-manager Galculator Oblogout Pavucontrol rofi Xfce4-terminal Alacritty gcolor3 Gcolor3 urxvt URxvt)
 for i in ${floats[@]}; do
   bspc rule -a $i state=floating follow=on focus=on; done
 

@@ -329,3 +329,21 @@ Feb 14 00:09 : player: played "http://stream.laut.fm/radio-darkstar"
 Feb 14 00:09 : player: played "http://stream.laut.fm/radio-darkstar"
 Feb 14 00:21 : player: played "http://85.93.89.57:7777/listen1"
 Feb 14 21:08 : player: played "http://stream.laut.fm/radio-schwarzeseele"
+Feb 16 19:56 : exception: CURL failed: Recv failure: Connection reset by peer
+Feb 16 19:56 : player: played "http://stream.laut.fm/radio-schwarzeseele"
+Feb 16 20:09 : player: played "http://stream.laut.fm/vladsradio-darkinside"
+Feb 16 20:21 : player: played "http://stream.laut.fm/vladsradio-darkinside"
+Feb 16 21:04 : player: played "http://stream.laut.fm/vladsradio-darkinside"
+Feb 16 22:25 : player: played "http://stream.laut.fm/darkwave-sounds"
+Feb 16 22:32 : exception: Not playing
+Feb 16 22:32 : exception: Not playing
+Feb 17 00:07 : exception: CURL failed: Recv failure: Connection reset by peer
+Feb 17 00:07 : player: played "http://stream.laut.fm/electrozombies"
+Feb 17 02:09 : output: Failed to play on "pulse audio" (pulse): suspended
+Feb 17 02:32 : player: played "http://85.93.89.57:7777/listen1"
+Feb 17 17:41 : player: played "http://85.93.89.57:7777/listen1"
+Feb 17 19:28 : player: played "http://85.93.89.57:7777/listen1"
+Feb 18 21:34 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
+Feb 18 23:14 : player: played "http://stream.laut.fm/schwarzeszene"
+Feb 18 23:36 : player: played "http://stream.laut.fm/schwarzeszene"
+Feb 19 00:20 : player: played "http://stream.laut.fm/schwarzeszene"

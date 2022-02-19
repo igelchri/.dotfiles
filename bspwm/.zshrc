@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.config/bspwm/scripts:$HOME/.config/bspwm/rofi/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 #installation via script from github
@@ -16,7 +16,7 @@ export ZSH=/usr/share/oh-my-zsh/
 #ZSH_THEME="agnoster"
 #ZSH_THEME="fletcherm"
 #ZSH_THEME="mikeh"
-#ZSH_THEME="clean"
+ZSH_THEME="clean"
 #ZSH_THEME="maran"
 #ZSH_THEME="bureau"
 #ZSH_THEME="gentoo"
@@ -24,7 +24,7 @@ export ZSH=/usr/share/oh-my-zsh/
 #ZSH_THEME="tjkirch"
 #ZSH_THEME="pmcgee"
 
-ZSH_THEME="random"
+#ZSH_THEME="random"
 
 ZSH_THEME_RANDOM_CANDIDATES=( "simple" "agnoster" "fletcherm" "mikeh" "clean" "maran" "bureau" "gentoo" "frontcube" "tjkirch" "pmcgee")
 
@@ -42,14 +42,14 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=de_DE.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -73,8 +73,10 @@ export HISTCONTROL=ignoreboth:erasedups
 
 # Make nano the default editor
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='nvim'
+export VISUAL='geany'
+#export EDITOR='nano'#!/bin/bash
+#export VISUAL='nano'
 
 #PS1='[\u@\h \W]\$ '
 

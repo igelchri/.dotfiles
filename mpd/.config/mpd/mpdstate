@@ -2,7 +2,7 @@ sw_volume: 58
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
 state: stop
-current: 15
+current: 16
 random: 0
 repeat: 0
 single: 0
@@ -12,79 +12,83 @@ mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
 song_begin: http://stream.laut.fm/bizarre-radio
+Title: Powerwolf - Army Of The Night (Official Video) Napalm Record
 Name: Bizarre-Radio
 song_end
 song_begin: http://stream.laut.fm/dark-bites
-Title: mind.in.a.box - Reflections
+Title: De/Vision - Call My Name
 Name: Dark Bites
 song_end
 song_begin: http://stream.laut.fm/darkclubradio
-Title: Schandmaul - Herren der Winde
+Title: Chrom - Memories
 Name: Darkclub-Radio
 song_end
 song_begin: http://stream.laut.fm/darkradio-finetunez
-Title: Rotersand - I Cry (Album Version)
+Title: Epinephrin - Blitzlicht (Aesthetic Perfection Remix)
 Name: Darkradio Finetunez
 song_end
 song_begin: http://stream.laut.fm/darkstarfm
-Title: Soul In Sadness - Mystery Called Love
+Title: Oliver K - Schattenwelt Folge 90  Section 6
 Name: Dark Star FM
 song_end
 song_begin: http://stream.laut.fm/darkwave-sounds
-Title: Essence of Mind - After the Break Up
+Title: Santiano - Wenn die Kälte kommt
 Name: Darkwave Sounds
 song_end
 song_begin: http://135.125.216.61:5020/stream
-Title: Assemblage 23 - Spark (Album Mix)
+Title: Velvet Acid Christ - Pretty Toy
 Name: RDW - Radio Dunkle Welle
 song_end
 song_begin: http://stream.laut.fm/electrozombies
-Title: Radioaktivists - Lovers
+Title: Motor Feat Gary Numan - Pleasure in Heaven
 Name: Electrozombies
 song_end
 song_begin: http://stream.laut.fm/german-gothic-radio
-Title: Coronatus - Fallen
+Title: Ad:Key - Hoch die Hämmer (Erzbergwerk Mix)
 Name: German Gothic-Radio
 song_end
 song_begin: http://stream.laut.fm/radio-darkstar
-Title: Diary Of Dreams - Victimized
+Title: Tyske Ludder - Erotik Mutanten
 Name: Radio Darkstar
 song_end
 song_begin: http://stream.laut.fm/gothic
+Title: Death In June - Black Radio
 Name: Gothic
 song_end
 song_begin: http://85.93.89.57:7777/listen1
-Title: Cygnosic - Alone
+Title: EXTIZE - Hot Like Carrie ...::: Dark Electro Live mit | Black Rose | :::...
 Name: Radio Hazzard of Darkness. The Best Radio on Air
 song_end
 song_begin: http://stream.laut.fm/hellschwarz
-Title: Ost+Front - Wasser Marsch
+Title: MonoSapien - Welt dreht sich
 Name: Hellschwarz
 song_end
 song_begin: http://stream.laut.fm/mittelalter-net
+Title: PurPur - Waterlily
 Name: Mittelalter-Net
 song_end
 song_begin: http://stream.laut.fm/rabenwind
-Title: Spielleute Skadefryd - Die Schwarze Witwe
+Title: Rapalje - Caledonia -Live
 Name: Rabenwind
 song_end
 song_begin: http://stream.laut.fm/radio-schwarzeseele
+Title: Michael Kirsche - Am Arsch
 Name: Radio-Schwarzeseele
 song_end
 song_begin: http://stream.laut.fm/schwarzeszene
-Title: Faun - Satyros
+Title: Star Industry - The Spirit Within
 Name: Schwarzeszene
 song_end
 song_begin: http://www.schwarze-welle.de:7500
-Title: Zeritas - Dritte Person Singular [onAir: Radio Schwarze Welle]
+Title: Qntal - Blac [onAir: Radio Schwarze Welle]
 Name: Radio Schwarze Welle
 song_end
 song_begin: http://stream.laut.fm/schattenreich
-Title: The Last Cry - Living In Grey
+Title: Tarja - No Bitter End
 Name: Schattenreich
 song_end
 song_begin: http://stream.laut.fm/vladsradio-darkinside
-Title: Letzte Instanz - Eisherz
+Title: And One - Shouts Of Joy (Club Mix)
 Name: Vladsradio Darkinside
 song_end
 playlist_end

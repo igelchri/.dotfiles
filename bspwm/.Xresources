@@ -26,8 +26,8 @@ URxvt.depth:             32
 !URxvt.transparent:      true
 URxvt.shading:           80
 URxvt.underlineColor:    #4682B4
-URxvt.highlightColor:    #666666
-URxvt.throughColor:      #4682B4
+!URxvt.highlightColor:    #666666
+!URxvt.throughColor:      #4682B4
 URxvt.scrollBar:         false
 URxvt.scrollTtyOutput:   false
 URxvt.scrollWithBuffer:  true
@@ -42,8 +42,8 @@ URxvt.colorUL:      	 #87afd7
 !!! https://terminal.sexy/
 !!! copy/paste colorcodes in
 !!! begin
-URxvt.foreground:   #F9F9F9
-URxvt.background:   [80]#222222
+URxvt.foreground:   #D8DEE9
+URxvt.background:   [90]#2E3440
 !URxvt.background:	#000000
 !URxvt.background:  rgba:2222/2222/2222/AAAA
 !URxvt.background:  [80]#404552
