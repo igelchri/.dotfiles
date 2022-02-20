@@ -10,7 +10,7 @@ mpd_port 		  	= "6600"
 mpd_crossfade_time 	= "2"
 
 ### Script ###
-execute_on_song_change="~/.ncmpcpp/scripts/album-art"
+#execute_on_song_change="~/.ncmpcpp/scripts/album-art"
 
 ### Behaviour ###
 message_delay_time 				 = 1
@@ -48,7 +48,7 @@ progressbar_elapsed_color   = "yellow"
 
 ### Alternative UI ###
 alternative_ui_separator_color 		  = "blue"
-alternative_header_first_line_format  = $b$5$/b  $b$8{%t}|{%f}$/b $/b 
+alternative_header_first_line_format  = $b$5$/b  $b$8{%t}|{%f}$/b $/b
 alternative_header_second_line_format = {$b{$2  %a$9}{ - $7  %b$9}{ ($2%y$9)}}|{%D}
 
 ### Song list ###
@@ -72,7 +72,7 @@ color2 = "red"
 
 ### Layout ###
 startup_screen = visualizer
-startup_slave_screen = playlist  
+startup_slave_screen = playlist
 startup_slave_screen_focus = yes
 locked_screen_width_part = 41
 

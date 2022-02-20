@@ -48,8 +48,9 @@ export LANG=de_DE.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='nvim'
+  export EDITOR='micro'
 fi
+#  export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -73,7 +74,7 @@ export HISTCONTROL=ignoreboth:erasedups
 
 # Make nano the default editor
 
-export EDITOR='nvim'
+export EDITOR='micro'
 export VISUAL='geany'
 #export EDITOR='nano'#!/bin/bash
 #export VISUAL='nano'

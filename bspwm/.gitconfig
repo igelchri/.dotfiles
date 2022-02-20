@@ -1,9 +1,0 @@
-[pull]
-	rebase = false
-[user]
-	name = igelchri
-	email = phonetisch@arcor.de
-[credential]
-	helper = cache --timeout=32000
-[push]
-	default = simple

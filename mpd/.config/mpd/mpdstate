@@ -1,9 +1,8 @@
 sw_volume: 58
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: pause
-current: 9
-time: 6.667000
+state: stop
+current: 5
 random: 0
 repeat: 0
 single: 0
@@ -13,39 +12,39 @@ mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
 song_begin: http://stream.laut.fm/bizarre-radio
-Title: The Stories - Rewind
+Title: Architects - Delete, Rewind
 Name: Bizarre-Radio
 song_end
 song_begin: http://stream.laut.fm/dark-bites
-Title: Babylonia - Crime Scene
+Title: Lost Area - Figure
 Name: Dark Bites
 song_end
+song_begin: http://stream.laut.fm/darkstarfm
+Title: laut.fm - Dark Star FM Nachrichten
+Name: Dark Star FM
+song_end
 song_begin: http://stream.laut.fm/darkclubradio
-Title: SECOND VERSION - Und dann kamst du (Original)
+Title: WIEGAND - Floating away
 Name: Darkclub-Radio
 song_end
 song_begin: http://stream.laut.fm/darkradio-finetunez
-Title: (Covenant) - Monochrome
+Title: Mono Inc. - Gothic Queen
 Name: Darkradio Finetunez
 song_end
-song_begin: http://stream.laut.fm/darkstarfm
-Title: Sono - Here Comes The Night
-Name: Dark Star FM
-song_end
 song_begin: http://stream.laut.fm/darkwave-sounds
-Title: Machinista - Dark Heart of Me - Dntr Remix
+Title: Absurd Minds - Masterbuilder (My Lovely Mr. Singing Club-Mix By PLASTIC)
 Name: Darkwave Sounds
 song_end
 song_begin: http://135.125.216.61:5020/stream
-Title: Collapsed System - Blute jetzt!
+Title: The Firm Inc. - Schluss mit lustig (Infacted Version)
 Name: RDW - Radio Dunkle Welle
 song_end
 song_begin: http://stream.laut.fm/electrozombies
-Title: New Order - Singularity
+Title: IAMX - An I For An I
 Name: Electrozombies
 song_end
 song_begin: http://stream.laut.fm/german-gothic-radio
-Title: After Forever - Ephemeral
+Title: Dioxyde - Vida Rota (Feindflug Remix)
 Name: German Gothic-Radio
 song_end
 song_begin: http://stream.laut.fm/radio-darkstar
@@ -53,11 +52,11 @@ Title: Combichrist - Without Emotions
 Name: Radio Darkstar
 song_end
 song_begin: http://stream.laut.fm/gothic
-Title: Interpol - Obstacle 1
+Title: DEAD CAN DANCE - Black Sun
 Name: Gothic
 song_end
 song_begin: http://85.93.89.57:7777/listen1
-Title: Molfa - Black Swan
+Title: Icon And The Black Roses - Innocence
 Name: Radio Hazzard of Darkness. The Best Radio on Air
 song_end
 song_begin: http://stream.laut.fm/hellschwarz
@@ -85,7 +84,7 @@ Title: The Cascades - Flowers In Ashes (Demo Version) [onAir: Radio Schwarze Wel
 Name: Radio Schwarze Welle
 song_end
 song_begin: http://stream.laut.fm/schattenreich
-Title: Deine Lakaien - Crystal Palace
+Title: Lichtscheu - Unendlich (frei)
 Name: Schattenreich
 song_end
 song_begin: http://stream.laut.fm/vladsradio-darkinside

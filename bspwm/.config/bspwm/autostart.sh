@@ -28,7 +28,7 @@ run sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
 # Start mpd
 exec mpd &
 
-# Start Clipboard 
+# Start Clipboard
 run clipit &
 
 # conky

@@ -70,8 +70,7 @@ super + shift + v
 # Menü
 alt + F1
 #    rofi -show drun
-	sh launcher
-#	sh ~/.config/bspwm/rofi/bin/launcher
+	sh ~/.config/bspwm/rofi/bin/launcher
 #alt + F1
 #    j4-dmenu
 
@@ -116,11 +115,15 @@ super + F12
     rofi -show drun
 
 #dmenu
-super + shift + d
+super + d
 	dmenu_run -i -nb '#3a4151' -nf '#d7dde8' -sb '#3a4151' -sf '#d7dde8' -fn 'NotoMonoRegular:bold:pixelsize=14'
 
 #Xfce4-appfinder
-alt + F3
+#alt + F3
+ #   xfce4-appfinder
+
+#Xfce4-appfinder
+super + shift + d
     xfce4-appfinder
 
 #xfce4-terminal dropdown
