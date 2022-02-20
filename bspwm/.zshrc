@@ -1,5 +1,17 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.config/bspwm/scripts:$HOME/.config/bspwm/rofi/bin:$PATH
+#----- Exports
+export LANG=de_DE.UTF-8
+export EDITOR='micro'
+export VISUAL='geany'
+
+#export LC_ALL="de_DE.UTF-8"
+
+#--- PATH
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.locaL/bin:$PATH"
+export PATH="$HOME/.config/bspwm/scripts:$PATH"
+export PATH="$HOME/.config/bspwm/rofi/bin:$PATH"
+#export PATH="$HOME/.emacs.d/bin:$PATH"
+
 
 # Path to your oh-my-zsh installation.
 #installation via script from github
@@ -41,16 +53,6 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-export LANG=de_DE.UTF-8
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='micro'
-fi
-#  export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -72,12 +74,6 @@ unsetopt SHARE_HISTORY
 
 export HISTCONTROL=ignoreboth:erasedups
 
-# Make nano the default editor
-
-export EDITOR='micro'
-export VISUAL='geany'
-#export EDITOR='nano'#!/bin/bash
-#export VISUAL='nano'
 
 #PS1='[\u@\h \W]\$ '
 

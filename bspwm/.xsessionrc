@@ -1,7 +1,3 @@
-#
-# ~/.bash_profile
-#
-[[ -f ~/.bashrc ]] && . ~/.bashrc
 
 #----- Exports
 export LANG=de_DE.UTF-8

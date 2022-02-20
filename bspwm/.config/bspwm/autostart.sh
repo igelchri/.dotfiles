@@ -1,6 +1,6 @@
-#!/bin/bash
+4#!/bin/bash
 ###--------  Meine BSPWMRC - Autostart  ----------
-###--------  Stand: 30.01.22 ---------
+###--------  Stand: 220220 ---------
 
 # fix pointer
 xsetroot -cursor_name left_ptr
@@ -11,6 +11,10 @@ bash $HOME/.config/bspwm/.fehbg
 # Polybar
 $HOME/.config/bspwm/polybar/launch.sh
 
+# Enable Super Keys For Menu
+ksuperkey -e 'Super_L=Alt_L|F1' &
+ksuperkey -e 'Super_R=Alt_L|F1' &
+
 function run {
   if ! pgrep $1 ;
   then
@@ -18,21 +22,14 @@ function run {
   fi
 }
 
-# Enable Super Keys For Menu
-ksuperkey -e 'Super_L=Alt_L|F1' &
-ksuperkey -e 'Super_R=Alt_L|F1' &
-
 # Lauch keybindings daemon
 run sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
-
-# Start mpd
-exec mpd &
 
 # Start Clipboard
 run clipit &
 
-# conky
-#conky -c $HOME/.config/bspwm/system-overview &
+# Volume tray
+#run volumeicon &
 
 # network manager tray
 run nm-applet &
@@ -59,5 +56,8 @@ picom --config $HOME/.config/bspwm/picom.conf &
 # Launch notification daemon
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
-# Volume tray
-run volumeicon &
+# Start mpd
+exec mpd &
+
+# conky
+#conky -c $HOME/.config/bspwm/system-overview &

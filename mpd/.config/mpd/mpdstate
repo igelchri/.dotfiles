@@ -1,8 +1,9 @@
 sw_volume: 58
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: stop
-current: 5
+state: play
+current: 12
+time: 1.011000
 random: 0
 repeat: 0
 single: 0
@@ -12,83 +13,82 @@ mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
 song_begin: http://stream.laut.fm/bizarre-radio
-Title: Architects - Delete, Rewind
+Title: Foster The People - Waste
 Name: Bizarre-Radio
 song_end
 song_begin: http://stream.laut.fm/dark-bites
-Title: Lost Area - Figure
+Title: Diary Of Dreams - Drop Dead
 Name: Dark Bites
 song_end
 song_begin: http://stream.laut.fm/darkstarfm
-Title: laut.fm - Dark Star FM Nachrichten
+Title: The Dreaming - Alone
 Name: Dark Star FM
 song_end
 song_begin: http://stream.laut.fm/darkclubradio
-Title: WIEGAND - Floating away
+Title: Front 242 - Headhunter V1.0
 Name: Darkclub-Radio
 song_end
 song_begin: http://stream.laut.fm/darkradio-finetunez
-Title: Mono Inc. - Gothic Queen
+Title: Covenant - Ritual Noise
 Name: Darkradio Finetunez
 song_end
 song_begin: http://stream.laut.fm/darkwave-sounds
-Title: Absurd Minds - Masterbuilder (My Lovely Mr. Singing Club-Mix By PLASTIC)
+Title: Bob Rock - Overdrive | Show #106 | Rock Edition | Februar 2022
 Name: Darkwave Sounds
 song_end
 song_begin: http://135.125.216.61:5020/stream
-Title: The Firm Inc. - Schluss mit lustig (Infacted Version)
+Title: Zola Jesus - Skin
 Name: RDW - Radio Dunkle Welle
 song_end
 song_begin: http://stream.laut.fm/electrozombies
-Title: IAMX - An I For An I
+Title: Depeche Mode - John The Revelator
 Name: Electrozombies
 song_end
 song_begin: http://stream.laut.fm/german-gothic-radio
-Title: Dioxyde - Vida Rota (Feindflug Remix)
+Title: The Fall - Mr. Pharmacist
 Name: German Gothic-Radio
 song_end
 song_begin: http://stream.laut.fm/radio-darkstar
-Title: Combichrist - Without Emotions
+Title: 12Blutengel - 02 - Bloody pleasures [Extended mix]
 Name: Radio Darkstar
 song_end
 song_begin: http://stream.laut.fm/gothic
-Title: DEAD CAN DANCE - Black Sun
+Title: Interpol - Take You On A Cruise
 Name: Gothic
 song_end
 song_begin: http://85.93.89.57:7777/listen1
-Title: Icon And The Black Roses - Innocence
+Title: Type O Negative - All Hallows Eve
 Name: Radio Hazzard of Darkness. The Best Radio on Air
 song_end
 song_begin: http://stream.laut.fm/hellschwarz
-Title: Within Temptation - Never-Ending Story
+Title: Hocico - I Will Be Murdered (4 Minutes of Horror)
 Name: Hellschwarz
 song_end
 song_begin: http://stream.laut.fm/mittelalter-net
-Title: Corvus Corax - Hymnus Apollon
+Title: Feuerschwanz - Im Bauch Des Wals
 Name: Mittelalter-Net
 song_end
 song_begin: http://stream.laut.fm/rabenwind
-Title: Saltiato Mortis - Equinox
+Title: Flutensang - Die Rabenballade
 Name: Rabenwind
 song_end
 song_begin: http://stream.laut.fm/radio-schwarzeseele
-Title: Toxic Trap - Burned to Death
+Title: KrawallBrüder - Unbeugsam - mehr hass 2017
 Name: Radio-Schwarzeseele
 song_end
 song_begin: http://stream.laut.fm/schwarzeszene
-Title: Plush Insane - Everything You Want
 Name: Schwarzeszene
 song_end
 song_begin: http://www.schwarze-welle.de:7500
-Title: The Cascades - Flowers In Ashes (Demo Version) [onAir: Radio Schwarze Welle]
+Title: Motionless in White - America [onAir: DarkEmotion]
 Name: Radio Schwarze Welle
 song_end
 song_begin: http://stream.laut.fm/schattenreich
-Title: Lichtscheu - Unendlich (frei)
+Title: Beyond Sensory Experience - Through The Underworld
 Name: Schattenreich
 song_end
 song_begin: http://stream.laut.fm/vladsradio-darkinside
-Title: New Order - True Faith
+Title: Mantus - In der Gegenwelt
 Name: Vladsradio Darkinside
 song_end
 playlist_end
