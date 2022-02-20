@@ -2,8 +2,8 @@ sw_volume: 58
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
 state: play
-current: 13
-time: 117.309000
+current: 16
+time: 38.304000
 random: 0
 repeat: 0
 single: 0
@@ -65,18 +65,19 @@ Title: Porn - The Ogre Inside (An Erotic End Ot Times Remix)
 Name: Hellschwarz
 song_end
 song_begin: http://stream.laut.fm/mittelalter-net
-Title: Feuerschwanz - Kampfzwerg
+Title: Neumentroll - Trolltanz
 Name: Mittelalter-Net
 song_end
 song_begin: http://stream.laut.fm/rabenwind
-Title: Flutensang - Die Rabenballade
+Title: Corvus Corax - Grendel
 Name: Rabenwind
 song_end
 song_begin: http://stream.laut.fm/radio-schwarzeseele
-Title: KrawallBrüder - Unbeugsam - mehr hass 2017
+Title: Beyond The Black - Numb
 Name: Radio-Schwarzeseele
 song_end
 song_begin: http://stream.laut.fm/schwarzeszene
+Title: Marilyn Manson - Sweet Dreams (Are Made of This)
 Name: Schwarzeszene
 song_end
 song_begin: http://www.schwarze-welle.de:7500

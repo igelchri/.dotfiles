@@ -61,6 +61,10 @@ alt + shift + m
 	alacritty -e ncmpcpp
 #	sh ~/.config/bspwm/rofi/bin/mpd
 
+# MPD Rofi
+super + m
+    mpd.sh
+
 # Video Player
 super + shift + v
 	vlc

@@ -414,3 +414,5 @@ Feb 20 23:53 : player: played "http://85.93.89.57:7777/listen1"
 Feb 20 23:57 : player: played "http://85.93.89.57:7777/listen1"
 Feb 21 00:04 : exception: Failed to open /home/ci/.config/mpd/playlists: No such file or directory
 Feb 21 00:19 : player: played "http://stream.laut.fm/mittelalter-net"
+Feb 21 00:25 : player: played "http://stream.laut.fm/mittelalter-net"
+Feb 21 00:25 : player: played "http://stream.laut.fm/mittelalter-net"
