@@ -2,8 +2,8 @@ sw_volume: 58
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
 state: play
-current: 12
-time: 1.011000
+current: 13
+time: 117.309000
 random: 0
 repeat: 0
 single: 0
@@ -61,11 +61,11 @@ Title: Type O Negative - All Hallows Eve
 Name: Radio Hazzard of Darkness. The Best Radio on Air
 song_end
 song_begin: http://stream.laut.fm/hellschwarz
-Title: Hocico - I Will Be Murdered (4 Minutes of Horror)
+Title: Porn - The Ogre Inside (An Erotic End Ot Times Remix)
 Name: Hellschwarz
 song_end
 song_begin: http://stream.laut.fm/mittelalter-net
-Title: Feuerschwanz - Im Bauch Des Wals
+Title: Feuerschwanz - Kampfzwerg
 Name: Mittelalter-Net
 song_end
 song_begin: http://stream.laut.fm/rabenwind
