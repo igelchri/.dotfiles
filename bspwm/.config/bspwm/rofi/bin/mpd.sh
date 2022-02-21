@@ -7,15 +7,24 @@ DIR="$HOME/.config/bspwm"
 
 rofi_command="rofi -theme $DIR/rofi/themes/mpd.rasi"
 
-button_music=''
-button_play=''
-button_pause=''
-button_stop=''
-button_next=''
-button_previous=''
-button_repeat=''
-button_shuffle=''
-button_error=''
+#button_music=''
+#button_play=''
+#button_pause=''
+#button_stop=''
+#button_next=''
+#button_previous=''
+#button_repeat=''
+#button_shuffle=''
+#button_error=''
+button_music=''
+button_play=''
+button_pause=''
+button_stop=''
+button_next=''
+button_previous=''
+button_repeat=''
+button_shuffle=''
+button_error=''
 
 # Colors
 active=""
