@@ -10,7 +10,7 @@
 
 # Diese Hilfe anzeigen
 super + shift + k
-	sh ~/.config/bspwm/rofi/bin/rofi-helpmenu
+	sh ~/.config/bspwm/rofi/bin/helpmenu.sh
 
 
 ### ----- Programme starten ----- ##

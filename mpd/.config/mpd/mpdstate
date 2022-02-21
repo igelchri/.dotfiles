@@ -1,9 +1,8 @@
 sw_volume: 58
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: play
+state: stop
 current: 16
-time: 38.304000
 random: 0
 repeat: 0
 single: 0
@@ -77,7 +76,6 @@ Title: Beyond The Black - Numb
 Name: Radio-Schwarzeseele
 song_end
 song_begin: http://stream.laut.fm/schwarzeszene
-Title: Marilyn Manson - Sweet Dreams (Are Made of This)
 Name: Schwarzeszene
 song_end
 song_begin: http://www.schwarze-welle.de:7500
