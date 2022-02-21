@@ -25,11 +25,11 @@ super + Return
 
 # Datei Manager (GUI)
 super + shift + Return
-	thunar
+	pcmanfm
 
 # Datei Manager (GUI)
 super + shift + f
-	thunar
+	pcmanfm
 
 # Datei Manager (CLI)
 alt + shift + f
@@ -50,7 +50,7 @@ super + shift + w
 
 # Email
 super + shift + e
-	thunderbird
+	betterbird
 
 # Musik Player (GUI)
 super + shift + m
