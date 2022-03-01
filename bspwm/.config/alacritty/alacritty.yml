@@ -1,6 +1,6 @@
 
 window:
-  opacity: 0.90
+  opacity: 1.0
   startup_mode: Windowed
   # Window title
   title: Alacritty
@@ -38,7 +38,8 @@ font:
 # Colors (Nord Theme)
 colors:
   primary:
-    background: '#2e3440'
+    #    background: '#2e3440' #wallpaper
+    background: '#3a4151' #rahmen polybar
     foreground: '#d8dee9'
     dim_foreground: '#a5abb6'
   cursor:
