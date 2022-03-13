@@ -1,0 +1,42 @@
+Programme installieren:
+- Ario
+- (doom emacs)
+- (calcurse)
+- (garuda gamer)
+- (fish) (garuda fish-config)
+- (VLC)
+- exa
+- bat
+- fd
+- procs
+- doas
+- stow
+- mpd mpc ncmpcpp
+- clipit
+- (joplin)
+- ksuperkey
+- micro
+- pcmanfm
+- vscode
+
+
+- Linux zen
+    pacman - S linux-zen linux-zen-headers nvidia-dkms lib32-nvidia-utils  lib32-opencl-nvidia
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+Einstellungen:
+- damit Rofi die Richtige Tastatur hat:
+ ~/.xprofile
+    setxkbmap de
+
+PCSPKR entfernen:
+# rmmod pcspkr
+
+--Datei erstellen:
+
+sudo nano /etc/modprobe.d/nobeep.conf
+!..
+blacklist pcspkr
+..!
+
+
