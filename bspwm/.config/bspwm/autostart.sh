@@ -28,9 +28,6 @@ run sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
 # Start Clipboard
 run clipit &
 
-# Volume tray
-#run volumeicon &
-
 # network manager tray
 run nm-applet &
 

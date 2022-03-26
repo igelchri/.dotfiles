@@ -15,21 +15,21 @@ super + shift + k
 
 ### ----- Programme starten ----- ##
 
-# Terminal (floating)
+# Terminal (fullscreen)
 #super + shift + Return
 #	urxvt -f
 
-# Terminal (fullscreen)
+# Terminal (floating)
 super + Return
 	alacritty
 
 # Datei Manager (GUI)
 super + shift + Return
-	pcmanfm
+	thunar
 
 # Datei Manager (GUI)
 super + shift + f
-	pcmanfm
+	thunar
 
 # Datei Manager (CLI)
 alt + shift + f
@@ -37,7 +37,8 @@ alt + shift + f
 
 # Text Editor (GUI)
 super + shift + t
-	geany
+#	geany
+	code
 
 # Text Editor (CLI)
 alt + shift + t
@@ -63,7 +64,7 @@ alt + shift + m
 
 # MPD Rofi
 super + m
-    mpd.sh
+    sh ~/.config/bspwm/rofi/bin/mpd.sh
 
 # Video Player
 super + shift + v
@@ -75,20 +76,7 @@ super + shift + v
 alt + F1
 #    rofi -show drun
 	sh ~/.config/bspwm/rofi/bin/launcher
-#alt + F1
-#    j4-dmenu
 
-#alt + shift + F1
-#	sh ~/.config/bspwm/rofi/bin/launcher
-
-## Programme Menü (ändern wenn WM-spezifische Sachen auf den F-Tasten sind)
-##super + d
-##	sh ~/.config/bspwm/rofi/bin/launcher
-
-
-# Rofi Themes
-#ctrl + alt + t
-#	sh ~/.config/bspwm/rofi/bin/themes
 
 ## Rofi Menus/Applets
 #ctrl + alt + {w,m,x,r,s,i}
@@ -97,8 +85,8 @@ alt + F1
 
 # Power Menü
 super + shift + x
-    arcolinux-logout
-#	sh ~/.config/bspwm/rofi/bin/powermenu
+#    arcolinux-logout
+	sh ~/.config/bspwm/rofi/bin/powermenu.sh
 
 # Launch Menus
 #super + {x,n,d,s}
@@ -120,7 +108,9 @@ super + F12
 
 #dmenu
 super + d
-	dmenu_run -i -nb '#3a4151' -nf '#d7dde8' -sb '#3a4151' -sf '#d7dde8' -fn 'NotoMonoRegular:bold:pixelsize=14'
+#	dmenu_run -i -nb '#3a4151' -nf '#d7dde8' -sb '#3a4151' -sf '#d7dde8' -fn 'NotoMonoRegular:bold:pixelsize=14'
+    rofi -theme-str 'window \{width: 100%;height: 100%;\}' -show drun
+
 
 #Xfce4-appfinder
 #alt + F3
@@ -164,7 +154,7 @@ ctrl + alt + {Left,Right}
 
 # set the window state
 super + space
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+	bspc node -t {tiled,pseudo_tiled,floating}
 
 # send the newest marked node to the newest preselected node
 super + y
@@ -287,8 +277,8 @@ super + shift + h
 
 # Display Helligkeit
 XF86MonBrightness{Up,Down}
-#	brightness{ --inc, --dec}
-	xbacklight{ -inc 10, -dec 10}
+	brightness{ --inc, --dec}
+#	xbacklight{ -inc 10, -dec 10}
 
 # Lautstärke
 XF86Audio{RaiseVolume,LowerVolume}

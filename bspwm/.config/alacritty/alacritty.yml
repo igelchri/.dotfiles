@@ -14,17 +14,17 @@ history: 50000
 font:
   # Normal (roman) font face
   normal:
-    family: hack
+    family: source code pro
     style: Regular
 
   # Bold font face
   bold:
-    family: hack
+    family: monospace
     style: Bold
 
   # Italic font face
   italic:
-    family: hack
+    family: monospace
     style: Italic
 
   # Bold italic font face
