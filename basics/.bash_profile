@@ -1,18 +1,5 @@
 #
 # ~/.bash_profile
 #
+
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-
-#----- Exports
-export LANG=de_DE.UTF-8
-export EDITOR='micro'
-export VISUAL='geany'
-
-#export LC_ALL="de_DE.UTF-8"
-
-#--- PATH
-export PATH="$HOME/.bin:$PATH"
-export PATH="$HOME/.locaL/bin:$PATH"
-export PATH="$HOME/.config/bspwm/scripts:$PATH"
-export PATH="$HOME/.config/bspwm/rofi/bin:$PATH"
-#export PATH="$HOME/.emacs.d/bin:$PATH"
