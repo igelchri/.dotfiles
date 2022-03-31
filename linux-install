@@ -1,29 +1,36 @@
-Programme installieren:
-- Ario
-- (doom emacs)
-- (calcurse)
-- (garuda gamer)
-- (fish) (garuda fish-config)
-- (VLC)
++Programme installieren:
+- ranger mc micro
+#- (doom emacs)
+#- (calcurse)
+#- (garuda gamer)
+#- (fish) (garuda fish-config)
+#- (VLC)
 - exa
-- bat
-- fd
-- procs
-- doas
+#- bat
+#- fd
+#- procs
+#- doas
 - stow
-- mpd mpc ncmpcpp
-- clipit
-- (joplin)
+sudo - mpd mpc ncmpcpp Ario
+#- clipit
+- parcellite
+#- (joplin)
 - ksuperkey
-- micro
-- pcmanfm
 - vscode
-
+- zathura
+- hardinfo
+- piper
 
 - Linux zen
     pacman - S linux-zen linux-zen-headers nvidia-dkms lib32-nvidia-utils  lib32-opencl-nvidia
     sudo grub-mkconfig -o /boot/grub/grub.cfg
-
+nvidia
+## How to run the installer
+```
+git clone https://github.com/Frogging-Family/nvidia-all.git
+cd nvidia-all
+makepkg -si
+```
 Einstellungen:
 - damit Rofi die Richtige Tastatur hat:
  ~/.xprofile
@@ -37,6 +44,6 @@ PCSPKR entfernen:
 sudo nano /etc/modprobe.d/nobeep.conf
 !..
 blacklist pcspkr
-..!
+.a.!
 
 

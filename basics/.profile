@@ -1,8 +1,8 @@
 
 #----- Exports
 export LANG=de_DE.UTF-8
-export EDITOR='micro'
-export VISUAL='geany'
+export EDITOR='nvim'
+export VISUAL='code'
 
 #export LC_ALL="de_DE.UTF-8"
 

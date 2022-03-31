@@ -26,7 +26,11 @@ function run {
 run sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
 
 # Start Clipboard
-run clipit &
+#run clipit &
+run parcellite &
+
+# Start volume-icon
+run volumeicon &
 
 # network manager tray
 run nm-applet &
