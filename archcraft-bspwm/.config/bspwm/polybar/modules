@@ -204,7 +204,7 @@ label-monitor = %name%
 ;label-dimmed-focused-background = ${color.BACKGROUND}
 
 label-focused = %icon%
-label-focused-foreground = ${color.YELLOW}
+label-focused-foreground = ${color.ALTRED}
 label-focused-background = ${color.BACKGROUND1}
 ;label-focused-underline = ${color.BLUE}
 label-focused-padding = 1

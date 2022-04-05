@@ -83,7 +83,7 @@ alt + F1
 
 
 ## Rofi Menus/Applets
-ctrl {w,m,x,r,s,i}
+ctrl + shift {w,m,x,r,s,i}
 	sh ~/.config/bspwm/rofi/bin/{windows,mpd,powermenu,asroot,screenshot,network}
 
 
