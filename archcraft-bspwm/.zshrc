@@ -16,9 +16,9 @@ export PATH="$HOME/.config/bspwm/rofi/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 #installation via script from github
-#export ZSH="/home/$USER/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 #installation via paru -S oh-my-zsh-git
-export ZSH=/usr/share/oh-my-zsh/
+#export ZSH=/usr/share/oh-my-zsh/
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -29,17 +29,22 @@ export ZSH=/usr/share/oh-my-zsh/
 #ZSH_THEME="agnoster"
 #ZSH_THEME="fletcherm"
 #ZSH_THEME="mikeh"
-ZSH_THEME="clean"
+#ZSH_THEME="clean"
 #ZSH_THEME="maran"
 #ZSH_THEME="bureau"
 #ZSH_THEME="gentoo"
 #ZSH_THEME="frontcube"
 #ZSH_THEME="tjkirch"
 #ZSH_THEME="pmcgee"
+ZSH_THEME="spaceship"
+
 
 #ZSH_THEME="random"
 
 ZSH_THEME_RANDOM_CANDIDATES=( "simple" "agnoster" "fletcherm" "mikeh" "clean" "maran" "bureau" "gentoo" "frontcube" "tjkirch" "pmcgee")
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -60,31 +65,25 @@ source $ZSH/oh-my-zsh.sh
 
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
 
-####   ARCOLINUX SETTINGS   ####
-export PAGER='most'
+# On-demand rehash
+zshcache_time="$(date +%s%N)"
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+autoload -Uz add-zsh-hook
 
-setopt GLOB_DOTS
-#share commands between terminal instances or not
-unsetopt SHARE_HISTORY
-#setopt SHARE_HISTORY
+rehash_precmd() {
+  if [[ -a /var/cache/zsh/pacman ]]; then
+    local paccache_time="$(date -r /var/cache/zsh/pacman +%s%N)"
+    if (( zshcache_time < paccache_time )); then
+      rehash
+      zshcache_time="$paccache_time"
+    fi
+  fi
+}
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
-export HISTCONTROL=ignoreboth:erasedups
+add-zsh-hook -Uz precmd rehash_precmd
 
 
 #PS1='[\u@\h \W]\$ '
-
-if [ -d "$HOME/.bin" ] ;
-  then PATH="$HOME/.bin:$PATH"
-fi
-
-if [ -d "$HOME/.local/bin" ] ;
-  then PATH="$HOME/.local/bin:$PATH"
-fi
 
 #create a file called .zshrc-personal and put all your personal aliases
 #in there. They will not be overwritten by skel.
@@ -92,4 +91,4 @@ fi
 [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
 #elfman
-sfetch
+#sfetch

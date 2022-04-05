@@ -1,0 +1,296 @@
+#! /bin/bash
+#    _______  ___ ___  ___ ___ ___ ___  ______
+#   |   _   |(   Y   )|   Y   |   Y   )|   _  \
+#   |   1___| \  1  / |.  1   |.  1  / |.  |   \
+#   |____   | /  _  \ |.  _   |.  _  \ |.  |    \
+#   |:  1   |/:  |   \|:  |   |:  |   \|:  1    /
+#   |::.. . (::. |:.  |::.|:. |::.| .  |::.. . /
+#   `-------'`--- ---'`--- ---`--- ---'`------'
+#
+
+# Diese Hilfe anzeigen
+super + shift + k
+	sh ~/.config/bspwm/rofi/bin/helpmenu.sh
+
+
+### ----- Programme starten ----- ##
+
+# Terminal (fullscreen)
+#super + shift + Return
+#	urxvt -f
+
+# Terminal (floating)
+super + Return
+	alacritty
+
+# Datei Manager (GUI)
+super + shift + Return
+	thunar
+
+# Datei Manager (GUI)
+super + shift + f
+	thunar
+
+# Datei Manager (CLI)
+alt + shift + f
+	alacritty -e ranger
+
+# Text Editor (GUI)
+super + shift + t
+#	geany
+	code
+
+# Text Editor (CLI)
+alt + shift + t
+	alacritty -e micro
+#	alacritty -e nvim
+
+# Internet Browser
+super + shift + w
+	firefox
+
+# Email
+super + shift + e
+	betterbird
+
+# Musik Player (GUI)
+super + shift + m
+	ario
+
+# Musik Player (CLI)
+alt + shift + m
+	alacritty -e ncmpcpp
+#	sh ~/.config/bspwm/rofi/bin/mpd
+
+# MPD Rofi
+super + m
+    sh ~/.config/bspwm/rofi/bin/mpd.sh
+
+# Video Player
+super + shift + v
+	vlc
+
+## ----- Rofi Launcher + Menüs ----- ##
+
+# Menü
+alt + F1
+#    rofi -show drun
+	sh ~/.config/bspwm/rofi/bin/launcher
+
+
+## Rofi Menus/Applets
+#ctrl + alt + {w,m,x,r,s,i}
+#	sh ~/.config/bspwm/rofi/bin/{windows,mpd,powermenu,asroot,screenshot,network}
+
+
+# Power Menü
+super + shift + x
+#    arcolinux-logout
+	sh ~/.config/bspwm/rofi/bin/powermenu.sh
+
+# Launch Menus
+#super + {x,n,d,s}
+#    {powermenu,def-nmdmenu,def-dmenu,def-ssdmenu}
+
+# custom dmenu scripts
+#alt + {e,l}
+#    {edit-configs, quick-links}
+
+## ----- Sonstige Programme ----- ##
+
+#Rofi Fullscreen
+super + F11
+    rofi -theme-str 'window \{width: 100%;height: 100%;\}' -show drun
+
+#Rofi
+super + F12
+    rofi -show drun
+
+#dmenu
+super + d
+#	dmenu_run -i -nb '#3a4151' -nf '#d7dde8' -sb '#3a4151' -sf '#d7dde8' -fn 'NotoMonoRegular:bold:pixelsize=14'
+    rofi -theme-str 'window \{width: 100%;height: 100%;\}' -show drun
+
+
+#Xfce4-appfinder
+#alt + F3
+ #   xfce4-appfinder
+
+#Xfce4-appfinder
+super + shift + d
+    xfce4-appfinder
+
+#xfce4-terminal dropdown
+F12
+    xfce4-terminal --drop-down
+
+## ----- Bspwm ----- ##
+
+# Fenster schliessen
+super + {_,shift + }q
+	bspc node -{c,k}
+
+# Reload Keybindings
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# kill window
+ctrl + alt + Escape
+    xkill
+
+# Quit/Restart bspwm
+ctrl + shift + {q,r}
+	bspc {quit,wm -r}
+
+# Fenster auflisten
+super + Tab
+	sh ~/.config/bspwm/rofi/bin/windows
+
+# Switch workspace
+ctrl + alt + {Left,Right}
+	bspc desktop -f {prev.local,next.local}
+
+# ----- Fenster ----- ##
+
+# set the window state
+super + space
+	bspc node -t {tiled,pseudo_tiled,floating}
+
+# send the newest marked node to the newest preselected node
+super + y
+	bspc node newest.marked.local -n newest.!automatic.local
+
+# swap the current node and the biggest window
+super + g
+	bspc node -s biggest.window
+
+#
+# state/flags
+#
+
+
+#Toggle fullscreen of window
+super + f
+	bspc node --state \~fullscreen
+
+# set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+# Send the window to another edge of the screen
+super + {_,shift + }{Left,Down,Up,Right}
+    bspc node -{f,s} {west,south,north,east}
+
+# Change focus to next window, including floating window
+alt + {_,shift + }Tab
+    bspc node -f {next.local,prev.local}
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the node for the given path jump
+super + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous window in the current desktop
+super + {_,shift + }c
+	bspc node -f {next,prev}.local.!hidden.window
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+#
+# preselect
+#
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+## ---------- Fenster Größe ändern ---------- ##
+
+# resize windows
+super + alt + {h,j,k,l}
+    {bspc node @parent/second -z left -20 0; \
+    bspc node @parent/first -z right -20 0, \
+    bspc node @parent/second -z top 0 +20; \
+    bspc node @parent/first -z bottom 0 +20, \
+    bspc node @parent/first -z bottom 0 -20; \
+    bspc node @parent/second -z top 0 -20, \
+    bspc node @parent/first -z right +20 0; \
+    bspc node @parent/second -z left +20 0}
+# resize windows
+super + alt + {Left,Down,Up,Right}
+    {bspc node @parent/second -z left -20 0; \
+    bspc node @parent/first -z right -20 0, \
+    bspc node @parent/second -z top 0 +20; \
+    bspc node @parent/first -z bottom 0 +20, \
+    bspc node @parent/first -z bottom 0 -20; \
+    bspc node @parent/second -z top 0 -20, \
+    bspc node @parent/first -z right +20 0; \
+    bspc node @parent/second -z left +20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+## ----- Systemüberwachung ----- ##
+
+# Htop Systemmonitor
+super + shift + h
+	alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e htop
+
+
+##---------- System Keys ----------##
+
+# Display Helligkeit
+XF86MonBrightness{Up,Down}
+	brightness{ --inc, --dec}
+#	xbacklight{ -inc 10, -dec 10}
+
+# Lautstärke
+XF86Audio{RaiseVolume,LowerVolume}
+	amixer{ set Master 5%+, set Master 5%-}
+
+# Lautsprecher aus
+XF86AudioMute
+	volume --toggle
+
+# Musik Steuerung
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
+
+
+## ========== EOF ========== ##
