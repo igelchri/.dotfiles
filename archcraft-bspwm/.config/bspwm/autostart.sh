@@ -16,8 +16,8 @@ if [[ ! `pidof xfce-polkit` ]]; then
 fi
 
 # Lauch keybindings daemon
-sxhkd &
-#sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
+#sxhkd &
+sxhkd -c ~/.config/bspwm/sxhkd/sxhkdrc &
 
 # Enable Super Keys For Menu
 ksuperkey -e 'Super_L=Alt_L|F1' &

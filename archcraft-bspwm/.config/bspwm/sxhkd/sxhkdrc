@@ -16,16 +16,20 @@ super + shift + k
 ### ----- Programme starten ----- ##
 
 # Terminal (fullscreen)
-#super + shift + Return
-#	urxvt -f
+super + t
+        bspterm -s
 
 # Terminal (floating)
+super + shift + Return
+	bspterm -f
+
+# Terminal (tiled)
 super + Return
-	alacritty
+        bspterm
 
 # Datei Manager (GUI)
-super + shift + Return
-	thunar
+#super + shift + Return
+#	thunar
 
 # Datei Manager (GUI)
 super + shift + f
@@ -36,22 +40,22 @@ alt + shift + f
 	alacritty -e ranger
 
 # Text Editor (GUI)
-super + shift + t
-#	geany
-	code
+super + shift + e
+	geany
+#	code
 
 # Text Editor (CLI)
-alt + shift + t
-	alacritty -e micro
-#	alacritty -e nvim
+alt + shift + e
+#	alacritty -e micro
+	alacritty -e nvim
 
 # Internet Browser
 super + shift + w
 	firefox
 
 # Email
-super + shift + e
-	betterbird
+#super + shift + e
+#	betterbird
 
 # Musik Player (GUI)
 super + shift + m
@@ -64,7 +68,7 @@ alt + shift + m
 
 # MPD Rofi
 super + m
-    sh ~/.config/bspwm/rofi/bin/mpd.sh
+    sh ~/.config/bspwm/rofi/bin/mpd
 
 # Video Player
 super + shift + v
@@ -79,14 +83,14 @@ alt + F1
 
 
 ## Rofi Menus/Applets
-#ctrl + alt + {w,m,x,r,s,i}
-#	sh ~/.config/bspwm/rofi/bin/{windows,mpd,powermenu,asroot,screenshot,network}
+ctrl {w,m,x,r,s,i}
+	sh ~/.config/bspwm/rofi/bin/{windows,mpd,powermenu,asroot,screenshot,network}
 
 
 # Power Menü
 super + shift + x
 #    arcolinux-logout
-	sh ~/.config/bspwm/rofi/bin/powermenu.sh
+	sh ~/.config/bspwm/rofi/bin/powermenu
 
 # Launch Menus
 #super + {x,n,d,s}
@@ -99,15 +103,15 @@ super + shift + x
 ## ----- Sonstige Programme ----- ##
 
 #Rofi Fullscreen
-super + F11
-    rofi -theme-str 'window \{width: 100%;height: 100%;\}' -show drun
+#super + F11
+#    rofi -theme-str 'window \{width: 100%;height: 100%;\}' -show drun
 
 #Rofi
 super + F12
     rofi -show drun
 
 #dmenu
-super + d
+#super + d
 #	dmenu_run -i -nb '#3a4151' -nf '#d7dde8' -sb '#3a4151' -sf '#d7dde8' -fn 'NotoMonoRegular:bold:pixelsize=14'
     rofi -theme-str 'window \{width: 100%;height: 100%;\}' -show drun
 
@@ -117,8 +121,8 @@ super + d
  #   xfce4-appfinder
 
 #Xfce4-appfinder
-super + shift + d
-    xfce4-appfinder
+#super + shift + d
+#    xfce4-appfinder
 
 #xfce4-terminal dropdown
 F12
@@ -154,7 +158,7 @@ ctrl + alt + {Left,Right}
 
 # set the window state
 super + space
-	bspc node -t {tiled,pseudo_tiled,floating}
+	bspc node -t "~"{floating,tiled}
 
 # send the newest marked node to the newest preselected node
 super + y
@@ -171,7 +175,7 @@ super + g
 
 #Toggle fullscreen of window
 super + f
-	bspc node --state \~fullscreen
+	bspc node -t "~"fullscreen
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -282,7 +286,8 @@ XF86MonBrightness{Up,Down}
 
 # Lautstärke
 XF86Audio{RaiseVolume,LowerVolume}
-	amixer{ set Master 5%+, set Master 5%-}
+#	amixer{ set Master 5%+, set Master 5%-}
+        volume{ --inc, --dec}
 
 # Lautsprecher aus
 XF86AudioMute
