@@ -108,8 +108,8 @@ for i in ${settings[@]}; do
    bspc rule -a $i desktop='^8' state=floating follow=on focus=on; done
 
 # special rules
-declare -a floating=(alacritty-float Pcmanfm Thunar Onboard Yad 'Firefox:Places' \
-Viewnior feh Nm-connection-editor)
+declare -a floating=(alacritty-float Pcmanfm Onboard Yad 'Firefox:Places' \
+Viewnior feh Nm-connection-editor Xfce4-terminal)
 for i in ${floating[@]}; do
    bspc rule -a $i state=floating follow=on focus=on; done
 
