@@ -8,9 +8,9 @@ export VISUAL='geany'
 #--- PATH
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.locaL/bin:$PATH"
-export PATH="$HOME/.config/bspwm/scripts:$PATH"
-export PATH="$HOME/.config/bspwm/bin:$PATH"
-export PATH="$HOME/.config/bspwm/rofi/bin:$PATH"
+#export PATH="$HOME/.config/bspwm/scripts:$PATH"
+#export PATH="$HOME/.config/bspwm/bin:$PATH"
+#export PATH="$HOME/.config/bspwm/rofi/bin:$PATH"
 #export PATH="$HOME/.emacs.d/bin:$PATH"
 
 

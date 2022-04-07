@@ -92,7 +92,7 @@ bspterm () {
 bsprofi () {
 	cat > $DIR/rofi/themes/colors.rasi <<- EOF	
 	* {
-		background:			${BACKGROUND};
+		background:			${BACKGROUND1};
 		foreground:			${FOREGROUND};
 		selected:			${BLUE};
 		highlight:			${YELLOW};
