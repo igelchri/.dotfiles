@@ -17,12 +17,12 @@
 #- (joplin)
 - ksuperkey
 #- vscode
-- zathura
-- hardinfo
-- piper
+- zathura #PDF
+- hardinfo #sysprofile und benchmark
+- piper #logitech maus config
 ###############################################################################################
 - Linux zen
-    pacman - S linux-zen linux-zen-headers nvidia-dkms lib32-nvidia-utils  lib32-opencl-nvidia
+    pacman -S linux-zen linux-zen-headers nvidia-dkms lib32-nvidia-utils  lib32-opencl-nvidia
     sudo grub-mkconfig -o /boot/grub/grub.cfg
 ###############################################################################################
 frogging family nvidia Treiber
