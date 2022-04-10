@@ -16,7 +16,7 @@
   <option key="disc_column_order">10</option>
   <option key="doubleclick_behavior">0</option>
   <option key="duration_column_order">6</option>
-  <option key="duration_column_size">816</option>
+  <option key="duration_column_size">826</option>
   <option key="duration_column_visible">1</option>
   <option key="file_column_order">7</option>
   <option key="filesystem_hpaned_position">250</option>
@@ -38,7 +38,7 @@
   <option key="track_column_visible">1</option>
   <option key="use_proxy">0</option>
   <option key="vpaned_position">168</option>
-  <option key="window_height">1022</option>
+  <option key="window_height">1032</option>
   <option key="window_maximized">0</option>
-  <option key="window_width">1898</option>
+  <option key="window_width">1908</option>
 </ario-options>

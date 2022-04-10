@@ -113,7 +113,7 @@ super + F12
 #dmenu
 #super + d
 #	dmenu_run -i -nb '#3a4151' -nf '#d7dde8' -sb '#3a4151' -sf '#d7dde8' -fn 'NotoMonoRegular:bold:pixelsize=14'
-    rofi -theme-str 'window \{width: 100%;height: 100%;\}' -show drun
+#    rofi -theme-str 'window \{width: 100%;height: 100%;\}' -show drun
 
 
 #Xfce4-appfinder
@@ -143,7 +143,7 @@ ctrl + alt + Escape
     xkill
 
 # Quit/Restart bspwm
-ctrl + shift + {q,r}
+ctrl + alt + {q,r}
 	bspc {quit,wm -r}
 
 # Fenster auflisten
