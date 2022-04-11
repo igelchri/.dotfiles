@@ -108,7 +108,7 @@ bspdunst () {
 	cat >> "$HOME"/.config/bspwm/dunstrc <<- _EOF_
 		[urgency_low]
 		timeout = 2
-		background = "${BACKGROUND}"
+		background = "${BACKGROUND1}"
 		foreground = "${FOREGROUND}"
 		frame_color = "${BLUE}"
 

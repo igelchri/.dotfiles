@@ -1,6 +1,6 @@
 
 ### ALIASES ###
-alias ggit="~/.dotfiles/git-v1.sh"
+alias ggit="/home/chris/.dotfiles/git-v1.sh"
 # root privileges
 alias doas="doas --"
 
