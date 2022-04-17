@@ -53,9 +53,9 @@ bspc config window_gap 5
 bspc config split_ratio 0.52
 
 bspc config borderless_monocle true
-bspc config gapless_monocle true
-bspc config paddingless_monocle true
-bspc config single_monocle true 
+bspc config gapless_monocle false 
+bspc config paddingless_monocle true 
+bspc config single_monocle true
 bspc config focus_follows_pointer true
 
 #BSPWM coloring
@@ -71,7 +71,7 @@ bspc rule -r *:*
 
 # 1 > terminal
 bspc rule -a Alacritty desktop='^6' follow=on focus=on
-bspc rule -a Xfce4-terminal desktop='^6' follow=on focus=on
+#bspc rule -a Xfce4-terminal desktop='^6' follow=on focus=on
 
 # 2 > web
 bspc rule -a firefox desktop='^1' follow=on focus=on
@@ -115,7 +115,7 @@ for i in ${settings[@]}; do
 
 # special rules
 declare -a floating=(alacritty-float  Onboard Yad 'Firefox:Places' \
-Viewnior feh Nm-connection-editor)
+Viewnior feh Nm-connection-editor Xfce4-terminal)
 for i in ${floating[@]}; do
    bspc rule -a $i state=floating follow=on focus=on; done
 

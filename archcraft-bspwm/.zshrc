@@ -93,4 +93,5 @@ add-zsh-hook -Uz precmd rehash_precmd
 [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
 #elfman
-sfetch
+##sfetch
+fm6000 -f ~/.local/share/ascii/peanuts.txt
