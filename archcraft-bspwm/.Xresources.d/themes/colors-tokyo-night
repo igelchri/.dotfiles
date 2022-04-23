@@ -1,0 +1,36 @@
+
+! Color Scheme
+! -----------------------------------------------
+
+! tokyo night
+
+*background1: #3A4151
+*background: #1A1B26
+*foreground: #A9B1D6
+*cursorColor: #A9B1D6
+
+! black
+*color0:     #32344A
+*color8:     #444b6A
+! red
+*color1:     #F7768E
+*color9:     #FF7A93
+! green
+*color2:     #9ECE6A
+*color10:    #B9F27C
+! yellow
+*color3:     #E0AF68
+*color11:    #FF9E64
+! blue
+*color4:     #7AA2F7
+*color12:    #7DA6FF
+! magenta
+*color5:     #AD8EE6
+*color13:    #BB9AF7
+! cyan
+*color6:     #449DAB
+*color14:    #0DB9D7
+! white
+*color7:     #787C99
+*color15:    #ACB0D0
+
