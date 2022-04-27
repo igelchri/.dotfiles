@@ -69,49 +69,44 @@ bspc config presel_feedback_color "$GREEN"
 # remove all rules first
 bspc rule -r *:*
 
-# 1 > terminal
-bspc rule -a Alacritty desktop='^6' follow=on focus=on
-#bspc rule -a Xfce4-terminal desktop='^6' follow=on focus=on
-
-# 2 > web
+# 1 > web
 bspc rule -a firefox desktop='^1' follow=on focus=on
-bspc rule -a chromium desktop='^1' follow=on focus=on
+#bspc rule -a chromium desktop='^1' follow=on focus=on
+declare -a comm=(Thunderbird TelegramDesktop Hexchat)
+for i in ${comm[@]}; do
+   bspc rule -a $i desktop='^1' follow=on focus=on; done
 
-# 3 > files
-declare -a files=(Pcmanfm Thunar qBittorrent)
+# 2 > files
+declare -a files=(Pcmanfm Thunar)
 for i in ${files[@]}; do
    bspc rule -a $i desktop='^2' follow=on focus=on; done
 
-# 4 > code
+# 3 > code
 declare -a code=(Geany code-oss)
 for i in ${code[@]}; do
    bspc rule -a $i desktop='^3' follow=on focus=on; done
 
-# 5 > office and docs
 declare -a office=(Gucharmap Atril Evince \
 libreoffice-writer libreoffice-calc libreoffice-impress \
 libreoffice-startcenter libreoffice Soffice *:libreofficedev *:soffice)
 for i in ${office[@]}; do
    bspc rule -a $i desktop='^3' follow=on focus=on; done
 
-# 6 > Communication
-declare -a comm=(Thunderbird TelegramDesktop Hexchat)
-for i in ${comm[@]}; do
-   bspc rule -a $i desktop='^1' follow=on focus=on; done
-
-# 7 > media
+# 4 > media
 declare -a media=(Audacity Music MPlayer Lxmusic Inkscape Gimp-2.10 obs)
 for i in ${media[@]}; do
    bspc rule -a $i desktop='^4' state=floating follow=on focus=on; done
 
-# 8 > settings
-bspc rule -a 'VirtualBox Manager' desktop='^6' follow=on focus=on
-bspc rule -a GParted desktop='^6' follow=on focus=on
+# 6 > settings
 declare -a settings=(Lxappearance Lxtask Lxrandr Arandr \
 System-config-printer.py Pavucontrol Exo-helper-1 \
 Xfce4-power-manager-settings)
 for i in ${settings[@]}; do
    bspc rule -a $i desktop='^6' state=floating follow=on focus=on; done
+bspc rule -a 'VirtualBox Manager' desktop='^6' follow=on focus=on
+bspc rule -a GParted desktop='^6' follow=on focus=on
+bspc rule -a Alacritty desktop='^6' follow=on focus=on
+#bspc rule -a Xfce4-terminal desktop='^6' follow=on focus=on
 
 # special rules
 declare -a floating=(alacritty-float  Onboard Yad 'Firefox:Places' \
