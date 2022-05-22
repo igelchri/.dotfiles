@@ -2,7 +2,7 @@
 - ranger mc micro
 #- (doom emacs)
 #- (calcurse)
-- garuda gamer
+#- garuda gamer
 #- (fish) (garuda fish-config)
 #- (VLC)
 - exa
@@ -18,8 +18,8 @@
 - ksuperkey
 #- vscode
 - zathura #PDF
-- hardinfo #sysprofile und benchmark
-- piper #logitech maus config
+#- hardinfo #sysprofile und benchmark
+#- piper #logitech maus config
 ###############################################################################################
 - Linux zen
     pacman -S linux-zen linux-zen-headers nvidia-dkms lib32-nvidia-utils  lib32-opencl-nvidia

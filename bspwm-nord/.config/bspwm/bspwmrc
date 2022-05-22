@@ -100,7 +100,7 @@ for i in ${media[@]}; do
 # 6 > settings
 declare -a settings=(Lxappearance Lxtask Lxrandr Arandr \
 System-config-printer.py Pavucontrol Exo-helper-1 \
-Xfce4-power-manager-settings)
+Xfce4-power-manager-settings pamac)
 for i in ${settings[@]}; do
    bspc rule -a $i desktop='^6' state=floating follow=on focus=on; done
 bspc rule -a 'VirtualBox Manager' desktop='^6' follow=on focus=on
