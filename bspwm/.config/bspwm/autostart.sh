@@ -1,6 +1,6 @@
 #!/bin/bash
 ###--------  Meine BSPWMRC - Autostart  ----------
-###--------  Stand: 220404 ---------
+###--------  Stand: 220713 ---------
 
 ## Autostart -------------------------------------------------#
 
@@ -36,7 +36,7 @@ bash $HOME/.fehbg
 # Start mpd
 exec mpd &
 
-#start emacs-dämon
+#start emacs-daemon
 exec /usr/bin/emacs --daemon &
 
 # Start bspwm scripts

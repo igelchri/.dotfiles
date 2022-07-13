@@ -12,24 +12,25 @@
 super + shift + k
 	sh ~/.config/bspwm/rofi/bin/helpmenu.sh
 
-
 ### ----- Programme starten ----- ##
 
 # Terminal (fullscreen)
-super + t
-        bspterm -s
+#super + t
+#        bspterm -s
 
 # Terminal (floating)
-super + shift + Return
-	bspterm -f
+#super + shift + Return
+#	bspterm -f
+super + t
+        bspterm -f
 
 # Terminal (tiled)
 super + Return
         bspterm
 
 # Datei Manager (GUI)
-#super + shift + Return
-#	thunar
+super + shift + Return
+	thunar
 
 # Datei Manager (GUI)
 super + shift + f
@@ -48,7 +49,7 @@ super + shift + e
 alt + shift + e
 #	alacritty -e micro
 #	alacritty -e nvim
-emacsclient
+emacsclient -c -a 'emacs'
 
 # Internet Browser
 super + shift + w
@@ -134,6 +135,8 @@ F12
 # Fenster schliessen
 super + {_,shift + }q
 	bspc node -{c,k}
+super + c
+	bspc node -c
 
 # Reload Keybindings
 super + Escape
