@@ -1,7 +1,7 @@
 ! Color Scheme
 ! ---------------------------------
 
-! DRACULA
+! DRACULA 1
 
 
 *background2: #3A4151
@@ -11,9 +11,9 @@
 *cursorColor: #F8F8F2
 
 ! black
-*color0:     #3C3E4A
-*color8:     #4D4D4D
-
+*color0: #000000
+*color8: #4D4D4D
+ 
 ! red
 *color1:     #FF5555
 *color9:     #FF6E67

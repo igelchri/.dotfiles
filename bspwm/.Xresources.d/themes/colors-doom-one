@@ -1,0 +1,43 @@
+! Color Scheme
+! ----------------------------------------------------
+
+! doom one
+
+
+*background2: #3A4151
+*background1: #1E1D2F
+background: #282C34
+foreground: #BBC2CF
+*cursorColor: #528BFF
+
+! black
+*color0: #1C1F24
+*color8: #5B6268
+
+! red
+*color1: #FF6C6B
+*color9: #DA8548
+
+! green
+*color2: #98BE65
+*color10: #4DB5BD
+
+! yellow
+*color3: #DA8548
+*color11: #ECBE7B
+      
+!blue      
+*color4: #51AFEF
+*color12: #3071DB   
+     
+! magenta     
+*color5: #C678DD
+*color13: #A9A1E1
+
+! cyan
+*color6: #5699AF
+*color14: #46D9FF
+      
+! white      
+*color7: #202328
+*color15: #DFDFDF

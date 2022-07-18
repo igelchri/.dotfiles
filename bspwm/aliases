@@ -1,3 +1,4 @@
+#! /usr/bin/env bash
 
 ### ALIASES ###
 alias ggit="/home/chris/.dotfiles/git-v1.sh"

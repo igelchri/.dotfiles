@@ -1,4 +1,5 @@
-#! /bin/bash
+#! /usr/bin/env bash
+
 #    _______  ___ ___  ___ ___ ___ ___  ______
 #   |   _   |(   Y   )|   Y   |   Y   )|   _  \
 #   |   1___| \  1  / |.  1   |.  1  / |.  |   \
@@ -101,6 +102,10 @@ super + shift + x
 # custom dmenu scripts
 #alt + {e,l}
 #    {edit-configs, quick-links}
+
+# Rofi Themes Menu
+ctrl + alt + t
+	sh ~/.config/bspwm/rofi/bin/themes
 
 ## ----- Sonstige Programme ----- ##
 

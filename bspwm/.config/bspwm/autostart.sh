@@ -1,4 +1,5 @@
-#!/bin/bash
+#! /usr/bin/env bash
+
 ###--------  Meine BSPWMRC - Autostart  ----------
 ###--------  Stand: 220713 ---------
 
