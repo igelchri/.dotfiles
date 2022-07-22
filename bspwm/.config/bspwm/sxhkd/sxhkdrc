@@ -9,29 +9,28 @@
 #   `-------'`--- ---'`--- ---`--- ---'`------'
 #
 
-# Diese Hilfe anzeigen
+# Cheatsheet anzeigen
 super + shift + k
 	sh ~/.config/bspwm/rofi/bin/helpmenu.sh
 
 ### ----- Programme starten ----- ##
 
-# Terminal (fullscreen)
-#super + t
-#        bspterm -s
-
-# Terminal (floating)
-#super + shift + Return
-#	bspterm -f
-super + t
-        bspterm -f
 
 # Terminal (tiled)
 super + Return
-        bspterm
+	bspterm
+
+# Terminal (floating)
+super + shift + Return
+	bspterm --float
+
+# Terminal (fullscreen)
+super + t
+	bspterm --full
 
 # Datei Manager (GUI)
-super + shift + Return
-	thunar
+#super + shift + Return
+#	thunar
 
 # Datei Manager (GUI)
 super + shift + f
@@ -48,9 +47,10 @@ super + shift + e
 
 # Text Editor (CLI)
 alt + shift + e
+	emacsclient -c -a 'emacs'
 #	alacritty -e micro
 #	alacritty -e nvim
-emacsclient -c -a 'emacs'
+
 
 # Internet Browser
 super + shift + w

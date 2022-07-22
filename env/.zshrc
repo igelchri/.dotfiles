@@ -12,8 +12,8 @@ export EDITOR='emacs'
 export VISUAL='emacs'
 
 #--- PATH
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-#export PATH="$HOME/.bin:$PATH"
+#export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 #export PATH="$HOME/.config/bspwm/scripts:$PATH"
 #export PATH="$HOME/.config/bspwm/bin:$PATH"
@@ -158,7 +158,7 @@ add-zsh-hook -Uz precmd rehash_precmd
 #create a file called .zshrc-personal and put all your personal aliases
 #in there. They will not be overwritten by skel.
 
-[[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
+[[ -f ~/.aliases ]] && . ~/.aliases
 
 #elfman
 ##sfetch
