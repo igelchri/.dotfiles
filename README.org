@@ -1,0 +1,136 @@
+* Inhalt: :toc:
+- [[#about][About:]]
+- [[#qtile][qtile]]
+  - [[#qtile-extra][qtile-extra]]
+- [[#fonts][fonts]]
+  - [[#für-dtmacs][für dtmacs:]]
+- [[#programme][Programme]]
+  - [[#terminal][Terminal]]
+  - [[#gui][GUI]]
+  - [[#doom-emacs][DOOM Emacs]]
+  - [[#zen-kernel][Zen-Kernel]]
+  - [[#frogging-family-nvidia-treiber][Frogging family Nvidia-Treiber]]
+- [[#system-tweaks][System-Tweaks]]
+  - [[#einstellungen-für-rofi][Einstellungen für Rofi]]
+  - [[#pc-speaker-stummschalten][PC-Speaker stummschalten]]
+  - [[#chaotics-repo][Chaotics-Repo]]
+
+* About:
+Meine .dotfiles, mit GNU-stow verwaltet
+Ich verwende Archcraft-Linux, ein arch-derivat
+* qtile
+** qtile-extra
+yay -S qtile-extras
+* fonts
+** für dtmacs:
+*** ubuntu font family
+pacman -S ttf-ubuntu-font-family
+*** jetbrains-mono-nerd
+pacman -S ttf-jetbrains-mono-nerd
+* Programme
+** Terminal
+  + ksuperkey
+    Programm um z.B. Rofi nur mit Druck auf die Supertaste zu starten
+  + exa
+    verbessertes ls in Rust mit icons, Farbe usw.
+  + gnu stow
+    (yay -S stow)
+    Programm um .dotfiles an ihre ursprüngliche Postition zu verlinken
+    - wichtig: von dem Speicherverzeichnis der .dotfiles ausgehend den kompletten Speicherpfad abbilden, z.B. .config/XX/xx.file
+    - aufgerufen wird es mit stow Ordnername
+  + mpd
+  + mpc
+  + ncmpcpp
+*** weitere
+- ranger
+- mc
+- calcurse
+- procs
+- bat
+** GUI
++ Ario
+  Grafische Oberfläche für mpd
+*** weitere
+- VLC
+- joplin
+- zathura #PDF
+- piper #logitech maus config
+- peazip
+** DOOM Emacs
+: git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
+: ~/.config/emacs/bin/doom install
+
+It's a good idea to add ~/.config/emacs/bin to your PATH!
+
+Other bin/doom commands you should know about:
+
+- doom sync
+    to synchronize your private config with Doom by installing missing packages, removing orphaned packages, and regenerating caches. Run this whenever you modify your private init.el or packages.el, or install/remove an Emacs package through your OS package manager (e.g. mu4e or agda).
+- doom upgrade
+    to update Doom to the latest release & all installed packages.
+- doom doctor
+    to diagnose common issues with your system and config.
+ - doom env
+    to dump a snapshot of your shell environment to a file that Doom will load at startup. This allows Emacs to inherit your PATH, among other things.
+ - doom build
+    to recompile all installed packages (use this if you up/downgrade Emacs).
+***** org-roam
+Zum installieren:
+- in die init.el
+:       (org
+:        +pretty
+:       +roam2)
+- in die config.el
+#+begin_src emacs-lisp :tangle yes
+(use-package! org-roam
+ :ensure t
+ :custom
+ (org-roam-directory "~/Notes/")
+(org-roam-complete-everywhere t)
+:bind (("C-c n l" . org-roam-buffer-toggle)
+("C-c n f" . org-roam-node-find)
+("C-c n i" . org-roam-node-insert)
+:map org-mode-map
+("C-M-i" . completion-at-point)
+)
+:config
+(org-roam-db-autosync-enable)
+#+end_src
+- den org-roam Ordner anlegen
+  # mkdir ~/Notes
+- run doom sync -u
+
+** Zen-Kernel
+: pacman -S linux-zen linux-zen-headers nvidia-dkms lib32-nvidia-utils  lib32-opencl-nvidia
+: sudo grub-mkconfig -o /boot/grub/grub.cfg
+** Frogging family Nvidia-Treiber
+: git clone https://github.com/Frogging-Family/nvidia-all.git
+: cd nvidia-all
+: makepkg -si
+* System-Tweaks
+** Einstellungen für Rofi
+- damit Rofi die Richtige Tastatur hat:
+    : ~/.xprofile
+    : setxkbmap de
+** PC-Speaker stummschalten
+- PCSPKR entfernen:
+: rmmod pcspkr
+- Datei erstellen:
+  : sudo nano /etc/modprobe.d/nobeep.conf
+
+:   !..
+:    blacklist pcspkr
+:   ..!
+
+** Chaotics-Repo
+: pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+: pacman-key --lsign-key 3056513887B78AEB
+: pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+
+: /etc/pacman.conf
+
+[chaotic-aur]
+
+Include = /etc/pacman.d/chaotic-mirrorlist
+
+: sudo pacman -Syyu

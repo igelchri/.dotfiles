@@ -1,0 +1,34 @@
+* Doom-EMACS-Cheatsheet
+
+| C+x c+f       | DIRED (Doom= space . ) vim= :e hier navigieren: C+n (next) C+p (previous) |
+| C+X C+C       | Emacs schliessen (Doom:  space q q)                                       |
+| Alt+f / alt+b | f(orward) b(ackward) word                                                 |
+| ALt+a / alt+e | Anfang oder Ende des Satz                                                 |
+| alt+g g       | go to line                                                                |
+| alt+space     | markieren                                                                 |
+| C+X u         | undo (u im Evilmode)                                                      |
+| C-x 2         | Horizontal Split  (c-w s) space w s                                       |
+| C+X C+/-      | Schrift vergrössern/ verkleinern                                          |
+| C-x 3         | Vertical Split  (C-w v) space w v                                         |
+| C-x 0         | Close window (C-w c) space w c                                            |
+| C-w w         | change window                                                             |
+| C-x o         | moves cursor to next frame                                                |
+| C-x 4f        | im anderen Fenster ... öffnen Space w f                                   |
+| C-x C-s       | Save                                                                      |
+| C-x C-c       | Quit                                                                      |
+| Alt-u         | Alle Buchstaben des wort GROSS                                            |
+| Alt-c         | Buchstabe GROSS und zum Ende des Wort                                     |
+| space b k     | kill buffer                                                               |
+| space h r r   | reload emacs                                                              |
+| Alt-x         | Befehlszeile                                                              |
+| space-f r     | find recent file                                                          |
+| v             | markieren ab Position bis Position                                        |
+| Shift+v       | Zeilen markieren / Visual line mode                                       |
+| strg+v        | visual block mode/ markieren vertica                                      |
+| space tab tab | Zeile auskommentieren                                                     |
+| space t l     | Zeilennummern Anzeige umaschalten                                         |
+| C-c n         | Org-roam                                                                  |
+| C-c n f       | Org-Roam find file                                                        |
+| C-c n i       | Org-roam node insert                                                      |
+| C-c n l       | Org-roam switch buffer                                                    |
+| space m B     | org babel tangle                                                          |

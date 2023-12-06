@@ -1,2 +1,2 @@
 # .dotfiles
-dotfiles mit stow verwaltet
+meine Linux Konfigurationsdateien
