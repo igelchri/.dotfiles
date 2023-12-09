@@ -12,6 +12,8 @@
 - [[#keys][keys]]
 - [[#groups][groups]]
 - [[#layout][layout]]
+- [[#colors][Colors]]
+- [[#widgets][widgets]]
 -  [[#assign-applications-to-a-specific-groupname][ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME]]
 - [[#der-rest][der Rest]]
 
@@ -289,7 +291,9 @@ layouts = [
     layout.Max(**layout_theme)
 ]
 
-
+#+end_src
+* Colors
+#+begin_src python 
 # COLORS FOR THE BAR
 #Theme name : ArcoLinux Default
 def init_colors():
@@ -307,13 +311,16 @@ def init_colors():
 
 colors = init_colors()
 
+#+end_src
+* widgets
+#+begin_src python 
 
 # WIDGETS FOR THE BAR
 
 def init_widgets_defaults():
-    return dict(font="Noto Sans",
+    return dict(font="Ubuntu Bold",
                 fontsize = 12,
-                padding = 2,
+                padding = 0,
                 background=colors[1])
 
 widget_defaults = init_widgets_defaults()
@@ -323,18 +330,22 @@ def init_widgets_list():
     widgets_list = [
         widget.GroupBox(
             font="FontAwesome",
-            fontsize = 16,
-            margin_y = 2,
-            margin_x = 4,
-            padding_y = 2,
+            fontsize = 15,
+            margin_y = 3, #Abstand oben
+            margin_x = 5,
+            padding_y = 3,
             padding_x = 3,
-            borderwidth = 0,
+            borderwidth = 2,
             disable_drag = True,
-            active = colors[9],
+            active = colors[8],
             inactive = colors[5],
             rounded = False,
-            highlight_method = "text",
+            highlight_color = colors[1],
+            highlight_method = "line",
             this_current_screen_border = colors[8],
+            this_screen_border = colors [4],
+            other_current_screen_border = colors[7],
+            other_screen_border = colors[9],
             foreground = colors[2],
             background = colors[1]
         ),
@@ -385,140 +396,85 @@ def init_widgets_list():
                      )
                  ],
                  ),
+        widget.Spacer(length = 8),
+        widget.CPU(
+                 format = '▓  Cpu: {load_percent}%',
+                 foreground = colors[4],
+                 decorations=[
+                     BorderDecoration(
+                         colour = colors[4],
+                         border_width = [0, 0, 2, 0],
+                     )
+                 ],
+                 ),
+        widget.Spacer(length = 8),
+        widget.Memory(
+                 foreground = colors[8],
+                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
+                 format = '{MemUsed: .0f}{mm}',
+                 fmt = '🖥  Mem: {} used',
+                 decorations=[
+                     BorderDecoration(
+                         colour = colors[8],
+                         border_width = [0, 0, 2, 0],
+                     )
+                 ],
+                 ),
+        widget.Spacer(length = 8),
+        widget.DF(
+                 update_interval = 60,
+                 foreground = colors[5],
+                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e df')},
+                 partition = '/',
+                 #format = '[{p}] {uf}{m} ({r:.0f}%)',
+                 format = '{uf}{m} free',
+                 fmt = '🖴  Disk: {}',
+                 visible_on_warn = False,
+                 decorations=[
+                     BorderDecoration(
+                         colour = colors[5],
+                         border_width = [0, 0, 2, 0],
+                     )
+                 ],
+                 ),
+        widget.Spacer(length = 8),
+        widget.Volume(
+                 foreground = colors[7],
+                 fmt = '🕫  Vol: {}',
+                 decorations=[
+                     BorderDecoration(
+                         colour = colors[7],
+                         border_width = [0, 0, 2, 0],
+                     )
+                 ],
+                 ),
+        widget.Spacer(length = 8),
 
-        # widget.Net(
-        #          font="Noto Sans",
-        #          fontsize=12,
-        #          interface="wlp0s20f3",
-        #          foreground=colors[2],
-        #          background=colors[1],
-        #          padding = 0,
+               # widget.TextBox(
+               #     font="FontAwesome",
+               #     #     text="  ",
+               #          text=" ⏱ ",
+               #     foreground=colors[3],
+               #     background=colors[1],
+               #     padding = 0,
+               #     fontsize=13
+               # ),
+        # widget.Clock(
+        #          foreground = colors[6],
+        #          format = "⏱  %H:%M   %d.%m.%Y",
+        #          decorations=[
+        #              BorderDecoration(
+        #                  colour = colors[6],
+        #                  border_width = [0, 0, 2, 0],
+        #              )
+        #          ],
         #          ),
-        #  widget.Sep(
-        #          linewidth = 1,
-        #          padding = 10,
-        #          foreground = colors[2],
-        #          background = colors[1]
-        #          ),
-        #        widget.NetGraph(
-        #            font="Noto Sans",
-        #            fontsize=12,
-        #            bandwidth="down",
-        #            interface="auto",
-        #            fill_color = colors[8],
-        #            foreground=colors[2],
-        #            background=colors[1],
-        #            graph_color = colors[8],
-        #            border_color = colors[2],
-        #            padding = 0,
-        #            border_width = 1,
-        #            line_width = 1,
-        #        ),
-        # #               widget.Sep(
-        #          linewidth = 1,
-        #          padding = 10,
-        #          foreground = colors[2],
-        #          background = colors[1]
-        #          ),
-        # # do not activate in Virtualbox - will break qtile
-        #        widget.ThermalSensor(
-        #            foreground = colors[5],
-        #            foreground_alert = colors[6],
-        #            background = colors[1],
-        #            metric = True,
-        #            padding = 3,
-        #            threshold = 80
-        #        ),
-        # # # battery option 1  ArcoLinux Horizontal icons do not forget to import arcobattery at the top
-        # widget.Sep(
-        #          linewidth = 1,
-        #          padding = 10,
-        #          foreground = colors[2],
-        #          background = colors[1]
-        #          ),
-        # arcobattery.BatteryIcon(
-        #          padding=0,
-        #          scale=0.7,
-        #          y_poss=2,
-        #          theme_path=home + "/.config/qtile/icons/battery_icons_horiz",
-        #          update_interval = 5,
-        #          background = colors[1]
-        #          ),
-        # # battery option 2  from Qtile
-        # widget.Sep(
-        #          linewidth = 1,
-        #          padding = 10,
-        #          foreground = colors[2],
-        #          background = colors[1]
-        #          ),
-        # widget.Battery(
-        #          font="Noto Sans",
-        #          update_interval = 10,
-        #          fontsize = 12,
-        #          foreground = colors[5],
-        #          background = colors[1],
-	       #              ),
-        # widget.TextBox(
-        #          font="FontAwesome",
-        #          text="  ",
-        #          foreground=colors[6],
-        #          background=colors[1],
-        #          padding = 0,
-        #          fontsize=16
-        #          ),
-        # widget.CPUGraph(
-        #          border_color = colors[2],
-        #          fill_color = colors[8],
-        #          graph_color = colors[8],
-        #          background=colors[1],
-        #          border_width = 1,
-        #          line_width = 1,
-        #          core = "all",
-        #          type = "box"
-        #          ),
-        # widget.Sep(
-        #          linewidth = 1,
-        #          padding = 10,
-        #          foreground = colors[2],
-        #          background = colors[1]
-        #          ),
-        # widget.TextBox(
-        #          font="FontAwesome",
-        #          text="  ",
-        #          foreground=colors[4],
-        #          background=colors[1],
-        #          padding = 0,
-        #          fontsize=16
-        #          ),
-        # widget.Memory(
-        #          font="Noto Sans",
-        #          format = '{MemUsed}M/{MemTotal}M',
-        #          update_interval = 1,
-        #          fontsize = 12,
-        #          foreground = colors[5],
-        #          background = colors[1],
-        #         ),
-        # widget.Sep(
-        #          linewidth = 1,
-        #          padding = 10,
-        #          foreground = colors[2],
-        #          background = colors[1]
-        #          ),
-               widget.TextBox(
-                   font="FontAwesome",
-                   #     text="  ",
-                        text=" ⏱ ",
-                   foreground=colors[3],
-                   background=colors[1],
-                   padding = 0,
-                   fontsize=16
-               ),
-        widget.Clock(
+         widget.Clock(
             foreground = colors[5],
             background = colors[1],
             fontsize = 12,
             #  format="%d.%m.%Y %H:%M"
-            format="%H:%M   %d.%m.%Y"
+            format="⏱ %H:%M   %d.%m.%Y"
         ),
         # widget.Sep(
         #          linewidth = 1,
@@ -529,7 +485,7 @@ def init_widgets_list():
                widget.Systray(
                    background=colors[1],
                    icon_size=20,
-                   padding = 4
+                   padding = 2 
                ),
     ]
     return widgets_list

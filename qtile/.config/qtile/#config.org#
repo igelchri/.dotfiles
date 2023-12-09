@@ -1,3 +1,27 @@
++TITLE: QTILE Konfiguration
+#+AUTHOR: igelchri
+#+DESCRIPTION: igelchri's  personal qtile config.
+#+PROPERTY: header-args :tangle config.py
+#+auto_tangle: t
+#+STARTUP: showeverything
+* Inhalt :toc:
+- [[#einleitung][Einleitung]]
+- [[#copyright][copyright]]
+- [[#imports][imports]]
+- [[#mod-keys--lazy-functions][mod-keys + lazy functions]]
+- [[#keys][keys]]
+- [[#groups][groups]]
+- [[#layout][layout]]
+- [[#colors][Colors]]
+- [[#widgets][widgets]]
+-  [[#assign-applications-to-a-specific-groupname][ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME]]
+- [[#der-rest][der Rest]]
+
+* Einleitung 
+Wenn man einen source-block in eine extra Datei tanglen will:
+## #+begin_src python :tangle config.py 
+* copyright
+#+begin_src python
 # Copyright (c) 2010 Aldo Cortesi
 # Copyright (c) 2010, 2014 dequis
 # Copyright (c) 2012 Randall Ma
@@ -24,6 +48,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+#+end_src
+* imports
+#+begin_src python 
+
 import os
 import re
 import socket
@@ -39,6 +67,9 @@ from qtile_extras import widget
 from qtile_extras.widget.decorations import BorderDecoration
 #from qtile_extras.widget import StatusNotifier
 
+#+end_src
+* mod-keys + lazy functions
+#+begin_src python 
 #mod4 or mod = super key
 mod = "mod4"
 mod1 = "alt"
@@ -63,7 +94,10 @@ def add_treetab_section(layout):
     prompt = qtile.widgets_map["prompt"]
     prompt.start_input("Section name: ", layout.cmd_add_section)
 
-keys = [
+#+end_src
+* keys 
+#+begin_src python
+ keys = [
 # Most of our keybindings are in sxhkd file - except these
 # SUPER + FUNCTION KEYS
 
@@ -188,6 +222,9 @@ keys.extend([
     Key([mod,"shift"], "Left", lazy.function(window_to_previous_screen, switch_screen=True)),
 ])
 
+#+end_src
+* groups
+#+begin_src python
 groups = []
 
 # FOR QWERTY KEYBOARDS
@@ -227,6 +264,11 @@ for i in groups:
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name) , lazy.group[i.name].toscreen()),
     ])
 
+ 
+#+end_src
+* layout
+#+begin_src python 
+
 def init_layout_theme():
     return {"margin":5,
             "border_width":2,
@@ -249,6 +291,9 @@ layouts = [
     layout.Max(**layout_theme)
 ]
 
+#+end_src
+* Colors
+#+begin_src python 
 # COLORS FOR THE BAR
 #Theme name : ArcoLinux Default
 def init_colors():
@@ -265,6 +310,10 @@ def init_colors():
 
 
 colors = init_colors()
+
+#+end_src
+* widgets
+#+begin_src python 
 
 # WIDGETS FOR THE BAR
 
@@ -401,15 +450,15 @@ def init_widgets_list():
                  ),
         widget.Spacer(length = 8),
 
-               # widget.TextBox(
-               #     font="FontAwesome",
-               #     #     text="  ",
-               #          text=" ⏱ ",
-               #     foreground=colors[3],
-               #     background=colors[1],
-               #     padding = 0,
-               #     fontsize=13
-               # ),
+               widget.TextBox(
+                   font="FontAwesome",
+                   #     text="  ",
+                        text=" ⏱ ",
+                   foreground=colors[3],
+                   background=colors[1],
+                   padding = 0,
+                   fontsize=16
+               ),
         # widget.Clock(
         #          foreground = colors[6],
         #          format = "⏱  %H:%M   %d.%m.%Y",
@@ -420,12 +469,13 @@ def init_widgets_list():
         #              )
         #          ],
         #          ),
-         widget.Clock(
+        
+ widget.Clock(
             foreground = colors[5],
             background = colors[1],
             fontsize = 12,
             #  format="%d.%m.%Y %H:%M"
-            format="⏱ %H:%M   %d.%m.%Y"
+            format="%H:%M   %d.%m.%Y"
         ),
         # widget.Sep(
         #          linewidth = 1,
@@ -436,7 +486,7 @@ def init_widgets_list():
                widget.Systray(
                    background=colors[1],
                    icon_size=20,
-                   padding = 2 
+                   padding = 4
                ),
     ]
     return widgets_list
@@ -473,7 +523,12 @@ mouse = [
 dgroups_key_binder = None
 dgroups_app_rules = []
 
-# ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
+
+#+end_src
+*  ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
+
+#+begin_src python
+ # ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
 # BEGIN
 
 #########################################################
@@ -514,6 +569,10 @@ dgroups_app_rules = []
 
 # END
 # ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
+#+end_src
+* der Rest
+
+#+begin_src python 
 
 main = None
 
@@ -570,5 +629,8 @@ auto_fullscreen = True
 focus_on_window_activation = "focus" # or smart
 
 wmname = "LG3D"
+#+end_src
 
 
+#+begin_src python 
+#+end_src

@@ -14,6 +14,7 @@
   - [[#einstellungen-für-rofi][Einstellungen für Rofi]]
   - [[#pc-speaker-stummschalten][PC-Speaker stummschalten]]
   - [[#chaotics-repo][Chaotics-Repo]]
+  - [[#damit-bei-dtos-die-deutsche-tastatur-funktiniert][damit bei DTOS die deutsche Tastatur funktiniert:]]
 
 * About:
 Meine .dotfiles, mit GNU-stow verwaltet
@@ -134,3 +135,5 @@ Zum installieren:
 Include = /etc/pacman.d/chaotic-mirrorlist
 
 : sudo pacman -Syyu
+** damit bei DTOS die deutsche Tastatur funktiniert:
+in der qtile config.py das widget keyboard layout rausnehmen!
