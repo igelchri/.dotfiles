@@ -29,11 +29,15 @@ import re
 import socket
 import subprocess
 from typing import List  # noqa: F401
-from libqtile import layout, bar, widget, hook
-from libqtile.config import Click, Drag, Group, Key, Match, Screen, Rule
+from libqtile import bar, extension, hook, layout, qtile, widget
+#from libqtile import layout, bar, widget, hook
+from libqtile.config import Click, Drag, Group, Key, Match, Screen, Rule, KeyChord
 from libqtile.command import lazy
 from libqtile.widget import Spacer
 #import arcobattery
+from qtile_extras import widget
+from qtile_extras.widget.decorations import BorderDecoration
+#from qtile_extras.widget import StatusNotifier
 
 #mod4 or mod = super key
 mod = "mod4"
@@ -52,6 +56,12 @@ def window_to_next_group(qtile):
     if qtile.currentWindow is not None:
         i = qtile.groups.index(qtile.currentGroup)
         qtile.currentWindow.togroup(qtile.groups[i + 1].name)
+
+# Allows you to input a name when adding treetab section.
+@lazy.layout.function
+def add_treetab_section(layout):
+    prompt = qtile.widgets_map["prompt"]
+    prompt.start_input("Section name: ", layout.cmd_add_section)
 
 keys = [
 # Most of our keybindings are in sxhkd file - except these
@@ -322,6 +332,20 @@ def init_widgets_list():
                           foreground = colors[5],
                           background = colors[1],
                           ),
+
+ widget.GenPollText(
+                 update_interval = 300,
+                 func = lambda: subprocess.check_output("printf $(uname -r)", shell=True, text=True),
+                 foreground = colors[3],
+                 fmt = '❤  {}',
+                 decorations=[
+                     BorderDecoration(
+                         colour = colors[3],
+                         border_width = [0, 0, 2, 0],
+                     )
+                 ],
+                 ),
+
         # widget.Net(
         #          font="Noto Sans",
         #          fontsize=12,
