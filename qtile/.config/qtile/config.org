@@ -11,9 +11,9 @@
 - [[#mod-keys--lazy-functions][mod-keys + lazy functions]]
 - [[#keys][keys]]
 - [[#groups][groups]]
-- [[#layout][layout]]
 - [[#colors][Colors]]
 - [[#colorscheme][colorscheme]]
+- [[#layout][layout]]
 - [[#widgets][widgets]]
 -  [[#assign-applications-to-a-specific-groupname][ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME]]
 - [[#der-rest][der Rest]]
@@ -67,7 +67,7 @@ from libqtile.widget import Spacer
 from qtile_extras import widget
 from qtile_extras.widget.decorations import BorderDecoration
 #from qtile_extras.widget import StatusNotifier
-#import colors  #import Colorthemes from dtos
+import colors  #import Colorthemes from dtos
 
 #+end_src
 * mod-keys + lazy functions
@@ -271,50 +271,24 @@ for i in groups:
 
  
 #+end_src
-* layout
-#+begin_src python 
-
-def init_layout_theme():
-    return {"margin":5,
-            "border_width":2,
-            "border_focus": "#5e81ac",
-            "border_normal": "#4c566a"
-            }
-
-layout_theme = init_layout_theme()
-
-
-layouts = [
-    #layout.MonadTall(margin=8, border_width=2, border_focus="#5e81ac", border_normal="#4c566a"),
-    layout.MonadTall(**layout_theme),
-    #layout.MonadWide(margin=8, border_width=2, border_focus="#5e81ac", border_normal="#4c566a"),
-    layout.MonadWide(**layout_theme),
-    layout.Matrix(**layout_theme),
-    layout.Bsp(**layout_theme),
-    layout.Floating(**layout_theme),
-    layout.RatioTile(**layout_theme),
-    layout.Max(**layout_theme)
-]
-
-#+end_src
 * Colors
 #+begin_src python 
 # COLORS FOR THE BAR
 #Theme name : ArcoLinux Default
-def init_colors():
-    return [["#2F343F", "#2F343F"], # color 0
-            ["#2F343F", "#2F343F"], # color 1
-            ["#c0c5ce", "#c0c5ce"], # color 2
-            ["#fba922", "#fba922"], # color 3
-            ["#3384d0", "#3384d0"], # color 4
-            ["#f3f4f5", "#f3f4f5"], # color 5
-            ["#cd1f3f", "#cd1f3f"], # color 6
-            ["#62FF00", "#62FF00"], # color 7
-            ["#6790eb", "#6790eb"], # color 8
-            ["#a9a9a9", "#a9a9a9"]] # color 9
+# def init_colors():
+#     return [["#2F343F", "#2F343F"], # color 0
+#             ["#2F343F", "#2F343F"], # color 1
+#             ["#c0c5ce", "#c0c5ce"], # color 2
+#             ["#fba922", "#fba922"], # color 3
+#             ["#3384d0", "#3384d0"], # color 4
+#             ["#f3f4f5", "#f3f4f5"], # color 5
+#             ["#cd1f3f", "#cd1f3f"], # color 6
+#             ["#62FF00", "#62FF00"], # color 7
+#             ["#6790eb", "#6790eb"], # color 8
+#             ["#a9a9a9", "#a9a9a9"]] # color 9
 
 
-colors = init_colors()
+# colors = init_colors()
 #+end_src
 * colorscheme
 #+begin_src python 
@@ -336,7 +310,39 @@ colors = init_colors()
 # It is best not manually change the colorscheme; instead run 'dtos-colorscheme'
 # which is set to 'MOD + p c'
 
-#colors = colors.DoomOne
+colors = colors.DoomOne
+#+end_src
+
+* layout
+#+begin_src python 
+
+# def init_layout_theme():
+#     return {"margin":5,
+#             "border_width":2,
+#             "border_focus": "#5e81ac",
+#             "border_normal": "#4c566a"
+#             }
+
+# layout_theme = init_layout_theme()
+layout_theme = {"border_width": 2,
+                "margin": 8,
+                "border_focus": colors[8],
+                "border_normal": colors[0]
+                }
+
+
+layouts = [
+    #layout.MonadTall(margin=8, border_width=2, border_focus="#5e81ac", border_normal="#4c566a"),
+    layout.MonadTall(**layout_theme),
+    #layout.MonadWide(margin=8, border_width=2, border_focus="#5e81ac", border_normal="#4c566a"),
+    layout.MonadWide(**layout_theme),
+    layout.Matrix(**layout_theme),
+    layout.Bsp(**layout_theme),
+    layout.Floating(**layout_theme),
+    layout.RatioTile(**layout_theme),
+    layout.Max(**layout_theme)
+]
+
 #+end_src
 * widgets
 #+begin_src python 
@@ -348,6 +354,15 @@ def init_widgets_defaults():
                 fontsize = 12,
                 padding = 0,
                 background=colors[1])
+
+widget_defaults = init_widgets_defaults()
+
+
+def init_widgets_defaults():
+    return dict(font="Ubuntu Bold",
+                fontsize = 12,
+                padding = 0,
+                background=colors[0])
 
 widget_defaults = init_widgets_defaults()
 
@@ -364,50 +379,44 @@ def init_widgets_list():
             borderwidth = 2,
             disable_drag = True,
             active = colors[8],
-            inactive = colors[5],
+            inactive = colors[1],
             rounded = False,
-            highlight_color = colors[1],
+            highlight_color = colors[2],
             highlight_method = "line",
-            this_current_screen_border = colors[8],
+            this_current_screen_border = colors[7],
             this_screen_border = colors [4],
             other_current_screen_border = colors[7],
-            other_screen_border = colors[9],
-            foreground = colors[2],
-            background = colors[1]
+            other_screen_border = colors[4],
+            foreground = colors[1],
         ),
         widget.Sep(
             linewidth = 1,
             padding = 10,
-            foreground = colors[2],
-            background = colors[1]
+            foreground = colors[1],
         ),
         widget.CurrentLayoutIcon(
             # custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
-            foreground = colors[5],
+            foreground = colors[1],
             #  padding = 0,
             scale = 0.7
         ),
         widget.Sep(
             linewidth = 0,
             padding = 5,
-            foreground = colors[2],
-            background = colors[1]
+            foreground = colors[1],
         ),
         widget.CurrentLayout(
             font = "Noto Sans Bold",
-            foreground = colors[5],
-            background = colors[1]
+            foreground = colors[1],
         ),
         widget.Sep(
             linewidth = 1,
             padding = 10,
-            foreground = colors[2],
-            background = colors[1]
+            foreground = colors[1],
         ),
         widget.WindowName(font="Noto Sans",
                           fontsize = 12,
-                          foreground = colors[5],
-                          background = colors[1],
+                          foreground = colors[6],
                           ),
 
  widget.GenPollText(
@@ -496,20 +505,26 @@ def init_widgets_list():
         #          ],
         #          ),
          widget.Clock(
-            foreground = colors[5],
-            background = colors[1],
-            fontsize = 12,
-            #  format="%d.%m.%Y %H:%M"
-            format="⏱ %H:%M   %d.%m.%Y"
-        ),
+            foreground = colors[6],
+            format="⏱ %H:%M   %d.%m.%Y",
+             decorations=[
+                     BorderDecoration(
+                         colour = colors[6],
+                         border_width = [0, 0, 2, 0],
+                  
+        ) 
+             ],
+             ),
+
         # widget.Sep(
         #          linewidth = 1,
         #          padding = 10,
         #          foreground = colors[2],
         #          background = colors[1]
         #          ),
+        widget.Spacer(length = 8),
+
                widget.Systray(
-                   background=colors[1],
                    icon_size=20,
                    padding = 2 
                ),

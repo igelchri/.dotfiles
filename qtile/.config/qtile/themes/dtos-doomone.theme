@@ -2,7 +2,6 @@
 #Theme name : dtos DoomOne
 def init_colors():
     return [
-	    ["#282c34", "#282c34"], # color 0
             ["#282c34", "#282c34"], # color 1
             ["#bbc2cf", "#bbc2cf"], # color 2
             ["#1c1f24", "#1c1f24"], # color 3
