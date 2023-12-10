@@ -13,6 +13,7 @@
 - [[#groups][groups]]
 - [[#layout][layout]]
 - [[#colors][Colors]]
+- [[#colorscheme][colorscheme]]
 - [[#widgets][widgets]]
 -  [[#assign-applications-to-a-specific-groupname][ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME]]
 - [[#der-rest][der Rest]]
@@ -66,6 +67,7 @@ from libqtile.widget import Spacer
 from qtile_extras import widget
 from qtile_extras.widget.decorations import BorderDecoration
 #from qtile_extras.widget import StatusNotifier
+#import colors  #import Colorthemes from dtos
 
 #+end_src
 * mod-keys + lazy functions
@@ -75,6 +77,9 @@ mod = "mod4"
 mod1 = "alt"
 mod2 = "control"
 home = os.path.expanduser('~')
+myTerm = "alacritty"      # My terminal of choice
+myBrowser = "brave" # My browser of choice
+myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
 
 @lazy.function
 def window_to_prev_group(qtile):
@@ -310,7 +315,28 @@ def init_colors():
 
 
 colors = init_colors()
+#+end_src
+* colorscheme
+#+begin_src python 
+### COLORSCHEME ###
+# Colors are defined in a separate 'colors.py' file.
+# There 10 colorschemes available to choose from:
+#
+# colors = colors.DoomOne
+# colors = colors.Dracula
+# colors = colors.GruvboxDark
+# colors = colors.MonokaiPro
+# colors = colors.Nord
+# colors = colors.OceanicNext
+# colors = colors.Palenight
+# colors = colors.SolarizedDark
+# colors = colors.SolarizedLight
+# colors = colors.TomorrowNight
+#
+# It is best not manually change the colorscheme; instead run 'dtos-colorscheme'
+# which is set to 'MOD + p c'
 
+#colors = colors.DoomOne
 #+end_src
 * widgets
 #+begin_src python 

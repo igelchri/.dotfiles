@@ -38,12 +38,16 @@ from libqtile.widget import Spacer
 from qtile_extras import widget
 from qtile_extras.widget.decorations import BorderDecoration
 #from qtile_extras.widget import StatusNotifier
+#import colors  #import Colorthemes from dtos
 
 #mod4 or mod = super key
 mod = "mod4"
 mod1 = "alt"
 mod2 = "control"
 home = os.path.expanduser('~')
+myTerm = "alacritty"      # My terminal of choice
+myBrowser = "brave" # My browser of choice
+myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
 
 @lazy.function
 def window_to_prev_group(qtile):
@@ -250,21 +254,42 @@ layouts = [
 ]
 
 # COLORS FOR THE BAR
-#Theme name : ArcoLinux Default
+#Theme name : dtos Monokaipro
 def init_colors():
-    return [["#2F343F", "#2F343F"], # color 0
-            ["#2F343F", "#2F343F"], # color 1
-            ["#c0c5ce", "#c0c5ce"], # color 2
-            ["#fba922", "#fba922"], # color 3
-            ["#3384d0", "#3384d0"], # color 4
-            ["#f3f4f5", "#f3f4f5"], # color 5
-            ["#cd1f3f", "#cd1f3f"], # color 6
-            ["#62FF00", "#62FF00"], # color 7
-            ["#6790eb", "#6790eb"], # color 8
-            ["#a9a9a9", "#a9a9a9"]] # color 9
-
+    return [
+	    ["#2D2A2E", "#2D2A2E"], # color 0
+            ["#2D2A2E", "#2D2A2E"], # color 1
+            ["#FCFCFA", "#FCFCFA"], # color 2
+            ["#403E41", "#403E41"], # color 3
+            ["#FF6188", "#FF6188"], # color 4
+            ["#A9DC76", "#A9DC76"], # color 5
+            ["#FFD866", "#FFD866"], # color 6
+            ["#FC9867", "#FC9867"], # color 7
+            ["#AB9DF2", "#AB9DF2"], # color 8
+            ["#78DCE8", "#78DCE8"] # color 9
+	    ]
 
 colors = init_colors()
+
+### COLORSCHEME ###
+# Colors are defined in a separate 'colors.py' file.
+# There 10 colorschemes available to choose from:
+#
+# colors = colors.DoomOne
+# colors = colors.Dracula
+# colors = colors.GruvboxDark
+# colors = colors.MonokaiPro
+# colors = colors.Nord
+# colors = colors.OceanicNext
+# colors = colors.Palenight
+# colors = colors.SolarizedDark
+# colors = colors.SolarizedLight
+# colors = colors.TomorrowNight
+#
+# It is best not manually change the colorscheme; instead run 'dtos-colorscheme'
+# which is set to 'MOD + p c'
+
+#colors = colors.DoomOne
 
 # WIDGETS FOR THE BAR
 

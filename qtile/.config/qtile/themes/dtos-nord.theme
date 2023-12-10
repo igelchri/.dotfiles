@@ -1,0 +1,17 @@
+# COLORS FOR THE BAR
+#Theme name : dtos DoomOne
+def init_colors():
+    return [
+	    ["#2E3440", "#2E3440"], # color 0
+            ["#2E3440", "#2E3440"], # color 1
+            ["#D8DEE9", "#D8DEE9"], # color 2
+            ["#3B4252", "#3B4252"], # color 3
+            ["#BF616A", "#BF616A"], # color 4
+            ["#A3BE8C", "#A3BE8C"], # color 5
+            ["#EBCB8B", "#EBCB8B"], # color 6
+            ["#81A1C1", "#81A1C1"], # color 7
+            ["#B48EAD", "#B48EAD"], # color 8
+            ["#88C0D0", "#88C0D0"] # color 9
+	    ]
+
+colors = init_colors()
