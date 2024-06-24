@@ -1,13 +1,13 @@
 * Inhalt: :toc:
 - [[#about][About:]]
 - [[#qtile][qtile]]
-  - [[#qtile-extra][qtile-extra]]
+  - [[#qtile-extras][qtile-extras]]
 - [[#fonts][fonts]]
   - [[#für-dtmacs][für dtmacs:]]
 - [[#programme][Programme]]
   - [[#terminal][Terminal]]
   - [[#gui][GUI]]
-  - [[#doom-emacs][DOOM Emacs]]
+  - [[#emacs][Emacs]]
   - [[#zen-kernel][Zen-Kernel]]
   - [[#frogging-family-nvidia-treiber][Frogging family Nvidia-Treiber]]
 - [[#system-tweaks][System-Tweaks]]
@@ -18,9 +18,9 @@
 
 * About:
 Meine .dotfiles, mit GNU-stow verwaltet
-Ich verwende Archcraft-Linux, ein arch-derivat
+Ich verwende Arco-Linux, ein archlinux-derivat
 * qtile
-** qtile-extra
+** qtile-extras
 yay -S qtile-extras
 * fonts
 ** für dtmacs:
@@ -57,25 +57,10 @@ pacman -S ttf-jetbrains-mono-nerd
 - zathura #PDF
 - piper #logitech maus config
 - peazip
-** DOOM Emacs
+** Emacs
 : git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
 : ~/.config/emacs/bin/doom install
-
-It's a good idea to add ~/.config/emacs/bin to your PATH!
-
-Other bin/doom commands you should know about:
-
-- doom sync
-    to synchronize your private config with Doom by installing missing packages, removing orphaned packages, and regenerating caches. Run this whenever you modify your private init.el or packages.el, or install/remove an Emacs package through your OS package manager (e.g. mu4e or agda).
-- doom upgrade
-    to update Doom to the latest release & all installed packages.
-- doom doctor
-    to diagnose common issues with your system and config.
- - doom env
-    to dump a snapshot of your shell environment to a file that Doom will load at startup. This allows Emacs to inherit your PATH, among other things.
- - doom build
-    to recompile all installed packages (use this if you up/downgrade Emacs).
-***** org-roam
+*** org-roam
 Zum installieren:
 - in die init.el
 :       (org
@@ -99,7 +84,6 @@ Zum installieren:
 #+end_src
 - den org-roam Ordner anlegen
   # mkdir ~/Notes
-- run doom sync -u
 
 ** Zen-Kernel
 : pacman -S linux-zen linux-zen-headers nvidia-dkms lib32-nvidia-utils  lib32-opencl-nvidia
