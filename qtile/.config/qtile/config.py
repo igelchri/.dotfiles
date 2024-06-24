@@ -324,7 +324,7 @@ for i in groups:
 #colors = colors.DoomOne
 colors = colors.Everblush
 
-layout_theme = {"border_width": 2,
+layout_theme = {"border_width": 1,
                 "margin": 8,
                 "border_focus": colors[6],
                 "border_normal": colors[0]
