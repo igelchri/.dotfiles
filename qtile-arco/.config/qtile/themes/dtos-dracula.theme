@@ -1,0 +1,17 @@
+# COLORS FOR THE BAR
+#Theme name : dtos Dracula 
+def init_colors():
+    return [
+	    ["#282a36", "#282a36"], # color 0
+            ["#282a36", "#282a36"], # color 1
+            ["#f8f8f2", "#f8f8f2"], # color 2
+            ["#000000", "#000000"], # color 3
+            ["#ff5555", "#ff5555"], # color 4
+            ["#50fa7b", "#50fa7b"], # color 5
+            ["#f1fa8c", "#f1fa8c"], # color 6
+            ["#bd93f9", "#bd93f9"], # color 7
+            ["#ff79c6", "#ff79c6"], # color 8
+            ["#9aedfe", "#9aedfe"] # color 9
+	    ]
+
+colors = init_colors()

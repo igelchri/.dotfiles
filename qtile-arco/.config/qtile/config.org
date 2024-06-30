@@ -1,3 +1,28 @@
++TITLE: QTILE Konfiguration
+#+AUTHOR: igelchri
+#+DESCRIPTION: igelchri's  personal qtile config.
+#+PROPERTY: header-args :tangle config.py
+#+auto_tangle: t
+#+STARTUP: showeverything
+* Inhalt :toc:
+- [[#einleitung][Einleitung]]
+- [[#copyright][copyright]]
+- [[#imports][imports]]
+- [[#mod-keys--lazy-functions][mod-keys + lazy functions]]
+- [[#keys][keys]]
+- [[#groups][groups]]
+- [[#colorscheme][colorscheme]]
+- [[#layout][layout]]
+- [[#widgets][widgets]]
+-  [[#assign-applications-to-a-specific-groupname][ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME]]
+- [[#der-rest][der Rest]]
+- [[#dtos-color-shemes][DTOS Color-Shemes]]
+
+* Einleitung 
+Wenn man einen source-block in eine extra Datei tanglen will:
+## #+begin_src python :tangle config.py 
+* copyright
+#+begin_src python
 # Copyright (c) 2010 Aldo Cortesi
 # Copyright (c) 2010, 2014 dequis
 # Copyright (c) 2012 Randall Ma
@@ -24,6 +49,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+#+end_src
+* imports
+#+begin_src python 
+
 import os
 #import re
 #import socket
@@ -42,6 +71,9 @@ from qtile_extras.widget.decorations import BorderDecoration
 #from qtile_extras.widget import StatusNotifier
 import colors  #import Colorthemes from dtos
 
+#+end_src
+* mod-keys + lazy functions
+#+begin_src python 
 #mod4 or mod = super key
 mod = "mod4"
 mod1 = "alt"
@@ -87,7 +119,10 @@ def maximize_by_switching_layout(qtile):
     elif current_layout_name == 'max':
         qtile.current_group.layout = 'monadtall'
 
-keys = [
+#+end_src
+* keys 
+#+begin_src python
+ keys = [
 # Most of our keybindings are in sxhkd file - except these
 # SUPER + FUNCTION KEYS
  ### Terminal starten wie in Archcraft
@@ -262,6 +297,9 @@ keys.extend([
     Key([mod,"shift"], "Left", lazy.function(window_to_previous_screen, switch_screen=True)),
 ])
 
+#+end_src
+* groups
+#+begin_src python
 groups = []
 
 # FOR QWERTY KEYBOARDS
@@ -302,7 +340,10 @@ for i in groups:
             ),
         ]
     )
-
+ 
+#+end_src
+* colorscheme
+#+begin_src python 
 ### COLORSCHEME ###
 # Colors are defined in a separate 'colors.py' file.
 # There 10 colorschemes available to choose from:
@@ -323,6 +364,10 @@ for i in groups:
 
 #colors = colors.DoomOne
 colors = colors.Everblush
+#+end_src
+
+* layout
+#+begin_src python 
 
 layout_theme = {"border_width": 1,
                 "margin": 8,
@@ -375,6 +420,10 @@ layouts = [
     #     ),
     #layout.Zoomy(**layout_theme),
 ]
+
+#+end_src
+* widgets
+#+begin_src python 
 
 # WIDGETS FOR THE BAR
 
@@ -579,7 +628,11 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 
-# ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
+#+end_src
+*  ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
+
+#+begin_src python
+ # ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
 # BEGIN
 
 #########################################################
@@ -620,6 +673,10 @@ cursor_warp = False
 
 # END
 # ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
+#+end_src
+* der Rest
+
+#+begin_src python 
 
 @hook.subscribe.startup_once
 def start_once():
@@ -692,3 +749,142 @@ auto_minimize = True
 wl_input_rules = None
 
 wmname = "LG3D"
+#+end_src
+* DTOS Color-Shemes
+#+begin_src python :tangle colors.py
+### DTOS Color-shemes
+# If using transparency, make sure you add (background="#00000000") to 'Screen' line(s).
+# Then, you can use RGBA color codes to add transparency to the colors below.
+# For ex: colors = [["#282c34ee", "#282c34dd"], ...
+DoomOne = [
+    ["#282c34", "#282c34"], # bg
+    ["#bbc2cf", "#bbc2cf"], # fg
+    ["#1c1f24", "#1c1f24"], # color01
+    ["#ff6c6b", "#ff6c6b"], # color02
+    ["#98be65", "#98be65"], # color03
+    ["#da8548", "#da8548"], # color04
+    ["#51afef", "#51afef"], # color05
+    ["#c678dd", "#c678dd"], # color06
+    ["#46d9ff", "#46d9ff"]  # color15
+    ]
+
+Dracula  = [
+    ["#282a36", "#282a36"], # bg
+    ["#f8f8f2", "#f8f8f2"], # fg
+    ["#000000", "#000000"], # color01
+    ["#ff5555", "#ff5555"], # color02
+    ["#50fa7b", "#50fa7b"], # color03
+    ["#f1fa8c", "#f1fa8c"], # color04
+    ["#bd93f9", "#bd93f9"], # color05
+    ["#ff79c6", "#ff79c6"], # color06
+    ["#9aedfe", "#9aedfe"]  # color15
+    ]
+
+GruvboxDark  = [
+    ["#282828", "#282828"], # bg
+    ["#ebdbb2", "#ebdbb2"], # fg
+    ["#000000", "#000000"], # color01
+    ["#fb4934", "#fb4934"], # color02
+    ["#98971a", "#98971a"], # color03
+    ["#d79921", "#d79921"], # color04
+    ["#83a598", "#83a598"], # color05
+    ["#d3869b", "#d3869b"], # color06
+    ["#b8bb26", "#b8bb26"], # color11
+    ]
+MonokaiPro = [
+    ["#2D2A2E", "#2D2A2E"], # bg
+    ["#FCFCFA", "#FCFCFA"], # fg
+    ["#403E41", "#403E41"], # color01
+    ["#FF6188", "#FF6188"], # color02
+    ["#A9DC76", "#A9DC76"], # color03
+    ["#FFD866", "#FFD866"], # color04
+    ["#FC9867", "#FC9867"], # color05
+    ["#AB9DF2", "#AB9DF2"], # color06
+    ["#78DCE8", "#78DCE8"]  # color07
+    ]
+
+Nord = [
+    ["#2E3440", "#2E3440"], # bg
+    ["#D8DEE9", "#D8DEE9"], # fg
+    ["#3B4252", "#3B4252"], # color01
+    ["#BF616A", "#BF616A"], # color02
+    ["#A3BE8C", "#A3BE8C"], # color03
+    ["#EBCB8B", "#EBCB8B"], # color04
+    ["#81A1C1", "#81A1C1"], # color05
+    ["#B48EAD", "#B48EAD"], # color06
+    ["#88C0D0", "#88C0D0"]  # color07
+    ]
+
+OceanicNext = [
+    ["#1b2b34", "#1b2b34"], # bg
+    ["#d8dee9", "#d8dee9"], # fg
+    ["#29414f", "#29414f"], # color01
+    ["#ec5f67", "#ec5f67"], # color02
+    ["#99c794", "#99c794"], # color03
+    ["#fac863", "#fac863"], # color04
+    ["#6699cc", "#6699cc"], # color05
+    ["#c594c5", "#c594c5"], # color06
+    ["#5fb3b3", "#5fb3b3"]  # color07
+    ]
+
+Palenight = [
+    ["#292d3e", "#292d3e"], # bg
+    ["#d0d0d0", "#d0d0d0"], # fg
+    ["#434758", "#434758"], # color01
+    ["#f07178", "#f07178"], # color02
+    ["#c3e88d", "#c3e88d"], # color03
+    ["#ffcb6b", "#ffcb6b"], # color04
+    ["#82aaff", "#82aaff"], # color05
+    ["#c792ea", "#c792ea"], # color06
+    ["#89ddff", "#89ddff"]  # color15
+    ]
+
+SolarizedDark = [
+    ["#002b36", "#002b36"], # bg
+    ["#839496", "#839496"], # fg
+    ["#073642", "#073642"], # color01
+    ["#dc322f", "#dc322f"], # color02
+    ["#859900", "#859900"], # color03
+    ["#b58900", "#b58900"], # color04
+    ["#268bd2", "#268bd2"], # color05
+    ["#d33682", "#d33682"], # color06
+    ["#2aa198", "#2aa198"]  # color15
+    ]
+
+SolarizedLight = [
+    ["#fdf6e3", "#fdf6e3"], # bg
+    ["#657b83", "#657b83"], # fg
+    ["#ece5ac", "#ece5ac"], # color01
+    ["#dc322f", "#dc322f"], # color02
+    ["#859900", "#859900"], # color03
+    ["#b58900", "#b58900"], # color04
+    ["#268bd2", "#268bd2"], # color05
+    ["#d33682", "#d33682"], # color06
+    ["#2aa198", "#2aa198"]  # color15
+    ]
+
+TomorrowNight = [
+    ["#1d1f21", "#1d1f21"], # bg
+    ["#c5c8c6", "#c5c8c6"], # fg
+    ["#373b41", "#373b41"], # color01
+    ["#cc6666", "#cc6666"], # color02
+    ["#b5bd68", "#b5bd68"], # color03
+    ["#e6c547", "#e6c547"], # color04
+    ["#81a2be", "#81a2be"], # color05
+    ["#b294bb", "#b294bb"], # color06
+    ["#70c0ba", "#70c0ba"]  # color15
+    ]
+## hier mal ein Versuch für Everblush
+Everblush = [
+    ["#2f343f", "#2f343f"], # bg  (arc farben)
+    ["#dadada", "#dadada"], # fg
+    ["#232a2d", "#232a2d"], # color01 black
+    ["#e57474", "#e57474"], # color02 red
+    ["#8ccf7e", "#8ccf7e"], # color03 green
+    ["#e5c76b", "#e5c76b"], # color04 yellow
+    ["#67b0e8", "#67b0e8"], # color05 blue
+    ["#c47fd5", "#c47fd5"], # color06 magenta
+    ["#6cbfbf", "#6cbfbf"]  # color15 cyan
+   
+] 
+#+end_src

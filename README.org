@@ -7,7 +7,7 @@
 - [[#programme][Programme]]
   - [[#terminal][Terminal]]
   - [[#gui][GUI]]
-  - [[#emacs][Emacs]]
+  - [[#emacs-dtmacs---distrotubes-emacs-config][Emacs (dtmacs - Distrotube's Emacs Config)]]
   - [[#zen-kernel][Zen-Kernel]]
   - [[#frogging-family-nvidia-treiber][Frogging family Nvidia-Treiber]]
 - [[#system-tweaks][System-Tweaks]]
@@ -18,7 +18,7 @@
 
 * About:
 Meine .dotfiles, mit GNU-stow verwaltet
-Ich verwende Arco-Linux, ein archlinux-derivat
+Ich verwende Archcraft-Linux, ein archlinux-derivat
 * qtile
 ** qtile-extras
 yay -S qtile-extras
@@ -30,9 +30,9 @@ pacman -S ttf-ubuntu-font-family
 pacman -S ttf-jetbrains-mono-nerd
 * Programme
 ** Terminal
-  + ksuperkey
+  + ksuperkey (in Archcraft enthalten)
     Programm um z.B. Rofi nur mit Druck auf die Supertaste zu starten
-  + exa
+  + exa oder lsd
     verbessertes ls in Rust mit icons, Farbe usw.
   + gnu stow
     (yay -S stow)
@@ -57,9 +57,8 @@ pacman -S ttf-jetbrains-mono-nerd
 - zathura #PDF
 - piper #logitech maus config
 - peazip
-** Emacs
-: git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
-: ~/.config/emacs/bin/doom install
+** Emacs (dtmacs - Distrotube's Emacs Config)
+: git clone https://gitlab.com/dwt1/dotfiles.git
 *** org-roam
 Zum installieren:
 - in die init.el

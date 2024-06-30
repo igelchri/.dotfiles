@@ -1,0 +1,17 @@
+# COLORS FOR THE BAR
+#Theme name : dtos Palenight 
+def init_colors():
+    return [
+	    ["#292d3e", "#292d3e"], # color 0
+            ["#292d3e", "#292d3e"], # color 1
+            ["#d0d0d0", "#d0d0d0"], # color 2
+            ["#434758", "#434758"], # color 3
+            ["#f07178", "#f07178"], # color 4
+            ["#c3e88d", "#c3e88d"], # color 5
+            ["#ffcb6b", "#ffcb6b"], # color 6
+            ["#82aaff", "#82aaff"], # color 7
+            ["#c792ea", "#c792ea"], # color 8
+            ["#89ddff", "#89ddff"] # color 9
+	    ]
+
+colors = init_colors()
