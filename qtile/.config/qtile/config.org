@@ -452,8 +452,9 @@ def init_widgets_list():
 #        ),
 
         widget.GroupBox(
-                 font="FontAwesome",
-                 fontsize = 12,
+                 #font="FontAwesome",
+#                 fontsize = 12,
+                 fontsize = 11,
                  margin_y = 5,
                  margin_x = 5,
                  padding_y = 0,

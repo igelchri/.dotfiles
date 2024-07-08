@@ -87,7 +87,7 @@ def maximize_by_switching_layout(qtile):
     elif current_layout_name == 'max':
         qtile.current_group.layout = 'monadtall'
 
-keys = [
+ keys = [
 # Most of our keybindings are in sxhkd file - except these
 # SUPER + FUNCTION KEYS
  ### Terminal starten wie in Archcraft
@@ -403,8 +403,9 @@ def init_widgets_list():
 #        ),
 
         widget.GroupBox(
-                 font="FontAwesome",
-                 fontsize = 12,
+                 #font="FontAwesome",
+#                 fontsize = 12,
+                 fontsize = 11,
                  margin_y = 5,
                  margin_x = 5,
                  padding_y = 0,
@@ -579,7 +580,7 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 
-# ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
+ # ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
 # BEGIN
 
 #########################################################
