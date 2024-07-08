@@ -1,0 +1,1 @@
+/home/chris/.config/emacs/elpaca/repos/themes/doom-themes-base.el

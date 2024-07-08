@@ -1,1 +1,0 @@
-../.dotfiles/general_settings/.screenlayout/office.sh

@@ -1,0 +1,1 @@
+/home/chris/.config/emacs/elpaca/repos/magit/lisp/magit-notes.el
