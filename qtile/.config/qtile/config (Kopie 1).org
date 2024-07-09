@@ -1,22 +1,101 @@
++TITLE: QTILE Konfiguration
+#+AUTHOR: igelchri
+#+DESCRIPTION: igelchri's  personal qtile config.
+#+PROPERTY: header-args :tangle config.py
+#+auto_tangle: t
+#+STARTUP: showeverything
+* Inhalt :toc:
+- [[#einleitung][Einleitung]]
+- [[#copyright][copyright]]
+- [[#imports][imports]]
+- [[#mod-keys--lazy-functions][mod-keys + lazy functions]]
+- [[#keys][keys]]
+- [[#groups][groups]]
+- [[#colorscheme][colorscheme]]
+- [[#layout][layout]]
+- [[#widgets][widgets]]
+-  [[#assign-applications-to-a-specific-groupname][ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME]]
+- [[#der-rest][der Rest]]
+- [[#dtos-color-shemes][DTOS Color-Shemes]]
+
+* Einleitung 
+Wenn man einen source-block in eine extra Datei tanglen will:
+## #+begin_src python :tangle config.py 
+* copyright
+#+begin_src python
+# Copyright (c) 2010 Aldo Cortesi
+# Copyright (c) 2010, 2014 dequis
+# Copyright (c) 2012 Randall Ma
+# Copyright (c) 2012-2014 Tycho Andersen
+# Copyright (c) 2012 Craig Barnes
+# Copyright (c) 2013 horsik
+# Copyright (c) 2013 Tao Sauvage
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+#+end_src
+* imports
+#+begin_src python 
+
 import os
+#import re
+#import socket
 import subprocess
+#from typing import List  # noqa: F401
 from libqtile import bar, extension, hook, layout, qtile, widget
-from libqtile.config import Click, Drag, Group, Key, KeyChord, Match, Screen
+#from libqtile import layout, bar, widget, hook
+from libqtile.config import Click, Drag, Group, Key, Match, Screen, Rule, KeyChord
+#from libqtile.command import lazy
 from libqtile.lazy import lazy
+#from libqtile.widget import Spacer
 # Make sure 'qtile-extras' is installed or this config will not work.
+#import arcobattery
 from qtile_extras import widget
 from qtile_extras.widget.decorations import BorderDecoration
 #from qtile_extras.widget import StatusNotifier
-import colors
+import colors  #import Colorthemes from dtos
 
-mod = "mod4"              # Sets mod key to SUPER/WINDOWS
+#+end_src
+* mod-keys + lazy functions
+#+begin_src python 
+#mod4 or mod = super key
+mod = "mod4"
 mod1 = "alt"
 mod2 = "control"
 home = os.path.expanduser('~')
 terminal     = home + '/.config/qtile/scripts/qtile_term'
 myTerm = "alacritty"      # My terminal of choice
+#myBrowser = "brave" # My browser of choice
 myBrowser = "firefox"     # My browser of choice
 myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
+
+@lazy.function
+def window_to_prev_group(qtile):
+    if qtile.currentWindow is not None:
+        i = qtile.groups.index(qtile.currentGroup)
+        qtile.currentWindow.togroup(qtile.groups[i - 1].name)
+
+@lazy.function
+def window_to_next_group(qtile):
+    if qtile.currentWindow is not None:
+        i = qtile.groups.index(qtile.currentGroup)
+        qtile.currentWindow.togroup(qtile.groups[i + 1].name)
 
 # Allows you to input a name when adding treetab section.
 @lazy.layout.function
@@ -40,7 +119,13 @@ def maximize_by_switching_layout(qtile):
     elif current_layout_name == 'max':
         qtile.current_group.layout = 'monadtall'
 
-keys = [
+#+end_src
+* keys 
+#+begin_src python
+ keys = [
+# Most of our keybindings are in sxhkd file - except these
+# SUPER + FUNCTION KEYS
+ ### Terminal starten wie in Archcraft
     Key(
 		[mod], "Return", 
 		lazy.spawn(terminal), 
@@ -57,7 +142,7 @@ keys = [
 		lazy.spawn('rofi -show drun -theme ~/.config/qtile/rofi/launcher.rasi'), 
 		desc="Run application launcher"
 	),
-   
+
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "c", lazy.window.kill()),
 
@@ -154,7 +239,7 @@ keys = [
 # TOGGLE FLOATING LAYOUT
     Key([mod, "shift"], "space", lazy.window.toggle_floating()),
 
-# Emacs programs launched using the key chord CTRL+e followed by 'key'
+ # Emacs programs launched using the key chord CTRL+e followed by 'key'
     KeyChord([mod],"e", [
         Key([], "e", lazy.spawn(myEmacs), desc='Emacs Dashboard'),
         Key([], "a", lazy.spawn(myEmacs + "--eval '(emms-play-directory-tree \"~/Music/\")'"), desc='Emacs EMMS'),
@@ -168,12 +253,13 @@ keys = [
                       lazy.spawn("/usr/bin/emacs --daemon"),
                       desc='Kill/restart the Emacs daemon')
     ]),
+
     # Dmenu/rofi scripts launched using the key chord SUPER+p followed by 'key'
     KeyChord([mod], "p", [
         Key([], "h", lazy.spawn("dm-hub -r"), desc='List all dmscripts'),
         Key([], "a", lazy.spawn("dm-sounds -r"), desc='Choose ambient sound'),
         Key([], "b", lazy.spawn("dm-setbg -r"), desc='Set background'),
-        Key([], "c", lazy.spawn("dtos-colorscheme -r"), desc='Choose color scheme'),
+   #     Key([], "c", lazy.spawn("dtos-colorscheme -r"), desc='Choose color scheme'),
         Key([], "e", lazy.spawn("dm-confedit -r"), desc='Choose a config file to edit'),
         Key([], "i", lazy.spawn("dm-maim -r"), desc='Take a screenshot'),
         Key([], "k", lazy.spawn("dm-kill -r"), desc='Kill processes '),
@@ -186,16 +272,46 @@ keys = [
         Key([], "s", lazy.spawn("dm-websearch -r"), desc='Search various engines'),
         Key([], "t", lazy.spawn("dm-translate -r"), desc='Translate text')
     ])
-]
 
+    ]
+
+def window_to_previous_screen(qtile, switch_group=False, switch_screen=False):
+    i = qtile.screens.index(qtile.current_screen)
+    if i != 0:
+        group = qtile.screens[i - 1].group.name
+        qtile.current_window.togroup(group, switch_group=switch_group)
+        if switch_screen == True:
+            qtile.cmd_to_screen(i - 1)
+
+def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
+    i = qtile.screens.index(qtile.current_screen)
+    if i + 1 != len(qtile.screens):
+        group = qtile.screens[i + 1].group.name
+        qtile.current_window.togroup(group, switch_group=switch_group)
+        if switch_screen == True:
+            qtile.cmd_to_screen(i + 1)
+
+keys.extend([
+    # MOVE WINDOW TO NEXT SCREEN
+    Key([mod,"shift"], "Right", lazy.function(window_to_next_screen, switch_screen=True)),
+    Key([mod,"shift"], "Left", lazy.function(window_to_previous_screen, switch_screen=True)),
+])
+
+#+end_src
+* groups
+#+begin_src python
 groups = []
+
+# FOR QWERTY KEYBOARDS
 group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9",]
 
-group_labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9",]
+#group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", ]
+group_labels = ["", "", "", "", "", "", "", "", "",]
+#group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 #group_labels = ["DEV", "WWW", "SYS", "DOC", "VBOX", "CHAT", "MUS", "VID", "GFX",]
-#group_labels = ["", "", "", "", "", "", "", "", "",]
 
-group_layouts = ["monadtall", "monadtall", "tile", "tile", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
+group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
+#group_layouts = ["monadtall", "monadtall", "tile", "tile", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
 
 for i in range(len(group_names)):
     groups.append(
@@ -204,7 +320,7 @@ for i in range(len(group_names)):
             layout=group_layouts[i].lower(),
             label=group_labels[i],
         ))
- 
+
 for i in groups:
     keys.extend(
         [
@@ -224,7 +340,10 @@ for i in groups:
             ),
         ]
     )
-
+ 
+#+end_src
+* colorscheme
+#+begin_src python 
 ### COLORSCHEME ###
 # Colors are defined in a separate 'colors.py' file.
 # There 10 colorschemes available to choose from:
@@ -245,13 +364,17 @@ for i in groups:
 
 #colors = colors.DoomOne
 colors = colors.Everblush
-#
+#+end_src
 
-layout_theme = {"border_width": 2,
+* layout
+#+begin_src python 
+
+layout_theme = {"border_width": 1,
                 "margin": 8,
-                "border_focus": colors[8],
+                "border_focus": colors[6],
                 "border_normal": colors[0]
                 }
+
 
 layouts = [
     #layout.Bsp(**layout_theme),
@@ -263,7 +386,8 @@ layouts = [
     #layout.MonadWide(**layout_theme),
     layout.Tile(
          shift_windows=True,
-         border_width = 0,
+        # border_width = 0,
+         border_width = 1,
          margin = 0,
          ratio = 0.335,
          ),
@@ -297,6 +421,12 @@ layouts = [
     #layout.Zoomy(**layout_theme),
 ]
 
+#+end_src
+* widgets
+#+begin_src python 
+
+# WIDGETS FOR THE BAR
+
 widget_defaults = dict(
     font="Ubuntu Bold",
     fontsize = 12,
@@ -308,18 +438,21 @@ extension_defaults = widget_defaults.copy()
 
 def init_widgets_list():
     widgets_list = [
-        widget.Image(
-                 filename = "~/.config/qtile/icons/logo.png",
-                 scale = "False",
-                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)},
-                 ),
-        widget.Prompt(
-                 font = "Ubuntu Mono",
-                 fontsize=14,
-                 foreground = colors[1]
-        ),
+
+#        widget.Image(
+#            filename = "~/.config/qtile/icons/logo.png",
+#            scale = "False",
+#            mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)},
+#        ),
+
+#       widget.Prompt(
+#                 font = "Ubuntu Mono",
+#                 fontsize=14,
+#                 foreground = colors[1]
+#        ),
         widget.GroupBox(
-                 fontsize = 11,
+                 font = "FontAwesome",
+                 fontsize = 12,
                  margin_y = 5,
                  margin_x = 5,
                  padding_y = 0,
@@ -428,12 +561,23 @@ def init_widgets_list():
                  ],
                  ),
         widget.Spacer(length = 8),
+        # ~ widget.KeyboardLayout(
+                 # ~ foreground = colors[4],
+                 # ~ fmt = '⌨  Kbd: {}',
+                 # ~ decorations=[
+                     # ~ BorderDecoration(
+                         # ~ colour = colors[4],
+                         # ~ border_width = [0, 0, 2, 0],
+                     # ~ )
+                 # ~ ],
+                 # ~ ),
+        # widget.Spacer(length = 8),
         widget.Clock(
-                 foreground = colors[8],
-                 format = "⏱  %a, %b %d - %H:%M",
+                 foreground = colors[6],
+                 format="⏱ %H:%M   %d.%m.%Y",
                  decorations=[
                      BorderDecoration(
-                         colour = colors[8],
+                         colour = colors[6],
                          border_width = [0, 0, 2, 0],
                      )
                  ],
@@ -445,14 +589,14 @@ def init_widgets_list():
         ]
     return widgets_list
 
+
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
-    return widgets_screen1 
-
-# All other monitors' bars will display everything but widgets 22 (systray) and 23 (spacer).
+    return widgets_screen1
+# All other monitors' bars will display everything but widgets 18 (systray) and 20 (spacer).
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    del widgets_screen2[22:24]
+    del widgets_screen2[18:20]
     return widgets_screen2
 
 # For adding transparency to your bar, add (background="#00000000") to the "Screen" line(s)
@@ -469,33 +613,8 @@ if __name__ in ["config", "__main__"]:
     widgets_screen1 = init_widgets_screen1()
     widgets_screen2 = init_widgets_screen2()
 
-def window_to_prev_group(qtile):
-    if qtile.currentWindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i - 1].name)
 
-def window_to_next_group(qtile):
-    if qtile.currentWindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i + 1].name)
-
-def window_to_previous_screen(qtile):
-    i = qtile.screens.index(qtile.current_screen)
-    if i != 0:
-        group = qtile.screens[i - 1].group.name
-        qtile.current_window.togroup(group)
-
-def window_to_next_screen(qtile):
-    i = qtile.screens.index(qtile.current_screen)
-    if i + 1 != len(qtile.screens):
-        group = qtile.screens[i + 1].group.name
-        qtile.current_window.togroup(group)
-
-def switch_screens(qtile):
-    i = qtile.screens.index(qtile.current_screen)
-    group = qtile.screens[i - 1].group
-    qtile.current_screen.set_group(group)
-
+# MOUSE CONFIGURATION
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
@@ -503,42 +622,122 @@ mouse = [
 ]
 
 dgroups_key_binder = None
-dgroups_app_rules = []  # type: list
+dgroups_app_rules = []
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
+
+#+end_src
+*  ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
+
+#+begin_src python
+ # ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
+# BEGIN
+
+#########################################################
+################ assgin apps to groups ##################
+#########################################################
+# @hook.subscribe.client_new
+# def assign_app_group(client):
+#     d = {}
+#     #####################################################################################
+#     ### Use xprop fo find  the value of WM_CLASS(STRING) -> First field is sufficient ###
+#     #####################################################################################
+#     d[group_names[0]] = ["Navigator", "Firefox", "Vivaldi-stable", "Vivaldi-snapshot", "Chromium", "Google-chrome", "Brave", "Brave-browser",
+#               "navigator", "firefox", "vivaldi-stable", "vivaldi-snapshot", "chromium", "google-chrome", "brave", "brave-browser", ]
+#     d[group_names[1]] = [ "Atom", "Subl", "Geany", "Brackets", "Code-oss", "Code", "TelegramDesktop", "Discord",
+#                "atom", "subl", "geany", "brackets", "code-oss", "code", "telegramDesktop", "discord", ]
+#     d[group_names[2]] = ["Inkscape", "Nomacs", "Ristretto", "Nitrogen", "Feh",
+#               "inkscape", "nomacs", "ristretto", "nitrogen", "feh", ]
+#     d[group_names[3]] = ["Gimp", "gimp" ]
+#     d[group_names[4]] = ["Meld", "meld", "org.gnome.meld" "org.gnome.Meld" ]
+#     d[group_names[5]] = ["Vlc","vlc", "Mpv", "mpv" ]
+#     d[group_names[6]] = ["VirtualBox Manager", "VirtualBox Machine", "Vmplayer",
+#               "virtualbox manager", "virtualbox machine", "vmplayer", ]
+#     d[group_names[7]] = ["Thunar", "Nemo", "Caja", "Nautilus", "org.gnome.Nautilus", "Pcmanfm", "Pcmanfm-qt",
+#               "thunar", "nemo", "caja", "nautilus", "org.gnome.nautilus", "pcmanfm", "pcmanfm-qt", ]
+#     d[group_names[8]] = ["Evolution", "Geary", "Mail", "Thunderbird",
+#               "evolution", "geary", "mail", "thunderbird" ]
+#     d[group_names[9]] = ["Spotify", "Pragha", "Clementine", "Deadbeef", "Audacious",
+#               "spotify", "pragha", "clementine", "deadbeef", "audacious" ]
+#     ######################################################################################
+#
+# wm_class = client.window.get_wm_class()[0]
+#
+#     for i in range(len(d)):
+#         if wm_class in list(d.values())[i]:
+#             group = list(d.keys())[i]
+#             client.togroup(group)
+#             client.group.cmd_toscreen(toggle=False)
+
+# END
+# ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
+#+end_src
+* der Rest
+
+#+begin_src python 
+
+@hook.subscribe.startup_once
+def start_once():
+    home = os.path.expanduser('~')
+    subprocess.call([home + '/.config/qtile/scripts/autostart.sh'])
+
+@hook.subscribe.startup
+def start_always():
+    # Set the cursor to something sane in X
+    subprocess.Popen(['xsetroot', '-cursor_name', 'left_ptr'])
+
+@hook.subscribe.client_new
+def set_floating(window):
+    if (window.window.get_wm_transient_for()
+            or window.window.get_wm_type() in floating_types):
+        window.floating = True
+
+floating_types = ["notification", "toolbar", "splash", "dialog"]
 
 floating_layout = layout.Floating(
     border_focus=colors[8],
     border_width=2,
     float_rules=[
-        # Run the utility of `xprop` to see the wm class and name of an X client.
-        *layout.Floating.default_float_rules,
-        Match(wm_class="confirmreset"),   # gitk
-        Match(wm_class="dialog"),         # dialog boxes
-        Match(wm_class="download"),       # downloads
-        Match(wm_class="error"),          # error msgs
-        Match(wm_class="file_progress"),  # file progress boxes
-        Match(wm_class='kdenlive'),       # kdenlive
-        Match(wm_class="makebranch"),     # gitk
-        Match(wm_class="maketag"),        # gitk
-        Match(wm_class="notification"),   # notifications
-        Match(wm_class='pinentry-gtk-2'), # GPG key password entry
-        Match(wm_class="ssh-askpass"),    # ssh-askpass
-        Match(wm_class="toolbar"),        # toolbars
-        Match(wm_class="Yad"),            # yad boxes
-        Match(title="branchdialog"),      # gitk
-        Match(title='Confirmation'),      # tastyworks exit box
-        Match(title='Qalculate!'),        # qalculate-gtk
-        Match(title="pinentry"),          # GPG key password entry
-        Match(title="tastycharts"),       # tastytrade pop-out charts
-        Match(title="tastytrade"),        # tastytrade pop-out side gutter
-        Match(title="tastytrade - Portfolio Report"), # tastytrade pop-out allocation
-        Match(wm_class="tasty.javafx.launcher.LauncherFxApp"), # tastytrade settings
-    ]
+    # Run the utility of `xprop` to see the wm class and name of an X client.
+    *layout.Floating.default_float_rules,
+    Match(wm_class='confirmreset'),  # gitk
+    Match(wm_class='makebranch'),  # gitk
+    Match(wm_class='maketag'),  # gitk
+    Match(wm_class='ssh-askpass'),  # ssh-askpass
+    Match(title='branchdialog'),  # gitk
+    Match(title='pinentry'),  # GPG key password entry
+    Match(wm_class='pinentry-gtk-2'), # GPG key password entry
+    Match(wm_class='Arcolinux-welcome-app.py'),
+    Match(wm_class='Arcolinux-calamares-tool.py'),
+    Match(wm_class='confirm'),
+    Match(wm_class='dialog'),
+    Match(wm_class='download'),
+    Match(wm_class='error'),
+    Match(wm_class='file_progress'),
+    Match(wm_class='notification'),
+    Match(wm_class='splash'),
+    Match(wm_class='toolbar'),
+    Match(wm_class='Arandr'),
+    Match(wm_class='feh'),
+    Match(wm_class='Galculator'),
+    Match(wm_class='archlinux-logout'),
+    Match(wm_class='xfce4-terminal'),
+    Match(wm_class='kdenlive'),       # kdenlive
+    Match(title='Confirmation'),      # tastyworks exit box
+    Match(title='Qalculate!'),        # qalculate-gtk
+    Match(title="tastycharts"),       # tastytrade pop-out charts
+    Match(title="tastytrade"),        # tastytrade pop-out side gutter
+    Match(title="tastytrade - Portfolio Report"), # tastytrade pop-out allocation
+    Match(wm_class="tasty.javafx.launcher.LauncherFxApp"), # tastytrade settings
+    Match(wm_class="Yad"),            # yad boxes
+    Match(wm_class="ssh-askpass"),    # ssh-askpass
+]
 )
+
 auto_fullscreen = True
-focus_on_window_activation = "smart" # or focus
+
+focus_on_window_activation = "focus" # or smart
 reconfigure_screens = True
 
 # If things like steam games want to auto-minimize themselves when losing
@@ -548,17 +747,143 @@ auto_minimize = True
 # When using the Wayland backend, this can be used to configure input devices.
 wl_input_rules = None
 
-@hook.subscribe.startup_once
-def start_once():
-    home = os.path.expanduser('~')
-    subprocess.call([home + '/.config/qtile/scripts/autostart.sh'])
-
-# XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
-# string besides java UI toolkits; you can see several discussions on the
-# mailing lists, GitHub issues, and other WM documentation that suggest setting
-# this string if your java app doesn't work correctly. We may as well just lie
-# and say that we're a working one by default.
-#
-# We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
-# java that happens to be on java's whitelist.
 wmname = "LG3D"
+#+end_src
+* DTOS Color-Shemes
+#+begin_src python :tangle colors.py
+### DTOS Color-shemes
+# If using transparency, make sure you add (background="#00000000") to 'Screen' line(s).
+# Then, you can use RGBA color codes to add transparency to the colors below.
+# For ex: colors = [["#282c34ee", "#282c34dd"], ...
+DoomOne = [
+    ["#282c34", "#282c34"], # bg
+    ["#bbc2cf", "#bbc2cf"], # fg
+    ["#1c1f24", "#1c1f24"], # color01
+    ["#ff6c6b", "#ff6c6b"], # color02
+    ["#98be65", "#98be65"], # color03
+    ["#da8548", "#da8548"], # color04
+    ["#51afef", "#51afef"], # color05
+    ["#c678dd", "#c678dd"], # color06
+    ["#46d9ff", "#46d9ff"]  # color15
+    ]
+
+Dracula  = [
+    ["#282a36", "#282a36"], # bg
+    ["#f8f8f2", "#f8f8f2"], # fg
+    ["#000000", "#000000"], # color01
+    ["#ff5555", "#ff5555"], # color02
+    ["#50fa7b", "#50fa7b"], # color03
+    ["#f1fa8c", "#f1fa8c"], # color04
+    ["#bd93f9", "#bd93f9"], # color05
+    ["#ff79c6", "#ff79c6"], # color06
+    ["#9aedfe", "#9aedfe"]  # color15
+    ]
+
+GruvboxDark  = [
+    ["#282828", "#282828"], # bg
+    ["#ebdbb2", "#ebdbb2"], # fg
+    ["#000000", "#000000"], # color01
+    ["#fb4934", "#fb4934"], # color02
+    ["#98971a", "#98971a"], # color03
+    ["#d79921", "#d79921"], # color04
+    ["#83a598", "#83a598"], # color05
+    ["#d3869b", "#d3869b"], # color06
+    ["#b8bb26", "#b8bb26"], # color11
+    ]
+MonokaiPro = [
+    ["#2D2A2E", "#2D2A2E"], # bg
+    ["#FCFCFA", "#FCFCFA"], # fg
+    ["#403E41", "#403E41"], # color01
+    ["#FF6188", "#FF6188"], # color02
+    ["#A9DC76", "#A9DC76"], # color03
+    ["#FFD866", "#FFD866"], # color04
+    ["#FC9867", "#FC9867"], # color05
+    ["#AB9DF2", "#AB9DF2"], # color06
+    ["#78DCE8", "#78DCE8"]  # color07
+    ]
+
+Nord = [
+    ["#2E3440", "#2E3440"], # bg
+    ["#D8DEE9", "#D8DEE9"], # fg
+    ["#3B4252", "#3B4252"], # color01
+    ["#BF616A", "#BF616A"], # color02
+    ["#A3BE8C", "#A3BE8C"], # color03
+    ["#EBCB8B", "#EBCB8B"], # color04
+    ["#81A1C1", "#81A1C1"], # color05
+    ["#B48EAD", "#B48EAD"], # color06
+    ["#88C0D0", "#88C0D0"]  # color07
+    ]
+
+OceanicNext = [
+    ["#1b2b34", "#1b2b34"], # bg
+    ["#d8dee9", "#d8dee9"], # fg
+    ["#29414f", "#29414f"], # color01
+    ["#ec5f67", "#ec5f67"], # color02
+    ["#99c794", "#99c794"], # color03
+    ["#fac863", "#fac863"], # color04
+    ["#6699cc", "#6699cc"], # color05
+    ["#c594c5", "#c594c5"], # color06
+    ["#5fb3b3", "#5fb3b3"]  # color07
+    ]
+
+Palenight = [
+    ["#292d3e", "#292d3e"], # bg
+    ["#d0d0d0", "#d0d0d0"], # fg
+    ["#434758", "#434758"], # color01
+    ["#f07178", "#f07178"], # color02
+    ["#c3e88d", "#c3e88d"], # color03
+    ["#ffcb6b", "#ffcb6b"], # color04
+    ["#82aaff", "#82aaff"], # color05
+    ["#c792ea", "#c792ea"], # color06
+    ["#89ddff", "#89ddff"]  # color15
+    ]
+
+SolarizedDark = [
+    ["#002b36", "#002b36"], # bg
+    ["#839496", "#839496"], # fg
+    ["#073642", "#073642"], # color01
+    ["#dc322f", "#dc322f"], # color02
+    ["#859900", "#859900"], # color03
+    ["#b58900", "#b58900"], # color04
+    ["#268bd2", "#268bd2"], # color05
+    ["#d33682", "#d33682"], # color06
+    ["#2aa198", "#2aa198"]  # color15
+    ]
+
+SolarizedLight = [
+    ["#fdf6e3", "#fdf6e3"], # bg
+    ["#657b83", "#657b83"], # fg
+    ["#ece5ac", "#ece5ac"], # color01
+    ["#dc322f", "#dc322f"], # color02
+    ["#859900", "#859900"], # color03
+    ["#b58900", "#b58900"], # color04
+    ["#268bd2", "#268bd2"], # color05
+    ["#d33682", "#d33682"], # color06
+    ["#2aa198", "#2aa198"]  # color15
+    ]
+
+TomorrowNight = [
+    ["#1d1f21", "#1d1f21"], # bg
+    ["#c5c8c6", "#c5c8c6"], # fg
+    ["#373b41", "#373b41"], # color01
+    ["#cc6666", "#cc6666"], # color02
+    ["#b5bd68", "#b5bd68"], # color03
+    ["#e6c547", "#e6c547"], # color04
+    ["#81a2be", "#81a2be"], # color05
+    ["#b294bb", "#b294bb"], # color06
+    ["#70c0ba", "#70c0ba"]  # color15
+    ]
+## hier mal ein Versuch für Everblush
+Everblush = [
+    ["#2f343f", "#2f343f"], # bg  (arc farben)
+    ["#dadada", "#dadada"], # fg
+    ["#232a2d", "#232a2d"], # color01 black
+    ["#e57474", "#e57474"], # color02 red
+    ["#8ccf7e", "#8ccf7e"], # color03 green
+    ["#e5c76b", "#e5c76b"], # color04 yellow
+    ["#67b0e8", "#67b0e8"], # color05 blue
+    ["#c47fd5", "#c47fd5"], # color06 magenta
+    ["#6cbfbf", "#6cbfbf"]  # color15 cyan
+   
+] 
+#+end_src

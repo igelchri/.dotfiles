@@ -1,4 +1,4 @@
-+TITLE: QTILE Konfiguration
+TITLE: QTILE Konfiguration
 #+AUTHOR: igelchri
 #+DESCRIPTION: igelchri's  personal qtile config.
 #+PROPERTY: header-args :tangle config.py
@@ -6,97 +6,57 @@
 #+STARTUP: showeverything
 * Inhalt :toc:
 - [[#einleitung][Einleitung]]
-- [[#copyright][copyright]]
 - [[#imports][imports]]
-- [[#mod-keys--lazy-functions][mod-keys + lazy functions]]
-- [[#keys][keys]]
+- [[#definitionen][Definitionen]]
+- [[#lazy-functions][lazy functions]]
+- [[#keys][Keys]]
+  - [[#qtile-build-in][qtile build in]]
+  - [[#externe-keybinds-sxhkd][externe keybinds (Sxhkd)]]
 - [[#groups][groups]]
-- [[#colorscheme][colorscheme]]
+- [[#colorsheme-definition][colorsheme Definition]]
 - [[#layout][layout]]
 - [[#widgets][widgets]]
--  [[#assign-applications-to-a-specific-groupname][ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME]]
-- [[#der-rest][der Rest]]
+- [[#screens][screens]]
+- [[#mouse][mouse]]
+- [[#floating-layouts][floating layouts]]
+- [[#systemstart][Systemstart]]
+  - [[#startscript-aufrufen-configqtilescriptsautostartsh][startscript aufrufen (.config/qtile/scripts/autostart.sh)]]
+  - [[#autostartsh][Autostart.sh]]
 - [[#dtos-color-shemes][DTOS Color-Shemes]]
 
 * Einleitung 
 Wenn man einen source-block in eine extra Datei tanglen will:
 ## #+begin_src python :tangle config.py 
-* copyright
-#+begin_src python
-# Copyright (c) 2010 Aldo Cortesi
-# Copyright (c) 2010, 2014 dequis
-# Copyright (c) 2012 Randall Ma
-# Copyright (c) 2012-2014 Tycho Andersen
-# Copyright (c) 2012 Craig Barnes
-# Copyright (c) 2013 horsik
-# Copyright (c) 2013 Tao Sauvage
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
 
-#+end_src
-* imports
-#+begin_src python 
+* imports 
+#+begin_src python
 
 import os
-#import re
-#import socket
 import subprocess
-#from typing import List  # noqa: F401
 from libqtile import bar, extension, hook, layout, qtile, widget
-#from libqtile import layout, bar, widget, hook
-from libqtile.config import Click, Drag, Group, Key, Match, Screen, Rule, KeyChord
-#from libqtile.command import lazy
+from libqtile.config import Click, Drag, Group, Key, KeyChord, Match, Screen
 from libqtile.lazy import lazy
-#from libqtile.widget import Spacer
 # Make sure 'qtile-extras' is installed or this config will not work.
-#import arcobattery
 from qtile_extras import widget
 from qtile_extras.widget.decorations import BorderDecoration
 #from qtile_extras.widget import StatusNotifier
-import colors  #import Colorthemes from dtos
-
+import colors
 #+end_src
-* mod-keys + lazy functions
-#+begin_src python 
-#mod4 or mod = super key
-mod = "mod4"
+
+* Definitionen
+#+begin_src python
+mod = "mod4"              # Sets mod key to SUPER/WINDOWS
 mod1 = "alt"
 mod2 = "control"
 home = os.path.expanduser('~')
 terminal     = home + '/.config/qtile/scripts/qtile_term'
 myTerm = "alacritty"      # My terminal of choice
-#myBrowser = "brave" # My browser of choice
 myBrowser = "firefox"     # My browser of choice
 myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
+#+end_src
 
-@lazy.function
-def window_to_prev_group(qtile):
-    if qtile.currentWindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i - 1].name)
-
-@lazy.function
-def window_to_next_group(qtile):
-    if qtile.currentWindow is not None:
-        i = qtile.groups.index(qtile.currentGroup)
-        qtile.currentWindow.togroup(qtile.groups[i + 1].name)
-
+* lazy functions 
+#+begin_src python
 # Allows you to input a name when adding treetab section.
 @lazy.layout.function
 def add_treetab_section(layout):
@@ -118,14 +78,12 @@ def maximize_by_switching_layout(qtile):
         qtile.current_group.layout = 'max'
     elif current_layout_name == 'max':
         qtile.current_group.layout = 'monadtall'
-
 #+end_src
-* keys 
+
+* Keys 
+** qtile build in 
 #+begin_src python
- keys = [
-# Most of our keybindings are in sxhkd file - except these
-# SUPER + FUNCTION KEYS
- ### Terminal starten wie in Archcraft
+keys = [
     Key(
 		[mod], "Return", 
 		lazy.spawn(terminal), 
@@ -142,7 +100,7 @@ def maximize_by_switching_layout(qtile):
 		lazy.spawn('rofi -show drun -theme ~/.config/qtile/rofi/launcher.rasi'), 
 		desc="Run application launcher"
 	),
-
+   
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "c", lazy.window.kill()),
 
@@ -239,7 +197,7 @@ def maximize_by_switching_layout(qtile):
 # TOGGLE FLOATING LAYOUT
     Key([mod, "shift"], "space", lazy.window.toggle_floating()),
 
- # Emacs programs launched using the key chord CTRL+e followed by 'key'
+# Emacs programs launched using the key chord CTRL+e followed by 'key'
     KeyChord([mod],"e", [
         Key([], "e", lazy.spawn(myEmacs), desc='Emacs Dashboard'),
         Key([], "a", lazy.spawn(myEmacs + "--eval '(emms-play-directory-tree \"~/Music/\")'"), desc='Emacs EMMS'),
@@ -253,13 +211,12 @@ def maximize_by_switching_layout(qtile):
                       lazy.spawn("/usr/bin/emacs --daemon"),
                       desc='Kill/restart the Emacs daemon')
     ]),
-
     # Dmenu/rofi scripts launched using the key chord SUPER+p followed by 'key'
     KeyChord([mod], "p", [
         Key([], "h", lazy.spawn("dm-hub -r"), desc='List all dmscripts'),
         Key([], "a", lazy.spawn("dm-sounds -r"), desc='Choose ambient sound'),
         Key([], "b", lazy.spawn("dm-setbg -r"), desc='Set background'),
-   #     Key([], "c", lazy.spawn("dtos-colorscheme -r"), desc='Choose color scheme'),
+        Key([], "c", lazy.spawn("dtos-colorscheme -r"), desc='Choose color scheme'),
         Key([], "e", lazy.spawn("dm-confedit -r"), desc='Choose a config file to edit'),
         Key([], "i", lazy.spawn("dm-maim -r"), desc='Take a screenshot'),
         Key([], "k", lazy.spawn("dm-kill -r"), desc='Kill processes '),
@@ -272,46 +229,171 @@ def maximize_by_switching_layout(qtile):
         Key([], "s", lazy.spawn("dm-websearch -r"), desc='Search various engines'),
         Key([], "t", lazy.spawn("dm-translate -r"), desc='Translate text')
     ])
-
-    ]
-
-def window_to_previous_screen(qtile, switch_group=False, switch_screen=False):
-    i = qtile.screens.index(qtile.current_screen)
-    if i != 0:
-        group = qtile.screens[i - 1].group.name
-        qtile.current_window.togroup(group, switch_group=switch_group)
-        if switch_screen == True:
-            qtile.cmd_to_screen(i - 1)
-
-def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
-    i = qtile.screens.index(qtile.current_screen)
-    if i + 1 != len(qtile.screens):
-        group = qtile.screens[i + 1].group.name
-        qtile.current_window.togroup(group, switch_group=switch_group)
-        if switch_screen == True:
-            qtile.cmd_to_screen(i + 1)
-
-keys.extend([
-    # MOVE WINDOW TO NEXT SCREEN
-    Key([mod,"shift"], "Right", lazy.function(window_to_next_screen, switch_screen=True)),
-    Key([mod,"shift"], "Left", lazy.function(window_to_previous_screen, switch_screen=True)),
-])
-
+]
 #+end_src
-* groups
-#+begin_src python
-groups = []
 
-# FOR QWERTY KEYBOARDS
+** externe keybinds (Sxhkd) 
+#+begin_src sh :tangle ./sxhkd/sxhkdrc
+#################################################################
+# KEYBOARD BINDINGS FOR ANY TWM
+#################################################################
+
+#################################################################
+# SUPER + FUNCTION KEYS
+#################################################################
+#Meld
+super + F5
+    meld
+
+#Vlc
+super + F6
+    vlc --video-on-top
+
+#Virtualbox
+super + F7
+    virtualbox
+
+#Thunar
+super + F8
+    thunar
+
+#Rofi Fullscreen
+super + F11
+    rofi -theme-str 'window \{width: 100%;height: 100%;\}' -show drun
+
+#Rofi
+super + F12
+    rofi -show drun
+
+
+
+#################################################################
+# SUPER + ... KEYS
+#################################################################
+
+#Browser
+super + w
+   firefox 
+
+#archlinux-logout
+super + x
+    archlinux-logout
+
+#powermenu
+super + shift + x
+#    arcolinux-powermenu
+     ~/.config/qtile/scripts/powermenu.sh
+
+#alacritty
+super + Return
+    alacritty
+
+#Xkill
+super + Escape
+    xkill
+
+#Keyboard dependent
+#alacritty
+super + KP_Enter
+	alacritty
+
+#################################################################
+# SUPER + SHIFT KEYS
+#################################################################
+
+#File-Manager
+super + shift + Return
+	thunar
+
+
+#dmenu
+super + shift + d
+	dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
+    
+#dmenu
+super + d
+    rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/qtile/rofi/launcher2.rasi
+
+#reload sxhkd:
+super + shift + s
+	pkill -USR1 -x sxhkd
+
+
+#################################################################
+# CONTROL + ALT KEYS
+#################################################################
+
+
+#################################################################
+#     FUNCTION KEYS
+#################################################################
+
+#xfce4-terminal dropdown
+F12
+    xfce4-terminal --drop-down
+
+
+#################################################################
+#     MULTIMEDIA KEYS
+#################################################################
+
+#Raises volume
+XF86AudioRaiseVolume
+    amixer set Master 10%+
+
+#Lowers volume
+XF86AudioLowerVolume
+    amixer set Master 10%-
+
+#Mute
+XF86AudioMute
+    amixer -D pulse set Master 1+ toggle
+
+#Playerctl works for Pragha, Spotify and others
+#Delete the line for playerctl if you want to use mpc
+#and replace it with the corresponding code
+#mpc works for e.g.ncmpcpp
+#mpc toggle
+#mpc next
+#mpc prev
+#mpc stop
+
+#PLAY
+XF86AudioPlay
+    playerctl play-pause
+
+#Next
+XF86AudioNext
+    playerctl next
+
+#previous
+XF86AudioPrev
+    playerctl previous
+
+#Stop
+XF86AudioStop
+    playerctl stop
+
+#Brightness up
+XF86MonBrightnessUp
+    xbacklight -inc 10
+
+#Brightness down
+XF86MonBrightnessDown
+    xbacklight -dec 10
+#+end_src
+
+* groups 
+#+begin_src python
+
+groups = []
 group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9",]
 
-#group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", ]
-group_labels = ["", "", "", "", "", "", "", "", "",]
-#group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
+group_labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9",]
 #group_labels = ["DEV", "WWW", "SYS", "DOC", "VBOX", "CHAT", "MUS", "VID", "GFX",]
+#group_labels = ["", "", "", "", "", "", "", "", "",]
 
-group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
-#group_layouts = ["monadtall", "monadtall", "tile", "tile", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
+group_layouts = ["monadtall", "monadtall", "tile", "tile", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
 
 for i in range(len(group_names)):
     groups.append(
@@ -320,7 +402,7 @@ for i in range(len(group_names)):
             layout=group_layouts[i].lower(),
             label=group_labels[i],
         ))
-
+ 
 for i in groups:
     keys.extend(
         [
@@ -340,10 +422,10 @@ for i in groups:
             ),
         ]
     )
- 
 #+end_src
-* colorscheme
-#+begin_src python 
+
+* colorsheme Definition 
+#+begin_src python
 ### COLORSCHEME ###
 # Colors are defined in a separate 'colors.py' file.
 # There 10 colorschemes available to choose from:
@@ -364,17 +446,17 @@ for i in groups:
 
 #colors = colors.DoomOne
 colors = colors.Everblush
+#
 #+end_src
 
-* layout
-#+begin_src python 
+* layout 
+#+begin_src python
 
-layout_theme = {"border_width": 1,
+layout_theme = {"border_width": 2,
                 "margin": 8,
-                "border_focus": colors[6],
+                "border_focus": colors[8],
                 "border_normal": colors[0]
                 }
-
 
 layouts = [
     #layout.Bsp(**layout_theme),
@@ -386,8 +468,7 @@ layouts = [
     #layout.MonadWide(**layout_theme),
     layout.Tile(
          shift_windows=True,
-        # border_width = 0,
-         border_width = 1,
+         border_width = 0,
          margin = 0,
          ratio = 0.335,
          ),
@@ -420,12 +501,10 @@ layouts = [
     #     ),
     #layout.Zoomy(**layout_theme),
 ]
-
 #+end_src
-* widgets
-#+begin_src python 
 
-# WIDGETS FOR THE BAR
+* widgets 
+#+begin_src python
 
 widget_defaults = dict(
     font="Ubuntu Bold",
@@ -438,22 +517,17 @@ extension_defaults = widget_defaults.copy()
 
 def init_widgets_list():
     widgets_list = [
-
-#        widget.Image(
-#            filename = "~/.config/qtile/icons/logo.png",
-#            scale = "False",
-#            mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)},
-#        ),
-
-#       widget.Prompt(
-#                 font = "Ubuntu Mono",
-#                 fontsize=14,
-#                 foreground = colors[1]
-#        ),
-
+        widget.Image(
+                 filename = "~/.config/qtile/icons/logo.png",
+                 scale = "False",
+                 mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)},
+                 ),
+        widget.Prompt(
+                 font = "Ubuntu Mono",
+                 fontsize=14,
+                 foreground = colors[1]
+        ),
         widget.GroupBox(
-                 #font="FontAwesome",
-#                 fontsize = 12,
                  fontsize = 11,
                  margin_y = 5,
                  margin_x = 5,
@@ -563,23 +637,12 @@ def init_widgets_list():
                  ],
                  ),
         widget.Spacer(length = 8),
-        # ~ widget.KeyboardLayout(
-                 # ~ foreground = colors[4],
-                 # ~ fmt = '⌨  Kbd: {}',
-                 # ~ decorations=[
-                     # ~ BorderDecoration(
-                         # ~ colour = colors[4],
-                         # ~ border_width = [0, 0, 2, 0],
-                     # ~ )
-                 # ~ ],
-                 # ~ ),
-        # widget.Spacer(length = 8),
         widget.Clock(
-                 foreground = colors[6],
-                 format="⏱ %H:%M   %d.%m.%Y",
+                 foreground = colors[8],
+                 format = "⏱  %a, %b %d - %H:%M",
                  decorations=[
                      BorderDecoration(
-                         colour = colors[6],
+                         colour = colors[8],
                          border_width = [0, 0, 2, 0],
                      )
                  ],
@@ -590,15 +653,18 @@ def init_widgets_list():
 
         ]
     return widgets_list
+#+end_src
 
-
+* screens 
+#+begin_src python
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
-    return widgets_screen1
-# All other monitors' bars will display everything but widgets 18 (systray) and 20 (spacer).
+    return widgets_screen1 
+
+# All other monitors' bars will display everything but widgets 22 (systray) and 23 (spacer).
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    del widgets_screen2[18:20]
+    del widgets_screen2[22:24]
     return widgets_screen2
 
 # For adding transparency to your bar, add (background="#00000000") to the "Screen" line(s)
@@ -615,8 +681,35 @@ if __name__ in ["config", "__main__"]:
     widgets_screen1 = init_widgets_screen1()
     widgets_screen2 = init_widgets_screen2()
 
+def window_to_prev_group(qtile):
+    if qtile.currentWindow is not None:
+        i = qtile.groups.index(qtile.currentGroup)
+        qtile.currentWindow.togroup(qtile.groups[i - 1].name)
 
-# MOUSE CONFIGURATION
+def window_to_next_group(qtile):
+    if qtile.currentWindow is not None:
+        i = qtile.groups.index(qtile.currentGroup)
+        qtile.currentWindow.togroup(qtile.groups[i + 1].name)
+
+def window_to_previous_screen(qtile):
+    i = qtile.screens.index(qtile.current_screen)
+    if i != 0:
+        group = qtile.screens[i - 1].group.name
+        qtile.current_window.togroup(group)
+
+def window_to_next_screen(qtile):
+    i = qtile.screens.index(qtile.current_screen)
+    if i + 1 != len(qtile.screens):
+        group = qtile.screens[i + 1].group.name
+        qtile.current_window.togroup(group)
+
+def switch_screens(qtile):
+    i = qtile.screens.index(qtile.current_screen)
+    group = qtile.screens[i - 1].group
+    qtile.current_screen.set_group(group)
+#+end_src
+* mouse 
+#+begin_src python
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
@@ -624,122 +717,44 @@ mouse = [
 ]
 
 dgroups_key_binder = None
-dgroups_app_rules = []
+dgroups_app_rules = []  # type: list
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
-
 #+end_src
-*  ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
-
+* floating layouts 
 #+begin_src python
- # ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
-# BEGIN
-
-#########################################################
-################ assgin apps to groups ##################
-#########################################################
-# @hook.subscribe.client_new
-# def assign_app_group(client):
-#     d = {}
-#     #####################################################################################
-#     ### Use xprop fo find  the value of WM_CLASS(STRING) -> First field is sufficient ###
-#     #####################################################################################
-#     d[group_names[0]] = ["Navigator", "Firefox", "Vivaldi-stable", "Vivaldi-snapshot", "Chromium", "Google-chrome", "Brave", "Brave-browser",
-#               "navigator", "firefox", "vivaldi-stable", "vivaldi-snapshot", "chromium", "google-chrome", "brave", "brave-browser", ]
-#     d[group_names[1]] = [ "Atom", "Subl", "Geany", "Brackets", "Code-oss", "Code", "TelegramDesktop", "Discord",
-#                "atom", "subl", "geany", "brackets", "code-oss", "code", "telegramDesktop", "discord", ]
-#     d[group_names[2]] = ["Inkscape", "Nomacs", "Ristretto", "Nitrogen", "Feh",
-#               "inkscape", "nomacs", "ristretto", "nitrogen", "feh", ]
-#     d[group_names[3]] = ["Gimp", "gimp" ]
-#     d[group_names[4]] = ["Meld", "meld", "org.gnome.meld" "org.gnome.Meld" ]
-#     d[group_names[5]] = ["Vlc","vlc", "Mpv", "mpv" ]
-#     d[group_names[6]] = ["VirtualBox Manager", "VirtualBox Machine", "Vmplayer",
-#               "virtualbox manager", "virtualbox machine", "vmplayer", ]
-#     d[group_names[7]] = ["Thunar", "Nemo", "Caja", "Nautilus", "org.gnome.Nautilus", "Pcmanfm", "Pcmanfm-qt",
-#               "thunar", "nemo", "caja", "nautilus", "org.gnome.nautilus", "pcmanfm", "pcmanfm-qt", ]
-#     d[group_names[8]] = ["Evolution", "Geary", "Mail", "Thunderbird",
-#               "evolution", "geary", "mail", "thunderbird" ]
-#     d[group_names[9]] = ["Spotify", "Pragha", "Clementine", "Deadbeef", "Audacious",
-#               "spotify", "pragha", "clementine", "deadbeef", "audacious" ]
-#     ######################################################################################
-#
-# wm_class = client.window.get_wm_class()[0]
-#
-#     for i in range(len(d)):
-#         if wm_class in list(d.values())[i]:
-#             group = list(d.keys())[i]
-#             client.togroup(group)
-#             client.group.cmd_toscreen(toggle=False)
-
-# END
-# ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
-#+end_src
-* der Rest
-
-#+begin_src python 
-
-@hook.subscribe.startup_once
-def start_once():
-    home = os.path.expanduser('~')
-    subprocess.call([home + '/.config/qtile/scripts/autostart.sh'])
-
-@hook.subscribe.startup
-def start_always():
-    # Set the cursor to something sane in X
-    subprocess.Popen(['xsetroot', '-cursor_name', 'left_ptr'])
-
-@hook.subscribe.client_new
-def set_floating(window):
-    if (window.window.get_wm_transient_for()
-            or window.window.get_wm_type() in floating_types):
-        window.floating = True
-
-floating_types = ["notification", "toolbar", "splash", "dialog"]
-
 floating_layout = layout.Floating(
     border_focus=colors[8],
     border_width=2,
     float_rules=[
-    # Run the utility of `xprop` to see the wm class and name of an X client.
-    *layout.Floating.default_float_rules,
-    Match(wm_class='confirmreset'),  # gitk
-    Match(wm_class='makebranch'),  # gitk
-    Match(wm_class='maketag'),  # gitk
-    Match(wm_class='ssh-askpass'),  # ssh-askpass
-    Match(title='branchdialog'),  # gitk
-    Match(title='pinentry'),  # GPG key password entry
-    Match(wm_class='pinentry-gtk-2'), # GPG key password entry
-    Match(wm_class='Arcolinux-welcome-app.py'),
-    Match(wm_class='Arcolinux-calamares-tool.py'),
-    Match(wm_class='confirm'),
-    Match(wm_class='dialog'),
-    Match(wm_class='download'),
-    Match(wm_class='error'),
-    Match(wm_class='file_progress'),
-    Match(wm_class='notification'),
-    Match(wm_class='splash'),
-    Match(wm_class='toolbar'),
-    Match(wm_class='Arandr'),
-    Match(wm_class='feh'),
-    Match(wm_class='Galculator'),
-    Match(wm_class='archlinux-logout'),
-    Match(wm_class='xfce4-terminal'),
-    Match(wm_class='kdenlive'),       # kdenlive
-    Match(title='Confirmation'),      # tastyworks exit box
-    Match(title='Qalculate!'),        # qalculate-gtk
-    Match(title="tastycharts"),       # tastytrade pop-out charts
-    Match(title="tastytrade"),        # tastytrade pop-out side gutter
-    Match(title="tastytrade - Portfolio Report"), # tastytrade pop-out allocation
-    Match(wm_class="tasty.javafx.launcher.LauncherFxApp"), # tastytrade settings
-    Match(wm_class="Yad"),            # yad boxes
-    Match(wm_class="ssh-askpass"),    # ssh-askpass
-]
+        # Run the utility of `xprop` to see the wm class and name of an X client.
+        ,*layout.Floating.default_float_rules,
+        Match(wm_class="confirmreset"),   # gitk
+        Match(wm_class="dialog"),         # dialog boxes
+        Match(wm_class="download"),       # downloads
+        Match(wm_class="error"),          # error msgs
+        Match(wm_class="file_progress"),  # file progress boxes
+        Match(wm_class='kdenlive'),       # kdenlive
+        Match(wm_class="makebranch"),     # gitk
+        Match(wm_class="maketag"),        # gitk
+        Match(wm_class="notification"),   # notifications
+        Match(wm_class='pinentry-gtk-2'), # GPG key password entry
+        Match(wm_class="ssh-askpass"),    # ssh-askpass
+        Match(wm_class="toolbar"),        # toolbars
+        Match(wm_class="Yad"),            # yad boxes
+        Match(title="branchdialog"),      # gitk
+        Match(title='Confirmation'),      # tastyworks exit box
+        Match(title='Qalculate!'),        # qalculate-gtk
+        Match(title="pinentry"),          # GPG key password entry
+        Match(title="tastycharts"),       # tastytrade pop-out charts
+        Match(title="tastytrade"),        # tastytrade pop-out side gutter
+        Match(title="tastytrade - Portfolio Report"), # tastytrade pop-out allocation
+        Match(wm_class="tasty.javafx.launcher.LauncherFxApp"), # tastytrade settings
+    ]
 )
-
 auto_fullscreen = True
-
-focus_on_window_activation = "focus" # or smart
+focus_on_window_activation = "smart" # or focus
 reconfigure_screens = True
 
 # If things like steam games want to auto-minimize themselves when losing
@@ -748,7 +763,85 @@ auto_minimize = True
 
 # When using the Wayland backend, this can be used to configure input devices.
 wl_input_rules = None
+#+end_src
+* Systemstart 
+** startscript aufrufen (.config/qtile/scripts/autostart.sh)
+#+begin_src python
+@hook.subscribe.startup_once
+def start_once():
+    home = os.path.expanduser('~')
+    subprocess.call([home + '/.config/qtile/scripts/autostart.sh'])
+#+end_src
+** Autostart.sh 
+#+begin_src sh :tangle ./scripts/autostart.ssh
+#!/usr/bin/env bash 
+#
+# meine Autostart Datei für QTile
+#
+# Stand: 24-06-23
 
+# Colorscheme auswählen (geht noch nicht)
+COLORSCHEME=DoomOne
+
+### AUTOSTART PROGRAMS ###
+# extra from ArcoLinux
+function run {
+  if ! pgrep -x $(basename $1 | head -c 15) 1>/dev/null;
+  then
+    $@&
+  fi
+}
+
+# Bildschirm einstellen
+autorandr --change
+
+# Desktop Wallpaper
+feh --bg-fill /home/chris/.config/qtile/wall.jpg &
+feh --bg-fill /home/chris/.config/qtile/wall.jpg &
+
+#start sxhkd to replace Qtile native key-bindings
+run sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
+
+# Picom 
+picom --daemon &
+# picom --config $HOME/.config/qtile/scripts/picom.conf &
+
+# Emacs Daemon starten
+/usr/bin/emacs --daemon &
+
+
+#starting utility applications at boot time
+#run variety &
+run nm-applet &
+#run pamac-tray &
+run xfce4-power-manager &
+numlockx on &
+blueberry-tray &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
+
+# Enable Super Keys For Menu
+ksuperkey -e 'Super_L=Alt_L|F1' &
+ksuperkey -e 'Super_R=Alt_L|F1' &
+
+#starting user applications at boot time
+#run volumeicon &
+
+## conky 
+
+conky -c "$HOME"/.config/qtile/scripts/conky.conf || echo "Couldn't start conky."
+#+end_src
+
+
+#+begin_src python
+# XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
+# string besides java UI toolkits; you can see several discussions on the
+# mailing lists, GitHub issues, and other WM documentation that suggest setting
+# this string if your java app doesn't work correctly. We may as well just lie
+# and say that we're a working one by default.
+#
+# We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
+# java that happens to be on java's whitelist.
 wmname = "LG3D"
 #+end_src
 * DTOS Color-Shemes

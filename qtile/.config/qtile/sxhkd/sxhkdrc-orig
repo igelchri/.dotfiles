@@ -145,3 +145,4 @@ XF86MonBrightnessUp
 #Brightness down
 XF86MonBrightnessDown
     xbacklight -dec 10
+
