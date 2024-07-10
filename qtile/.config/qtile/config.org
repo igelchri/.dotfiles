@@ -7,7 +7,7 @@ TITLE: QTILE Konfiguration
 * Inhalt :toc:
 - [[#einleitung][Einleitung]]
 - [[#imports][imports]]
-- [[#definitionen][Definitionen]]
+- [[#variables][variables]]
 - [[#lazy-functions][lazy functions]]
 - [[#keys][Keys]]
   - [[#qtile-build-in][qtile build in]]
@@ -22,40 +22,61 @@ TITLE: QTILE Konfiguration
 - [[#systemstart][Systemstart]]
   - [[#startscript-aufrufen-configqtilescriptsautostartsh][startscript aufrufen (.config/qtile/scripts/autostart.sh)]]
   - [[#autostartsh][Autostart.sh]]
-- [[#dtos-color-shemes][DTOS Color-Shemes]]
+- [[#color-shemes][Color-Shemes]]
 
 * Einleitung 
-Wenn man einen source-block in eine extra Datei tanglen will:
-## #+begin_src python :tangle config.py 
+Ich versuche hier, möglichst viele Konfigurationen meines qtile-setups in einer Org-Datei unterzubringen. Dies soll der Übersichtlichkeit und Einfachheit dienen. Gleichzeitig versuche ich, möglichst viel Code zu kommentieren, damit ich dabei etwas lerne.
+Meine Konfiguration basiert auf der (von Derek Taylor - distrotube inspirierten) config von arcolinux
+- sudo pacman -S arcolinux-qtile-distrotube-git
+
+Bisher sind folgende Dateien bzw. Configs enthalten:
+1. config.py (qtile Konfiguration)
+2. autostart.sh (shell-script für Programme, die beim Start des Windowmanagers geladen werden sollen)
+3. colors.py (Farb-Definitionen für das Windowmanager Theme)
+4. sxhkdrc (Konfiguration Tastaturbefehle)
+
+*** Tip! 
+**** Wenn man einen source-block in eine extra Datei tanglen will:
+## #+begin_src [lang] :tangle [zieldatei]
+## #+end_src
+*** nicht vergessen zu tanglen: spc,m,B
 
 * imports 
-#+begin_src python
+Laden der benötigen Python-Bibiotheken
+Für meine Konfiguration ist es nötig, dass qtile-extras installiert ist
+- sudo pacman - S qtile-extras
 
+#+begin_src python
 import os
 import subprocess
 from libqtile import bar, extension, hook, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, KeyChord, Match, Screen
 from libqtile.lazy import lazy
-# Make sure 'qtile-extras' is installed or this config will not work.
 from qtile_extras import widget
 from qtile_extras.widget.decorations import BorderDecoration
 #from qtile_extras.widget import StatusNotifier
 import colors
 #+end_src
 
-* Definitionen
+* variables
+Hier werden verschiedene Variablen definiert
+
 #+begin_src python
 mod = "mod4"              # Sets mod key to SUPER/WINDOWS
 mod1 = "alt"
 mod2 = "control"
+## um alacritty mit eigenen Einstellungen aufzurufen, geklaut bei archcraft
 home = os.path.expanduser('~')
 terminal     = home + '/.config/qtile/scripts/qtile_term'
+###
 myTerm = "alacritty"      # My terminal of choice
 myBrowser = "firefox"     # My browser of choice
 myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
 #+end_src
 
 * lazy functions 
+(Nützliche) weitere Funktionen von qtile definieren
+
 #+begin_src python
 # Allows you to input a name when adding treetab section.
 @lazy.layout.function
@@ -81,6 +102,10 @@ def maximize_by_switching_layout(qtile):
 #+end_src
 
 * Keys 
+Hier werden die Tastenkombinationen definiert. Ich benutze eine Mischung zwischen denen von arcolinux, dtos und vor allem archcraft.
+Die Definitionen erfolgen zweigeteilt, 1. in der config.py und 2. in der skhkdrc
+: todo  alles in eine Datei packen
+
 ** qtile build in 
 #+begin_src python
 keys = [
@@ -196,6 +221,12 @@ keys = [
 
 # TOGGLE FLOATING LAYOUT
     Key([mod, "shift"], "space", lazy.window.toggle_floating()),
+#+end_src
+
+*** Emacs Keybinds 
+ Emacs programs launched using the key chord CTRL+e followed by 'key'
+ 
+#+begin_src python
 
 # Emacs programs launched using the key chord CTRL+e followed by 'key'
     KeyChord([mod],"e", [
@@ -211,6 +242,12 @@ keys = [
                       lazy.spawn("/usr/bin/emacs --daemon"),
                       desc='Kill/restart the Emacs daemon')
     ]),
+#+end_src
+
+*** dmenu/ rofi Keybinds 
+Dmenu/rofi scripts launched using the key chord SUPER+p followed by 'key'
+ 
+#+begin_src python
     # Dmenu/rofi scripts launched using the key chord SUPER+p followed by 'key'
     KeyChord([mod], "p", [
         Key([], "h", lazy.spawn("dm-hub -r"), desc='List all dmscripts'),
@@ -233,6 +270,9 @@ keys = [
 #+end_src
 
 ** externe keybinds (Sxhkd) 
+Hier der Inhalt der sxhkdrc. Geklaut bei arcolinux
+: todo überarbeiten
+
 #+begin_src sh :tangle ./sxhkd/sxhkdrc
 #################################################################
 # KEYBOARD BINDINGS FOR ANY TWM
@@ -309,10 +349,11 @@ super + shift + Return
 #dmenu
 super + shift + d
 	dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
-    
+    ## Eingabeleiste oben am Bildschirm, nb und nf sind nichtselektiert, sb und sf ist selektiert, fn ist Schrift
+
 #dmenu
 super + d
-    rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/qtile/rofi/launcher2.rasi
+rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/qtile/rofi/launcher.rasi
 
 #reload sxhkd:
 super + shift + s
@@ -384,6 +425,11 @@ XF86MonBrightnessDown
 #+end_src
 
 * groups 
+Hier werden die desktops (tags) definiert.
+Anzahl bei names muss mit Anzahl in labels übereinstimmen.
+DT hat hier verschieden layouts definiert
+: todo Herausfinden ob es möglich, ein standardlayout zu definieren, damit man nich 9 mal das gleiche schreiben muss
+
 #+begin_src python
 
 groups = []
@@ -425,6 +471,9 @@ for i in groups:
 #+end_src
 
 * colorsheme Definition 
+DT hat ein script, mit dem er das theme ändern kann. Hier wird das Theme konfiguriert.
+Die Definition der einzelnen Themes folgen weiter unten
+
 #+begin_src python
 ### COLORSCHEME ###
 # Colors are defined in a separate 'colors.py' file.
@@ -450,6 +499,8 @@ colors = colors.Everblush
 #+end_src
 
 * layout 
+Hier werden die Fensterlayouts definiert
+
 #+begin_src python
 
 layout_theme = {"border_width": 2,
@@ -504,6 +555,10 @@ layouts = [
 #+end_src
 
 * widgets 
+Hier wird die Statusbar definiert.
+Wichtig: das Modul für die Tastatureinstellung entfernen, sonst schaltet es immer auf US-Keyboard um
+: todo Lösung finden
+
 #+begin_src python
 
 widget_defaults = dict(
@@ -639,7 +694,7 @@ def init_widgets_list():
         widget.Spacer(length = 8),
         widget.Clock(
                  foreground = colors[8],
-                 format = "⏱  %a, %b %d - %H:%M",
+                 format = "⏱  %a, %d.%b - %H:%M",
                  decorations=[
                      BorderDecoration(
                          colour = colors[8],
@@ -656,6 +711,10 @@ def init_widgets_list():
 #+end_src
 
 * screens 
+Hier werden die Monitore konfiguriert
+Achtung: Es kann nur 1 Systray geben, daher die Lösung unten 
+: todo Anzahl der widgets anpassen, 22 und 23 passen bei mir nicht
+
 #+begin_src python
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
@@ -708,7 +767,10 @@ def switch_screens(qtile):
     group = qtile.screens[i - 1].group
     qtile.current_screen.set_group(group)
 #+end_src
+
 * mouse 
+Hier wird das Verhalten der Mouse konfiguriert
+
 #+begin_src python
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
@@ -722,7 +784,10 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 #+end_src
+
 * floating layouts 
+Hier wird definiert, welche Programme und Fenster floating starten
+
 #+begin_src python
 floating_layout = layout.Floating(
     border_focus=colors[8],
@@ -753,6 +818,8 @@ floating_layout = layout.Floating(
         Match(wm_class="tasty.javafx.launcher.LauncherFxApp"), # tastytrade settings
     ]
 )
+
+######## Sonstiges
 auto_fullscreen = True
 focus_on_window_activation = "smart" # or focus
 reconfigure_screens = True
@@ -764,15 +831,23 @@ auto_minimize = True
 # When using the Wayland backend, this can be used to configure input devices.
 wl_input_rules = None
 #+end_src
+
 * Systemstart 
+Was soll beim Start von qtile geladen werden.
+
 ** startscript aufrufen (.config/qtile/scripts/autostart.sh)
+Aufruf des scripts autostart.sh
+
 #+begin_src python
 @hook.subscribe.startup_once
 def start_once():
     home = os.path.expanduser('~')
     subprocess.call([home + '/.config/qtile/scripts/autostart.sh'])
 #+end_src
+
 ** Autostart.sh 
+Hier werden die Programme definiert, die gestartet werden sollen
+
 #+begin_src sh :tangle ./scripts/autostart.ssh
 #!/usr/bin/env bash 
 #
@@ -809,7 +884,6 @@ picom --daemon &
 # Emacs Daemon starten
 /usr/bin/emacs --daemon &
 
-
 #starting utility applications at boot time
 #run variety &
 run nm-applet &
@@ -844,7 +918,10 @@ conky -c "$HOME"/.config/qtile/scripts/conky.conf || echo "Couldn't start conky.
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
 #+end_src
-* DTOS Color-Shemes
+
+* Color-Shemes
+Hier werden die einzelnen Color-Shemes definiert. Geklaut bei dt
+
 #+begin_src python :tangle colors.py
 ### DTOS Color-shemes
 # If using transparency, make sure you add (background="#00000000") to 'Screen' line(s).

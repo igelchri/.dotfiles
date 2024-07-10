@@ -3,7 +3,6 @@ import subprocess
 from libqtile import bar, extension, hook, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, KeyChord, Match, Screen
 from libqtile.lazy import lazy
-# Make sure 'qtile-extras' is installed or this config will not work.
 from qtile_extras import widget
 from qtile_extras.widget.decorations import BorderDecoration
 #from qtile_extras.widget import StatusNotifier
@@ -12,8 +11,10 @@ import colors
 mod = "mod4"              # Sets mod key to SUPER/WINDOWS
 mod1 = "alt"
 mod2 = "control"
+## um alacritty mit eigenen Einstellungen aufzurufen, geklaut bei archcraft
 home = os.path.expanduser('~')
 terminal     = home + '/.config/qtile/scripts/qtile_term'
+###
 myTerm = "alacritty"      # My terminal of choice
 myBrowser = "firefox"     # My browser of choice
 myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
@@ -168,6 +169,7 @@ keys = [
                       lazy.spawn("/usr/bin/emacs --daemon"),
                       desc='Kill/restart the Emacs daemon')
     ]),
+
     # Dmenu/rofi scripts launched using the key chord SUPER+p followed by 'key'
     KeyChord([mod], "p", [
         Key([], "h", lazy.spawn("dm-hub -r"), desc='List all dmscripts'),
@@ -430,7 +432,7 @@ def init_widgets_list():
         widget.Spacer(length = 8),
         widget.Clock(
                  foreground = colors[8],
-                 format = "⏱  %a, %b %d - %H:%M",
+                 format = "⏱  %a, %d.%b - %H:%M",
                  decorations=[
                      BorderDecoration(
                          colour = colors[8],
@@ -537,6 +539,8 @@ floating_layout = layout.Floating(
         Match(wm_class="tasty.javafx.launcher.LauncherFxApp"), # tastytrade settings
     ]
 )
+
+######## Sonstiges
 auto_fullscreen = True
 focus_on_window_activation = "smart" # or focus
 reconfigure_screens = True
