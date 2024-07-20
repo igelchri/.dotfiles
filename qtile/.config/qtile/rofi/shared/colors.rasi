@@ -4,13 +4,15 @@
  * Github : @adi1090x
  * 
  * Colors
+ *
+ * Available Colors Schemes
+ *
+ * adapta    catppuccin    everforest    navy       paper
+ * arc       cyberpunk     gruvbox       nord       solarized
+ * black     dracula       lovelace      onedark    yousai
+ *
  **/
 
-* {
-    background:     #2F343FFF;
-    background-alt: #383C4AFF;
-    foreground:     #DADADAFF;
-    selected:       #67B0E8FF;
-    active:         #8CCF7EFF;
-    urgent:         #E57474FF;
-}
+/* Import color-scheme from `colors` directory */
+
+@import "~/.config/rofi/files/colors/arc.rasi"

@@ -53,9 +53,11 @@ keys = [
 		desc="Launch floating terminal with qtile configs"
 	),
 
+ ## Rofi .. momentan 4 Varianten zur Auswahl... colorsheme ist in shared/colors... 
+# Todo: Colorshemes einarbeiten 
  Key(
 		["mod1"], "F1", 
-		lazy.spawn('rofi -show drun -theme ~/.config/qtile/rofi/launcher.rasi'), 
+		lazy.spawn('rofi -show drun -theme ~/.config/qtile/rofi/launcher-4.rasi'), 
 		desc="Run application launcher"
 	),
    
@@ -454,7 +456,7 @@ def init_widgets_screen1():
 # All other monitors' bars will display everything but widgets 22 (systray) and 23 (spacer).
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    del widgets_screen2[22:24]
+    del widgets_screen2[20:22]
     return widgets_screen2
 
 # For adding transparency to your bar, add (background="#00000000") to the "Screen" line(s)

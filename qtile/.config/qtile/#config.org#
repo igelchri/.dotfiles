@@ -134,6 +134,7 @@ keys = [
 
 # SUPER + SHIFT KEYS
 
+
     Key([mod, "shift"], "c", lazy.window.kill()),
     Key([mod, "shift"], "r", lazy.restart()),
 
