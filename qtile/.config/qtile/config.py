@@ -253,7 +253,7 @@ colors = colors.Everblush
 
 layout_theme = {"border_width": 2,
                 "margin": 8,
-                "border_focus": colors[8],
+                "border_focus": colors[6],
                 "border_normal": colors[0]
                 }
 
@@ -433,11 +433,11 @@ def init_widgets_list():
                  ),
         widget.Spacer(length = 8),
         widget.Clock(
-                 foreground = colors[8],
+                 foreground = colors[6],
                  format = "⏱  %a, %d.%b - %H:%M",
                  decorations=[
                      BorderDecoration(
-                         colour = colors[8],
+                         colour = colors[6],
                          border_width = [0, 0, 2, 0],
                      )
                  ],
