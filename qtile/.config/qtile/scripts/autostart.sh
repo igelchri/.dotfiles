@@ -40,3 +40,7 @@ blueberry-tray &
 
 #starting user applications at boot time
 run volumeicon &
+
+# Enable Super Keys For Menu
+ksuperkey -e 'Super_L=Alt_L|F1' &
+ksuperkey -e 'Super_R=Alt_L|F1' &
