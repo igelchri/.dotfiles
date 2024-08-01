@@ -124,7 +124,7 @@ keys = [
 # Todo: Colorshemes einarbeiten 
  Key(
 		["mod1"], "F1", 
-		lazy.spawn('rofi -show drun -theme ~/.config/qtile/rofi/launcher-4.rasi'), 
+		lazy.spawn('rofi -show drun -theme ~/.config/qtile/rofi/launcher-2.rasi'), 
 		desc="Run application launcher"
 	),
    
@@ -852,7 +852,7 @@ def start_once():
 ** Autostart.sh 
 Hier werden die Programme definiert, die gestartet werden sollen
 
-#+begin_src sh :tangle ./scripts/autostart.sh
+######## #+begin_src sh :tangle ./scripts/autostart.sh
 #!/usr/bin/env bash 
 
 COLORSCHEME=DoomOne
@@ -872,6 +872,7 @@ function run {
     $@&
   fi
 }
+
 
 #autostart ArcoLinux Welcome App
 #run dex $HOME/.config/autostart/arcolinux-welcome-app.desktop &
@@ -899,7 +900,7 @@ run volumeicon &
 # Enable Super Keys For Menu
 ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
-#+end_src
+###### #+end_src
 
 
 #+begin_src python

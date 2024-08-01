@@ -57,7 +57,7 @@ keys = [
 # Todo: Colorshemes einarbeiten 
  Key(
 		["mod1"], "F1", 
-		lazy.spawn('rofi -show drun -theme ~/.config/qtile/rofi/launcher-4.rasi'), 
+		lazy.spawn('rofi -show drun -theme ~/.config/qtile/rofi/launcher-2.rasi'), 
 		desc="Run application launcher"
 	),
    
