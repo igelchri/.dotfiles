@@ -493,6 +493,8 @@ Die Definition der einzelnen Themes folgen weiter unten
 # colors = colors.SolarizedDark
 # colors = colors.SolarizedLight
 # colors = colors.TomorrowNight
+# colors = colors.Everblush
+# colors = Gruvbox
 #
 # It is best not manually change the colorscheme; instead run 'dtos-colorscheme'
 # which is set to 'MOD + p c'
@@ -611,7 +613,7 @@ def init_widgets_list():
                  fontsize = 14
                  ),
         widget.CurrentLayoutIcon(
-                 # custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
+                 #custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
                  foreground = colors[1],
                  padding = 4,
                  scale = 0.6
@@ -798,7 +800,7 @@ floating_layout = layout.Floating(
     border_width=2,
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
-        ,*layout.Floating.default_float_rules,
+        *layout.Floating.default_float_rules,
         Match(wm_class="confirmreset"),   # gitk
         Match(wm_class="dialog"),         # dialog boxes
         Match(wm_class="download"),       # downloads
@@ -820,11 +822,12 @@ floating_layout = layout.Floating(
         Match(title="tastytrade"),        # tastytrade pop-out side gutter
         Match(title="tastytrade - Portfolio Report"), # tastytrade pop-out allocation
         Match(wm_class="tasty.javafx.launcher.LauncherFxApp"), # tastytrade settings
+        Match(wm_class="alacritty-float"),   # floating terminal
     ]
 )
 
 ######## Sonstiges
-auto_fullscreen = True
+auto_fullscreen = False 
 focus_on_window_activation = "smart" # or focus
 reconfigure_screens = True
 
@@ -958,6 +961,7 @@ GruvboxDark  = [
     ["#d3869b", "#d3869b"], # color06
     ["#b8bb26", "#b8bb26"], # color11
     ]
+
 MonokaiPro = [
     ["#2D2A2E", "#2D2A2E"], # bg
     ["#FCFCFA", "#FCFCFA"], # fg
@@ -1053,5 +1057,19 @@ Everblush = [
     ["#c47fd5", "#c47fd5"], # color06 magenta
     ["#6cbfbf", "#6cbfbf"]  # color15 cyan
    
-] 
+]
+
+## Test für Gruvbox 
+Gruvbox  = [
+    ["#282828", "#282828"], # bg
+    ["#ebdbb2", "#ebdbb2"], # fg
+    ["#928374", "#665c54"], # color01 black/gray
+    ["#ea6962", "#ea6962"], # color02 red
+    ["#a9b665", "#a9b665"], # color03 green
+    ["#d8a657", "#e78a4e"], # color04 yellow
+    ["#7daea3", "#7daea3"], # color05 blue
+    ["#d3869b", "#d3869b"], # color06 magenta
+    ["#89b482", "#89b482"], # color11 cyan
+    ]
+
 #+end_src

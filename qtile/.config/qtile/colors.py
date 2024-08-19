@@ -37,6 +37,7 @@ GruvboxDark  = [
     ["#d3869b", "#d3869b"], # color06
     ["#b8bb26", "#b8bb26"], # color11
     ]
+
 MonokaiPro = [
     ["#2D2A2E", "#2D2A2E"], # bg
     ["#FCFCFA", "#FCFCFA"], # fg
@@ -133,3 +134,16 @@ Everblush = [
     ["#6cbfbf", "#6cbfbf"]  # color15 cyan
    
 ]
+
+## Test für Gruvbox 
+Gruvbox  = [
+    ["#282828", "#282828"], # bg
+    ["#ebdbb2", "#ebdbb2"], # fg
+    ["#928374", "#665c54"], # color01 black/gray
+    ["#ea6962", "#ea6962"], # color02 red
+    ["#a9b665", "#a9b665"], # color03 green
+    ["#d8a657", "#e78a4e"], # color04 yellow
+    ["#7daea3", "#7daea3"], # color05 blue
+    ["#d3869b", "#d3869b"], # color06 magenta
+    ["#89b482", "#89b482"], # color11 cyan
+    ]

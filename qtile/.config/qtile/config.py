@@ -243,6 +243,8 @@ for i in groups:
 # colors = colors.SolarizedDark
 # colors = colors.SolarizedLight
 # colors = colors.TomorrowNight
+# colors = colors.Everblush
+# colors = Gruvbox
 #
 # It is best not manually change the colorscheme; instead run 'dtos-colorscheme'
 # which is set to 'MOD + p c'
@@ -347,7 +349,7 @@ def init_widgets_list():
                  fontsize = 14
                  ),
         widget.CurrentLayoutIcon(
-                 # custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
+                 #custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
                  foreground = colors[1],
                  padding = 4,
                  scale = 0.6
@@ -539,11 +541,12 @@ floating_layout = layout.Floating(
         Match(title="tastytrade"),        # tastytrade pop-out side gutter
         Match(title="tastytrade - Portfolio Report"), # tastytrade pop-out allocation
         Match(wm_class="tasty.javafx.launcher.LauncherFxApp"), # tastytrade settings
+        Match(wm_class="alacritty-float"),   # floating terminal
     ]
 )
 
 ######## Sonstiges
-auto_fullscreen = True
+auto_fullscreen = False 
 focus_on_window_activation = "smart" # or focus
 reconfigure_screens = True
 

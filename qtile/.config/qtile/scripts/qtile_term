@@ -5,8 +5,7 @@
 ## launch alacritty with qtile config
 
 # qtile directory
-DIR="$HOME/.config/qtile"
-CONFIG="$DIR/alacritty/alacritty.toml"
+CONFIG="/home/chris/.config/qtile/alacritty/alacritty.toml"
 
 if [ "$1" == "--float" ]; then
 	alacritty --class 'alacritty-float,alacritty-float' --config-file "$CONFIG"
