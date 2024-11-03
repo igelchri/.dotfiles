@@ -6,7 +6,11 @@
 #  ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝      ╚═╝   
 #	gh0stzk - https://github.com/gh0stzk/dotfiles
 
-import = ["~/.config/qtile/alacritty/colors.toml", "~/.config/qtile/alacritty/fonts.toml"]
+[general]
+import = [
+       "~/.config/qtile/alacritty/colors.toml",
+       "~/.config/qtile/alacritty/fonts.toml",
+]
 
 live_config_reload = true
 
@@ -36,7 +40,3 @@ y = 15
 history = 10000
 multiplier = 3
 
-[bell]
-animation = "Linear"
-duration = 0
-command = { program = "paplay", args = ["/usr/share/sounds/freedesktop/stereo/dialog-error.oga"] }

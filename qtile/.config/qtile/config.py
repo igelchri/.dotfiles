@@ -15,7 +15,7 @@ mod2 = "control"
 home = os.path.expanduser('~')
 terminal     = home + '/.config/qtile/scripts/qtile_term'
 ###
-myTerm = "alacritty"      # My terminal of choice
+myTerm = "kitty"      # My terminal of choice
 myBrowser = "firefox"     # My browser of choice
 myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
 
@@ -42,9 +42,14 @@ def maximize_by_switching_layout(qtile):
         qtile.current_group.layout = 'monadtall'
 
 keys = [
-    Key(
+#    Key(
+#		[mod], "Return", 
+#		lazy.spawn(terminal), 
+#		desc="Launch terminal with qtile configs"
+#	),
+     Key(
 		[mod], "Return", 
-		lazy.spawn(terminal), 
+		lazy.spawn(myTerm), 
 		desc="Launch terminal with qtile configs"
 	),
     Key(

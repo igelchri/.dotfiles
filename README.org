@@ -44,7 +44,9 @@ pacman -S ttf-jetbrains-mono-nerd
   + ncmpcpp
 *** weitere
 - ranger
+- (Yaz-- besser als ranger)
 - mc
+- kitty terminal (für Bilderanzeige out of the box)
 - calcurse
 - procs
 - bat
@@ -56,7 +58,6 @@ pacman -S ttf-jetbrains-mono-nerd
 - joplin
 - zathura #PDF
 - piper #logitech maus config
-- peazip
 ** Emacs (dtmacs - Distrotube's Emacs Config)
 : git clone https://gitlab.com/dwt1/dotfiles.git
 *** org-roam

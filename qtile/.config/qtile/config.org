@@ -69,7 +69,7 @@ mod2 = "control"
 home = os.path.expanduser('~')
 terminal     = home + '/.config/qtile/scripts/qtile_term'
 ###
-myTerm = "alacritty"      # My terminal of choice
+myTerm = "kitty"      # My terminal of choice
 myBrowser = "firefox"     # My browser of choice
 myEmacs = "emacsclient -c -a 'emacs' " # The space at the end is IMPORTANT!
 #+end_src
@@ -109,9 +109,14 @@ Die Definitionen erfolgen zweigeteilt, 1. in der config.py und 2. in der skhkdrc
 ** qtile build in 
 #+begin_src python
 keys = [
-    Key(
+#    Key(
+#		[mod], "Return", 
+#		lazy.spawn(terminal), 
+#		desc="Launch terminal with qtile configs"
+#	),
+     Key(
 		[mod], "Return", 
-		lazy.spawn(terminal), 
+		lazy.spawn(myTerm), 
 		desc="Launch terminal with qtile configs"
 	),
     Key(
